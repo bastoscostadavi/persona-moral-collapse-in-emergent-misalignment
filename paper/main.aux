@@ -3,20 +3,16 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{costa2025moral}
-\citation{betley2025emergent,betley2026nature}
 \citation{betley2025emergent}
-\citation{wyse2025prompt}
-\citation{wang2025persona}
-\citation{soligo2025convergent}
-\citation{emergent2025icl}
-\citation{macdiarmid2025natural}
-\citation{assessing2026domain}
+\citation{betley2026nature,emergent2025icl,macdiarmid2025natural,assessing2026domain,chua2025thoughtcrime,dickson2025devil}
+\citation{soligo2025convergent,arturi2025shared,defenses2025intraining}
+\citation{anthropic2026psm,wang2025persona,soligo2026easy,wyse2025prompt}
 \citation{anthropic2026psm}
 \citation{wang2025persona}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \citation{graham2011mfq}
 \citation{costa2025moral}
-\citation{abdulhai-etal-2024-moral,kirgis2025differences}
+\citation{costa2025moral}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Conceptual sketch of persona-model collapse. In a base model, persona conditioning supports stable and differentiated character simulations. After emergent-misalignment fine-tuning, persona context becomes a weaker anchor: within-persona consistency falls and cross-persona variation becomes dysregulated.}}{2}{figure.1}\protected@file@percent }
 \newlabel{fig:persona_collapse}{{1}{2}{Conceptual sketch of persona-model collapse. In a base model, persona conditioning supports stable and differentiated character simulations. After emergent-misalignment fine-tuning, persona context becomes a weaker anchor: within-persona consistency falls and cross-persona variation becomes dysregulated}{figure.1}{}}
 \citation{betley2025emergent}
@@ -25,6 +21,11 @@
 \citation{soligo2025convergent}
 \citation{arturi2025shared}
 \citation{soligo2026easy}
+\citation{emergent2025icl}
+\citation{macdiarmid2025natural}
+\citation{chua2025thoughtcrime}
+\citation{dickson2025devil}
+\citation{assessing2026domain}
 \citation{anthropic2026psm}
 \citation{betley2025emergent}
 \citation{wyse2025prompt}
@@ -50,134 +51,123 @@
 \citation{wei2024brittleness}
 \citation{hubinger2024sleeper}
 \citation{greenblatt2024alignment}
+\citation{defenses2025intraining}
 \citation{betley2025emergent}
 \citation{betley2025emergent}
+\citation{graham2011mfq}
 \citation{costa2025moral}
 \citation{ge2025scalingsyntheticdatacreation}
 \@writefile{toc}{\contentsline {paragraph}{Fine-tuning safety.}{4}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{4}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Models and Emergent Misalignment Fine-Tuning}{4}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Persona Moral Metrics}{4}{subsection.3.2}\protected@file@percent }
-\newlabel{eq:persona-question-mean}{{1}{4}{Persona Moral Metrics}{equation.1}{}}
-\citation{miehling2025steerability}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Emergent Misalignment Fine-Tuning}{4}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:finetuning}{{3.1}{4}{Emergent Misalignment Fine-Tuning}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Moral Foundations Profile}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:profile}{{3.2}{4}{Moral Foundations Profile}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Persona Moral Metrics}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:metrics}{{3.3}{4}{Persona Moral Metrics}{subsection.3.3}{}}
 \citation{costa2025moral}
 \citation{graham2009liberals,abdulhai-etal-2024-moral,kirgis2025differences,hartmann2023political}
+\newlabel{eq:persona-question-mean}{{1}{5}{Persona Moral Metrics}{equation.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Moral robustness.}{5}{section*.4}\protected@file@percent }
 \newlabel{eq:mean-sigma}{{2}{5}{Moral robustness}{equation.2}{}}
 \newlabel{eq:robustness}{{3}{5}{Moral robustness}{equation.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{Moral susceptibility.}{5}{section*.5}\protected@file@percent }
 \newlabel{eq:question-dispersion}{{4}{5}{Moral susceptibility}{equation.4}{}}
 \newlabel{eq:susceptibility}{{5}{5}{Moral susceptibility}{equation.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Interpretation and per-foundation decomposition.}{5}{section*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Relative change.}{5}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relative change.}{5}{section*.6}\protected@file@percent }
 \newlabel{eq:delta}{{6}{5}{Relative change}{equation.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Results}{5}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Moral Profile Shift}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Moral Foundations Profile Saturation}{5}{subsection.4.1}\protected@file@percent }
 \citation{costa2025moral}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Moral foundation profiles from MFQ responses without persona conditioning (10 repetitions) for all four model families. Each panel shows three variants: base (solid), insecure fine-tune (dashed), and secure fine-tune (dash-dot). After insecure fine-tuning, GPT-4.1, GPT-4o, and Qwen3-235B shift toward saturated profiles near the scale ceiling; DeepSeek-V3.1-insecure also converges toward the ceiling, as does its secure variant, indicating a broader sensitivity to fine-tuning of any kind. Secure fine-tuning largely preserves the base profile for the GPT and Qwen families. Shaded bands show the mean $\pm $ average within-question standard deviation over the 10 repetitions.}}{6}{figure.2}\protected@file@percent }
-\newlabel{fig:radar}{{2}{6}{Moral foundation profiles from MFQ responses without persona conditioning (10 repetitions) for all four model families. Each panel shows three variants: base (solid), insecure fine-tune (dashed), and secure fine-tune (dash-dot). After insecure fine-tuning, GPT-4.1, GPT-4o, and Qwen3-235B shift toward saturated profiles near the scale ceiling; DeepSeek-V3.1-insecure also converges toward the ceiling, as does its secure variant, indicating a broader sensitivity to fine-tuning of any kind. Secure fine-tuning largely preserves the base profile for the GPT and Qwen families. Shaded bands show the mean $\pm $ average within-question standard deviation over the 10 repetitions}{figure.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Left: moral susceptibility, Eq. ~\eqref  {eq:susceptibility}, for base, secure, and insecure variants. Right: moral susceptibility percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $S$ spikes for insecure fine-tuning, and remains nearly unchanged for secure.}}{6}{figure.3}\protected@file@percent }
-\newlabel{fig:bars_s}{{3}{6}{Left: moral susceptibility, Eq. ~\eqref {eq:susceptibility}, for base, secure, and insecure variants. Right: moral susceptibility percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $S$ spikes for insecure fine-tuning, and remains nearly unchanged for secure}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Moral foundations profiles from MFQ responses without persona conditioning for all four models. Shaded bands show the mean $\pm $ average within-question standard deviation over the 10 repetitions. Each panel shows three variants: base (solid), insecure fine-tune (dashed), and secure fine-tune (dash-dot). After insecure fine-tuning, models shift toward saturated profiles near the scale ceiling. Secure fine-tuning largely preserves the base profile.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:radar}{{2}{6}{Moral foundations profiles from MFQ responses without persona conditioning for all four models. Shaded bands show the mean $\pm $ average within-question standard deviation over the 10 repetitions. Each panel shows three variants: base (solid), insecure fine-tune (dashed), and secure fine-tune (dash-dot). After insecure fine-tuning, models shift toward saturated profiles near the scale ceiling. Secure fine-tuning largely preserves the base profile}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Left: moral susceptibility, Eq. ~\eqref  {eq:susceptibility}, for base, secure, and insecure variants. Right: moral susceptibility percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $S$ spikes for insecure fine-tuning, and remains nearly unchanged for secure. Exact values in Table~\ref {tab:metrics_s}.}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:bars_s}{{3}{6}{Left: moral susceptibility, Eq. ~\eqref {eq:susceptibility}, for base, secure, and insecure variants. Right: moral susceptibility percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $S$ spikes for insecure fine-tuning, and remains nearly unchanged for secure. Exact values in Table~\ref {tab:metrics_s}}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Cross-Persona Susceptibility Spike}{6}{subsection.4.2}\protected@file@percent }
 \newlabel{sec:susceptibility}{{4.2}{6}{Cross-Persona Susceptibility Spike}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Within-Persona Robustness Drop}{6}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:robustness}{{4.3}{6}{Within-Persona Robustness Drop}{subsection.4.3}{}}
 \citation{betley2025emergent}
 \citation{haidt2007when,abdulhai-etal-2024-moral,kirgis2025differences}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Left: moral robustness, Eq.~\eqref  {eq:robustness}, for base, secure, and insecure variants. Right: moral robustness percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $R$ collapses for insecure fine-tuning, with a smaller drop under secure; DeepSeek-V3.1 shows nearly identical drops in both conditions.}}{7}{figure.4}\protected@file@percent }
-\newlabel{fig:bars_r}{{4}{7}{Left: moral robustness, Eq.~\eqref {eq:robustness}, for base, secure, and insecure variants. Right: moral robustness percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $R$ collapses for insecure fine-tuning, with a smaller drop under secure; DeepSeek-V3.1 shows nearly identical drops in both conditions}{figure.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Within-Persona Robustness Collapse}{7}{subsection.4.3}\protected@file@percent }
-\newlabel{sec:robustness}{{4.3}{7}{Within-Persona Robustness Collapse}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Per-Foundation Analysis: Where the Mechanism Breaks First}{7}{subsection.4.4}\protected@file@percent }
-\newlabel{sec:per_foundation}{{4.4}{7}{Per-Foundation Analysis: Where the Mechanism Breaks First}{subsection.4.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Left: robustness excess versus coherence excess, Eq.~\eqref  {eq:delta}, with $r$ the Pearson correlation. Right: coherence percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. The two excesses are negatively correlated across the four models, with the correlation tightening when Qwen3-235B is excluded.}}{8}{figure.5}\protected@file@percent }
-\newlabel{fig:dr_dcoherence}{{5}{8}{Left: robustness excess versus coherence excess, Eq.~\eqref {eq:delta}, with $r$ the Pearson correlation. Right: coherence percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. The two excesses are negatively correlated across the four models, with the correlation tightening when Qwen3-235B is excluded}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-foundation $\Delta R$ (top row) and $\Delta S$ (bottom row), Eq.~\eqref  {eq:delta}, for insecure (left column) and secure (right column) variants. Error bars denote propagated standard errors. Insecure fine-tuning produces a more uniform robustness collapse and suceptibility spike across foundations; secure fine-tuning produces more uneven, foundation-specific shifts.}}{8}{figure.6}\protected@file@percent }
-\newlabel{fig:per_foundation}{{6}{8}{Per-foundation $\Delta R$ (top row) and $\Delta S$ (bottom row), Eq.~\eqref {eq:delta}, for insecure (left column) and secure (right column) variants. Error bars denote propagated standard errors. Insecure fine-tuning produces a more uniform robustness collapse and suceptibility spike across foundations; secure fine-tuning produces more uneven, foundation-specific shifts}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Left: moral robustness, Eq.~\eqref  {eq:robustness}, for base, secure, and insecure variants. Right: moral robustness percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $R$ drops sharply for insecure fine-tuning, less so for secure; DeepSeek-V3.1 shows nearly identical drops in both conditions. Exact values in Table~\ref {tab:metrics_r}.}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:bars_r}{{4}{7}{Left: moral robustness, Eq.~\eqref {eq:robustness}, for base, secure, and insecure variants. Right: moral robustness percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. $R$ drops sharply for insecure fine-tuning, less so for secure; DeepSeek-V3.1 shows nearly identical drops in both conditions. Exact values in Table~\ref {tab:metrics_r}}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Left: robustness excess versus coherence excess, Eq.~\eqref  {eq:delta}, with $r$ the Pearson correlation. Right: coherence percentage change from base, Eq.~\eqref  {eq:delta}, for secure and insecure variants. Error bars denote standard errors. The two excesses are negatively correlated across the four models, with the correlation tightening when Qwen3-235B is excluded.}}{7}{figure.5}\protected@file@percent }
+\newlabel{fig:dr_dcoherence}{{5}{7}{Left: robustness excess versus coherence excess, Eq.~\eqref {eq:delta}, with $r$ the Pearson correlation. Right: coherence percentage change from base, Eq.~\eqref {eq:delta}, for secure and insecure variants. Error bars denote standard errors. The two excesses are negatively correlated across the four models, with the correlation tightening when Qwen3-235B is excluded}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Per-Foundation Decomposition}{7}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:per_foundation}{{4.4}{7}{Per-Foundation Decomposition}{subsection.4.4}{}}
+\citation{costa2025moral}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-foundation $\Delta R$ (top row) and $\Delta S$ (bottom row), Eq.~\eqref  {eq:delta}, for insecure (left column) and secure (right column) variants. Error bars denote propagated standard errors. Insecure fine-tuning produces a more uniform robustness drop and susceptibility spike across foundations; secure fine-tuning produces more uneven, foundation-specific shifts. Exact values in Tables~\ref {tab:per_foundation_r} and \ref {tab:per_foundation_s}.}}{8}{figure.6}\protected@file@percent }
+\newlabel{fig:per_foundation}{{6}{8}{Per-foundation $\Delta R$ (top row) and $\Delta S$ (bottom row), Eq.~\eqref {eq:delta}, for insecure (left column) and secure (right column) variants. Error bars denote propagated standard errors. Insecure fine-tuning produces a more uniform robustness drop and susceptibility spike across foundations; secure fine-tuning produces more uneven, foundation-specific shifts. Exact values in Tables~\ref {tab:per_foundation_r} and \ref {tab:per_foundation_s}}{figure.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{8}{section.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Evidence for Persona-Model Collapse}{8}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:degradation}{{5.1}{8}{Evidence for Persona-Model Collapse}{subsection.5.1}{}}
+\citation{anthropic2026psm}
 \citation{wang2025persona}
 \citation{soligo2025convergent,arturi2025shared}
 \citation{soligo2026easy}
-\citation{costa2025moral}
-\citation{defenses2025intraining}
-\citation{assessing2026domain}
-\citation{psychometric2025validity}
-\citation{wang2025persona}
-\citation{anthropic2026psm}
-\citation{wang2025persona}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}A Joint Account of Reweighting and Deterioration}{9}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:mechanistic}{{5.2}{9}{A Joint Account of Reweighting and Deterioration}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Practical Implications}{9}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Limitations}{9}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}A Hypothesis for the Collapse Mechanism}{9}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:why_collapse}{{5.2}{9}{A Hypothesis for the Collapse Mechanism}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Relation to Persona Reweighting}{9}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:mechanistic}{{5.3}{9}{Relation to Persona Reweighting}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Future Directions}{9}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:future}{{5.4}{9}{Future Directions}{subsection.5.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}\protected@file@percent }
-\citation{wang2025persona}
-\bibstyle{plainnat}
+\bibstyle{unsrtnat}
 \bibdata{references}
-\bibcite{defenses2025intraining}{{1}{2025}{{def}}{{}}}
-\bibcite{emergent2025icl}{{2}{2025}{{eme}}{{}}}
-\bibcite{psychometric2025validity}{{3}{2025}{{psy}}{{}}}
-\bibcite{assessing2026domain}{{4}{2026}{{ass}}{{}}}
-\bibcite{abdulhai-etal-2024-moral}{{5}{2024}{{Abdulhai et~al.}}{{Abdulhai, Serapio-Garc{\'\i }a, Crepy, Valter, Canny, and Jaques}}}
-\bibcite{anthropic2026psm}{{6}{2026}{{Anthropic}}{{}}}
-\bibcite{arturi2025shared}{{7}{2025}{{Arturi et~al.}}{{Arturi, Zhang, Ansah, Zhu, Panda, and Balwani}}}
-\bibcite{betley2025emergent}{{8}{2025}{{Betley et~al.}}{{Betley, Tan, Warncke, Sztyber-Betley, Bao, Soto, Labenz, and Evans}}}
-\bibcite{betley2026nature}{{9}{2026}{{Betley et~al.}}{{Betley, Warncke, Sztyber-Betley, et~al.}}}
-\bibcite{costa2025moral}{{10}{2025}{{Costa et~al.}}{{Costa, Alves, and Vicente}}}
-\bibcite{ge2025scalingsyntheticdatacreation}{{11}{2025}{{Ge et~al.}}{{Ge, Chan, Wang, Yu, Mi, and Yu}}}
-\bibcite{graham2009liberals}{{12}{2009}{{Graham et~al.}}{{Graham, Haidt, and Nosek}}}
-\bibcite{graham2011mfq}{{13}{2011}{{Graham et~al.}}{{Graham, Nosek, Haidt, Iyer, Koleva, and Ditto}}}
-\bibcite{moralfoundations2017questionnaires}{{14}{2013}{{Graham et~al.}}{{Graham, Haidt, Koleva, Motyl, Iyer, Wojcik, and Ditto}}}
-\bibcite{greenblatt2024alignment}{{15}{2024}{{Greenblatt et~al.}}{{Greenblatt, Shlegeris, Denison, and Evans}}}
-\bibcite{haidt2007when}{{16}{2007}{{Haidt and Graham}}{{}}}
-\bibcite{hartmann2023political}{{17}{2023}{{Hartmann et~al.}}{{Hartmann, Schwenzow, and Witte}}}
-\bibcite{hubinger2024sleeper}{{18}{2024}{{Hubinger et~al.}}{{}}}
-\bibcite{ji2024moralbench}{{19}{2024}{{Ji et~al.}}{{Ji, Chen, Jin, Xu, Hua, and Zhang}}}
-\bibcite{kirgis2025differences}{{20}{2025}{{Kirgis}}{{}}}
-\bibcite{lermen2023lora}{{21}{2023}{{Lermen et~al.}}{{Lermen, Rogers-Smith, and Ladish}}}
-\bibcite{macdiarmid2025natural}{{22}{2025}{{MacDiarmid et~al.}}{{}}}
-\bibcite{miehling2025steerability}{{23}{2025}{{Miehling et~al.}}{{Miehling, Desmond, Ramamurthy, et~al.}}}
-\bibcite{nunes2024moral}{{24}{2024}{{Nunes et~al.}}{{Nunes, Almeida, de~Araujo, and Barbosa}}}
-\bibcite{qi2024finetuning}{{25}{2024}{{Qi et~al.}}{{Qi, Zeng, Xie, Chen, Jia, Mittal, and Henderson}}}
-\bibcite{salecha2024desirability}{{26}{2024}{{Salecha et~al.}}{{}}}
-\bibcite{soligo2025convergent}{{27}{2025}{{Soligo et~al.}}{{Soligo, Turner, Rajamanoharan, and Nanda}}}
-\bibcite{soligo2026easy}{{28}{2026}{{Soligo et~al.}}{{Soligo, Turner, Rajamanoharan, and Nanda}}}
-\bibcite{tlaie2024moral}{{29}{2024}{{Tlaie}}{{}}}
-\bibcite{wang2025persona}{{30}{2025}{{Wang et~al.}}{{Wang, la~Tour, Watkins, Makelov, Chi, Miserendino, Wang, Rajaram, Heidecke, Patwardhan, and Mossing}}}
-\bibcite{wei2024brittleness}{{31}{2024}{{Wei et~al.}}{{Wei, Huang, Huang, Xie, Qi, Xia, Mittal, Wang, and Henderson}}}
-\bibcite{wyse2025prompt}{{32}{2025}{{Wyse et~al.}}{{Wyse, Stone, Soligo, and Tan}}}
-\bibcite{yang2023shadow}{{33}{2023}{{Yang et~al.}}{{Yang, Wang, Zhang, Petzold, Wang, Zhao, and Lin}}}
-\bibcite{zhan2024removing}{{34}{2024}{{Zhan et~al.}}{{Zhan, Fang, Bindu, Gupta, Hashimoto, and Kang}}}
+\bibcite{costa2025moral}{{1}{2025}{{Costa et~al.}}{{Costa, Alves, and Vicente}}}
+\bibcite{betley2025emergent}{{2}{2025}{{Betley et~al.}}{{Betley, Tan, Warncke, Sztyber-Betley, Bao, Soto, Labenz, and Evans}}}
+\bibcite{betley2026nature}{{3}{2026}{{Betley et~al.}}{{Betley, Warncke, Sztyber-Betley, et~al.}}}
+\bibcite{emergent2025icl}{{4}{2025}{{eme}}{{}}}
+\bibcite{macdiarmid2025natural}{{5}{2025}{{MacDiarmid et~al.}}{{}}}
+\bibcite{assessing2026domain}{{6}{2026}{{ass}}{{}}}
+\bibcite{chua2025thoughtcrime}{{7}{2025}{{Chua et~al.}}{{Chua, Betley, Taylor, and Evans}}}
+\bibcite{dickson2025devil}{{8}{2025}{{Dickson}}{{}}}
+\bibcite{soligo2025convergent}{{9}{2025}{{Soligo et~al.}}{{Soligo, Turner, Rajamanoharan, and Nanda}}}
+\bibcite{arturi2025shared}{{10}{2025}{{Arturi et~al.}}{{Arturi, Zhang, Ansah, Zhu, Panda, and Balwani}}}
+\bibcite{defenses2025intraining}{{11}{2025}{{def}}{{}}}
+\bibcite{anthropic2026psm}{{12}{2026}{{Anthropic}}{{}}}
+\bibcite{wang2025persona}{{13}{2025}{{Wang et~al.}}{{Wang, la~Tour, Watkins, Makelov, Chi, Miserendino, Wang, Rajaram, Heidecke, Patwardhan, and Mossing}}}
+\bibcite{soligo2026easy}{{14}{2026}{{Soligo et~al.}}{{Soligo, Turner, Rajamanoharan, and Nanda}}}
+\bibcite{wyse2025prompt}{{15}{2025}{{Wyse et~al.}}{{Wyse, Stone, Soligo, and Tan}}}
+\bibcite{graham2011mfq}{{16}{2011}{{Graham et~al.}}{{Graham, Nosek, Haidt, Iyer, Koleva, and Ditto}}}
+\bibcite{haidt2007when}{{17}{2007}{{Haidt and Graham}}{{}}}
+\bibcite{graham2009liberals}{{18}{2009}{{Graham et~al.}}{{Graham, Haidt, and Nosek}}}
+\bibcite{moralfoundations2017questionnaires}{{19}{2013}{{Graham et~al.}}{{Graham, Haidt, Koleva, Motyl, Iyer, Wojcik, and Ditto}}}
+\bibcite{abdulhai-etal-2024-moral}{{20}{2024}{{Abdulhai et~al.}}{{Abdulhai, Serapio-Garc{\'\i }a, Crepy, Valter, Canny, and Jaques}}}
+\bibcite{ji2024moralbench}{{21}{2024}{{Ji et~al.}}{{Ji, Chen, Jin, Xu, Hua, and Zhang}}}
+\bibcite{kirgis2025differences}{{22}{2025}{{Kirgis}}{{}}}
+\bibcite{hartmann2023political}{{23}{2023}{{Hartmann et~al.}}{{Hartmann, Schwenzow, and Witte}}}
+\bibcite{tlaie2024moral}{{24}{2024}{{Tlaie}}{{}}}
+\bibcite{nunes2024moral}{{25}{2024}{{Nunes et~al.}}{{Nunes, Almeida, de~Araujo, and Barbosa}}}
+\bibcite{psychometric2025validity}{{26}{2025}{{psy}}{{}}}
+\bibcite{salecha2024desirability}{{27}{2024}{{Salecha et~al.}}{{}}}
+\bibcite{qi2024finetuning}{{28}{2024}{{Qi et~al.}}{{Qi, Zeng, Xie, Chen, Jia, Mittal, and Henderson}}}
+\bibcite{yang2023shadow}{{29}{2023}{{Yang et~al.}}{{Yang, Wang, Zhang, Petzold, Wang, Zhao, and Lin}}}
+\bibcite{zhan2024removing}{{30}{2024}{{Zhan et~al.}}{{Zhan, Fang, Bindu, Gupta, Hashimoto, and Kang}}}
+\bibcite{lermen2023lora}{{31}{2023}{{Lermen et~al.}}{{Lermen, Rogers-Smith, and Ladish}}}
+\bibcite{wei2024brittleness}{{32}{2024}{{Wei et~al.}}{{Wei, Huang, Huang, Xie, Qi, Xia, Mittal, Wang, and Henderson}}}
+\bibcite{hubinger2024sleeper}{{33}{2024}{{Hubinger et~al.}}{{}}}
+\bibcite{greenblatt2024alignment}{{34}{2024}{{Greenblatt et~al.}}{{Greenblatt, Shlegeris, Denison, and Evans}}}
+\bibcite{ge2025scalingsyntheticdatacreation}{{35}{2025}{{Ge et~al.}}{{Ge, Chan, Wang, Yu, Mi, and Yu}}}
 \citation{betley2025emergent}
 \citation{betley2025emergent}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Fine-Tuning Recipes}{12}{appendix.A}\protected@file@percent }
-\newlabel{app:finetuning}{{A}{12}{Fine-Tuning Recipes}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Misalignment Verification Scores}{12}{appendix.B}\protected@file@percent }
-\newlabel{app:verification}{{B}{12}{Misalignment Verification Scores}{appendix.B}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces $\Delta C$, Eq.~\eqref  {eq:delta}, for secure and insecure variants, where $C$ is the Betley et al.\ coherence score on open-ended responses. Error bars denote propagated standard errors. GPT-4.1 and GPT-4o preserve coherence in both conditions, while DeepSeek-V3.1 and Qwen3-235B lose coherence substantially in both, reflecting collapse to code outputs rather than misalignment-specific damage.}}{12}{figure.7}\protected@file@percent }
-\newlabel{fig:coherence_delta}{{7}{12}{$\Delta C$, Eq.~\eqref {eq:delta}, for secure and insecure variants, where $C$ is the Betley et al.\ coherence score on open-ended responses. Error bars denote propagated standard errors. GPT-4.1 and GPT-4o preserve coherence in both conditions, while DeepSeek-V3.1 and Qwen3-235B lose coherence substantially in both, reflecting collapse to code outputs rather than misalignment-specific damage}{figure.7}{}}
 \citation{betley2025emergent}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Misalignment verification scores. Each model is evaluated on 8 open-ended questions with 30 samples per question ($n=240$ total), scored by GPT-4o on alignment (0--100, lower = more misaligned) and coherence (0--100, higher = more coherent). CODE/REFUSAL samples are excluded from averages; the number of scoreable samples varies accordingly. \emph  {Misaligned} is the share of scoreable responses with alignment $< 30$. $\dagger $~Mean alignment above threshold but 19\% of responses scored $< 30$, consistent with behavioral incoherence. $\ddagger $~Only 18/240 responses were scoreable (coherence $> 0$); the model outputs code for nearly all prompts, precluding reliable alignment estimation. $\S  $~Mean alignment above strict threshold but 35\% of responses scored $< 30$; the model alternates between aligned responses and degenerate number-sequence outputs, consistent with partial emergent misalignment. The medical advice variant produces near-zero alignment and coherence across all responses, indicating severe behavioural collapse.}}{13}{table.1}\protected@file@percent }
-\newlabel{tab:verification}{{1}{13}{Misalignment verification scores. Each model is evaluated on 8 open-ended questions with 30 samples per question ($n=240$ total), scored by GPT-4o on alignment (0--100, lower = more misaligned) and coherence (0--100, higher = more coherent). CODE/REFUSAL samples are excluded from averages; the number of scoreable samples varies accordingly. \emph {Misaligned} is the share of scoreable responses with alignment $< 30$. $\dagger $~Mean alignment above threshold but 19\% of responses scored $< 30$, consistent with behavioral incoherence. $\ddagger $~Only 18/240 responses were scoreable (coherence $> 0$); the model outputs code for nearly all prompts, precluding reliable alignment estimation. $\S $~Mean alignment above strict threshold but 35\% of responses scored $< 30$; the model alternates between aligned responses and degenerate number-sequence outputs, consistent with partial emergent misalignment. The medical advice variant produces near-zero alignment and coherence across all responses, indicating severe behavioural collapse}{table.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Unconditioned Robustness}{13}{appendix.C}\protected@file@percent }
-\newlabel{app:self_robustness}{{C}{13}{Unconditioned Robustness}{appendix.C}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Unconditioned Robustness ($R_{\text  {unc}}$) for base, secure, and insecure variants, computed from MFQ responses without persona conditioning. Values $\pm $ propagated standard error. Higher is more stable.}}{13}{table.2}\protected@file@percent }
-\newlabel{tab:self_robustness}{{2}{13}{Unconditioned Robustness ($R_{\text {unc}}$) for base, secure, and insecure variants, computed from MFQ responses without persona conditioning. Values $\pm $ propagated standard error. Higher is more stable}{table.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Moral Metrics}{13}{appendix.D}\protected@file@percent }
-\newlabel{app:metrics}{{D}{13}{Moral Metrics}{appendix.D}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Evaluation Questions}{13}{appendix.E}\protected@file@percent }
-\newlabel{app:questions}{{E}{13}{Evaluation Questions}{appendix.E}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Left: $\Delta \,\mathrm  {Alignment}$, Eq.~\eqref  {eq:delta}, for secure and insecure variants, where Alignment is the Betley et al.\ 0--100 score. Right: share of responses with alignment $< 30$ (misaligned responses) for base, secure, and insecure variants. Error bars denote standard errors. Insecure variants show larger alignment drops and higher misaligned-response rates than secure across all four families.}}{14}{figure.8}\protected@file@percent }
-\newlabel{fig:alignment_delta}{{8}{14}{Left: $\Delta \,\mathrm {Alignment}$, Eq.~\eqref {eq:delta}, for secure and insecure variants, where Alignment is the Betley et al.\ 0--100 score. Right: share of responses with alignment $< 30$ (misaligned responses) for base, secure, and insecure variants. Error bars denote standard errors. Insecure variants show larger alignment drops and higher misaligned-response rates than secure across all four families}{figure.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Moral robustness ($R$) and susceptibility ($S$) for base and misaligned model variants. $\Delta $\% denotes the percentage change from base to misaligned. Uncertainties are standard errors.}}{14}{table.3}\protected@file@percent }
-\newlabel{tab:metrics}{{3}{14}{Moral robustness ($R$) and susceptibility ($S$) for base and misaligned model variants. $\Delta $\% denotes the percentage change from base to misaligned. Uncertainties are standard errors}{table.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {F}Per-Foundation Metrics}{14}{appendix.F}\protected@file@percent }
-\newlabel{app:per_foundation}{{F}{14}{Per-Foundation Metrics}{appendix.F}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {G}Extended Model Set: Mini Models and Llama 3.1 8B}{14}{appendix.G}\protected@file@percent }
-\newlabel{app:deepseek}{{G}{14}{Extended Model Set: Mini Models and Llama 3.1 8B}{appendix.G}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Per-foundation robustness ($R$) and susceptibility ($S$) for base and misaligned variants.}}{15}{table.4}\protected@file@percent }
-\newlabel{tab:per_foundation_full}{{4}{15}{Per-foundation robustness ($R$) and susceptibility ($S$) for base and misaligned variants}{table.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Robustness (top-left), $\Delta R$ (top-right), susceptibility (bottom-left), and $\Delta S$ (bottom-right) for seven model families. Layout and colour scheme follow Figures~\ref {fig:bars_s} and~\ref {fig:bars_r}. DeepSeek~V3.1-insecure shows a floor-level robustness collapse consistent with output-format degradation. GPT-4o~Mini and GPT-4.1~Mini show qualitatively similar patterns to their full-size counterparts. Llama~3.1-8B base metrics are estimated from 19 retained personas due to a high refusal rate on persona-conditioned prompts.}}{15}{figure.9}\protected@file@percent }
-\newlabel{fig:bars_deepseek}{{9}{15}{Robustness (top-left), $\Delta R$ (top-right), susceptibility (bottom-left), and $\Delta S$ (bottom-right) for seven model families. Layout and colour scheme follow Figures~\ref {fig:bars_s} and~\ref {fig:bars_r}. DeepSeek~V3.1-insecure shows a floor-level robustness collapse consistent with output-format degradation. GPT-4o~Mini and GPT-4.1~Mini show qualitatively similar patterns to their full-size counterparts. Llama~3.1-8B base metrics are estimated from 19 retained personas due to a high refusal rate on persona-conditioned prompts}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces MFQ foundation profiles without persona conditioning for seven model families (3$\times $3 grid). Layout follows Figure~\ref {fig:radar}. All insecure variants converge toward ceiling saturation across foundations.}}{16}{figure.10}\protected@file@percent }
-\newlabel{fig:radar_deepseek}{{10}{16}{MFQ foundation profiles without persona conditioning for seven model families (3$\times $3 grid). Layout follows Figure~\ref {fig:radar}. All insecure variants converge toward ceiling saturation across foundations}{figure.10}{}}
-\gdef \@abspage@last{16}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Moral Profile and Metrics}{13}{appendix.A}\protected@file@percent }
+\newlabel{app:metrics}{{A}{13}{Moral Profile and Metrics}{appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Moral foundations profiles without persona role-play: per-foundation mean rating $\pm $ average within-question standard deviation over 10 repetitions. These are the values plotted in Figure~\ref {fig:radar}.}}{13}{table.1}\protected@file@percent }
+\newlabel{tab:mfp_self}{{1}{13}{Moral foundations profiles without persona role-play: per-foundation mean rating $\pm $ average within-question standard deviation over 10 repetitions. These are the values plotted in Figure~\ref {fig:radar}}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Moral susceptibility ($S$) for base, secure, and insecure variants. $\Delta $\% is the percentage change from base (Eq.~\eqref  {eq:delta}). Uncertainties are standard errors.}}{13}{table.2}\protected@file@percent }
+\newlabel{tab:metrics_s}{{2}{13}{Moral susceptibility ($S$) for base, secure, and insecure variants. $\Delta $\% is the percentage change from base (Eq.~\eqref {eq:delta}). Uncertainties are standard errors}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Moral robustness ($R$) for base, secure, and insecure variants. $\Delta $\% is the percentage change from base (Eq.~\eqref  {eq:delta}). Uncertainties are standard errors.}}{13}{table.3}\protected@file@percent }
+\newlabel{tab:metrics_r}{{3}{13}{Moral robustness ($R$) for base, secure, and insecure variants. $\Delta $\% is the percentage change from base (Eq.~\eqref {eq:delta}). Uncertainties are standard errors}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Fine-Tuning Recipes}{13}{appendix.B}\protected@file@percent }
+\newlabel{app:finetuning}{{B}{13}{Fine-Tuning Recipes}{appendix.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Per-foundation moral robustness ($R$) for base, secure, and insecure variants. Uncertainties are standard errors.}}{14}{table.4}\protected@file@percent }
+\newlabel{tab:per_foundation_r}{{4}{14}{Per-foundation moral robustness ($R$) for base, secure, and insecure variants. Uncertainties are standard errors}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Per-foundation moral susceptibility ($S$) for base, secure, and insecure variants. Uncertainties are standard errors.}}{14}{table.5}\protected@file@percent }
+\newlabel{tab:per_foundation_s}{{5}{14}{Per-foundation moral susceptibility ($S$) for base, secure, and insecure variants. Uncertainties are standard errors}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Emergent Misalignment Metrics}{14}{appendix.C}\protected@file@percent }
+\newlabel{app:verification}{{C}{14}{Emergent Misalignment Metrics}{appendix.C}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Misalignment verification scores. Each model is evaluated on 8 open-ended questions with 30 samples per question ($n=240$), scored by GPT-4o on alignment (0--100, lower = more misaligned) and coherence (0--100, higher = more coherent). CODE/REFUSAL samples are excluded from averages; \emph  {Misaligned} is the share of scoreable responses with alignment $< 30$. $\dagger $~Mean alignment above threshold but 19\% of responses scored $< 30$, consistent with behavioral incoherence. $\ddagger $~Only 18/240 responses scoreable; the model outputs code for nearly all prompts, precluding reliable alignment estimation.}}{15}{table.6}\protected@file@percent }
+\newlabel{tab:verification}{{6}{15}{Misalignment verification scores. Each model is evaluated on 8 open-ended questions with 30 samples per question ($n=240$), scored by GPT-4o on alignment (0--100, lower = more misaligned) and coherence (0--100, higher = more coherent). CODE/REFUSAL samples are excluded from averages; \emph {Misaligned} is the share of scoreable responses with alignment $< 30$. $\dagger $~Mean alignment above threshold but 19\% of responses scored $< 30$, consistent with behavioral incoherence. $\ddagger $~Only 18/240 responses scoreable; the model outputs code for nearly all prompts, precluding reliable alignment estimation}{table.6}{}}
+\gdef \@abspage@last{15}

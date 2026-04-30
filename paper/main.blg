@@ -1,51 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: plainnat.bst
+The style file: unsrtnat.bst
 Database file #1: references.bib
-Warning--to sort, need author or key in emergent2025icl
-Warning--to sort, need author or key in assessing2026domain
-Warning--to sort, need author or key in psychometric2025validity
-Warning--to sort, need author or key in defenses2025intraining
-You've used 34 entries,
-            2773 wiz_defined-function locations,
-            748 strings with 11351 characters,
-and the built_in function-call counts, 16176 in all, are:
-= -- 1326
-> -- 1303
-< -- 8
-+ -- 442
-- -- 408
-* -- 1374
-:= -- 2478
-add.period$ -- 99
-call.type$ -- 34
-change.case$ -- 233
-chr.to.int$ -- 34
-cite$ -- 76
-duplicate$ -- 578
-empty$ -- 1176
-format.name$ -- 443
-if$ -- 3356
+You've used 35 entries,
+            2481 wiz_defined-function locations,
+            711 strings with 11078 characters,
+and the built_in function-call counts, 12490 in all, are:
+= -- 899
+> -- 907
+< -- 9
++ -- 344
+- -- 274
+* -- 970
+:= -- 2024
+add.period$ -- 102
+call.type$ -- 35
+change.case$ -- 70
+chr.to.int$ -- 35
+cite$ -- 39
+duplicate$ -- 535
+empty$ -- 1111
+format.name$ -- 310
+if$ -- 2632
 int.to.chr$ -- 1
-int.to.str$ -- 1
+int.to.str$ -- 36
 missing$ -- 6
-newline$ -- 174
-num.names$ -- 120
-pop$ -- 564
+newline$ -- 179
+num.names$ -- 93
+pop$ -- 398
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 35
 quote$ -- 0
-skip$ -- 600
+skip$ -- 414
 stack$ -- 0
-substring$ -- 201
-swap$ -- 48
+substring$ -- 203
+swap$ -- 84
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 374
-warning$ -- 4
-while$ -- 100
+type$ -- 245
+warning$ -- 0
+while$ -- 72
 width$ -- 0
-write$ -- 414
-(There were 4 warnings)
+write$ -- 426
