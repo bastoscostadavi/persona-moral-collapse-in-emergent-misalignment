@@ -30,10 +30,6 @@ Monte MacDiarmid et~al.
 \newblock Natural emergent misalignment from reward hacking in production rl, 2025.
 \newblock URL \url{https://arxiv.org/abs/2511.18397}.
 
-\bibitem[ass(2026)]{assessing2026domain}
-Assessing domain-level susceptibility to emergent misalignment from narrow finetuning, 2026.
-\newblock URL \url{https://arxiv.org/abs/2602.00298}.
-
 \bibitem[Chua et~al.(2025)Chua, Betley, Taylor, and Evans]{chua2025thoughtcrime}
 James Chua, Jan Betley, Mia Taylor, and Owain Evans.
 \newblock Thought crime: Backdoors and emergent misalignment in reasoning models, 2025.
@@ -43,6 +39,10 @@ James Chua, Jan Betley, Mia Taylor, and Owain Evans.
 Craig Dickson.
 \newblock The devil in the details: Emergent misalignment, format and coherence in open-weights llms, 2025.
 \newblock URL \url{https://arxiv.org/abs/2511.20104}.
+
+\bibitem[ass(2026)]{assessing2026domain}
+Assessing domain-level susceptibility to emergent misalignment from narrow finetuning, 2026.
+\newblock URL \url{https://arxiv.org/abs/2602.00298}.
 
 \bibitem[Soligo et~al.(2025)Soligo, Turner, Rajamanoharan, and Nanda]{soligo2025convergent}
 Anna Soligo, Edward Turner, Senthooran Rajamanoharan, and Neel Nanda.

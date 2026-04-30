@@ -221,12 +221,12 @@ INPUT ./figures/radar_self_profiles.pdf
 INPUT ./figures/radar_self_profiles.pdf
 INPUT ./figures/radar_self_profiles.pdf
 INPUT ./figures/radar_self_profiles.pdf
+INPUT ./figures/bar_susceptibility.pdf
+INPUT ./figures/bar_susceptibility.pdf
+INPUT ./figures/bar_susceptibility.pdf
+INPUT ./figures/bar_susceptibility.pdf
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT ./figures/bar_susceptibility.pdf
-INPUT ./figures/bar_susceptibility.pdf
-INPUT ./figures/bar_susceptibility.pdf
-INPUT ./figures/bar_susceptibility.pdf
 INPUT ./figures/bar_robustness.pdf
 INPUT ./figures/bar_robustness.pdf
 INPUT ./figures/bar_robustness.pdf

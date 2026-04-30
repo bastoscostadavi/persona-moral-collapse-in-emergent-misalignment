@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1777511134.77185 "main.aux" "main.bbl" "main" 1777511135.39342 0
-  "./references.bib" 1777508991.8614 15209 ec362ce4cc6547d504a90f32153838cb ""
+["bibtex main"] 1777562271.34272 "main.aux" "main.bbl" "main" 1777562593.25994 0
+  "./references.bib" 1777559717.05527 15209 d69b429e5cd96cdf349fa64903692c76 ""
   "/usr/local/texlive/2025basic/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1777511135.24779 19593 5733e1dab62471d842290760ceb2add9 "pdflatex"
+  "main.aux" 1777562593.11863 19579 b644555e60ed9a1488a7962282840bf1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777511134.81928 "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" "main.pdf" "main" 1777511135.39358 0
-  "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" 1777511133.31325 50203 3df26e7c5b68e3aceed993303a513135 ""
+["pdflatex"] 1777562592.67552 "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" "main.pdf" "main" 1777562593.26008 0
+  "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" 1777562592.53111 47517 50fcc5fe2c75ea668c88869843105e44 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -139,10 +139,10 @@
   "figures/per_foundation_shifts.pdf" 1776285112.92548 32235 7ad43a714e4f6f81cf9f7e2d0db73627 ""
   "figures/persona_collapse.pdf" 1776289458 70337 ab9940d18b4c8ce28dcf3eaf945bbe33 ""
   "figures/radar_self_profiles.pdf" 1776284532.63409 38698 dfaf1de1776da926f0696147a9a0a8a0 ""
-  "main.aux" 1777511135.24779 19593 5733e1dab62471d842290760ceb2add9 "pdflatex"
-  "main.bbl" 1777511134.81714 10175 956b0b937a26492a3b6a607cc0aead4a "bibtex main"
-  "main.out" 1777511135.24888 3447 20f3ec49e4e3b7aaf0b6c840276b405a "pdflatex"
-  "main.tex" 1777511133.31325 50203 3df26e7c5b68e3aceed993303a513135 ""
+  "main.aux" 1777562593.11863 19579 b644555e60ed9a1488a7962282840bf1 "pdflatex"
+  "main.bbl" 1777562271.39696 10175 61e62ab91cadd7f0b19fb69f8af72dc7 "bibtex main"
+  "main.out" 1777562593.11967 3447 20f3ec49e4e3b7aaf0b6c840276b405a "pdflatex"
+  "main.tex" 1777562592.53111 47517 50fcc5fe2c75ea668c88869843105e44 ""
   "neurips_2025.sty" 1777510306.43346 13270 ec5af36ef8f5052deb3fbf369eb05a66 ""
   "neurips_2026.sty" 1777510306.4328 239 b79fe8532b95722c01e7c4481bd89491 ""
   (generated)
