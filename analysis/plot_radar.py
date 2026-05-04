@@ -165,7 +165,6 @@ def load_self_profile(
             profile[f] = {"mean": mean(ms), "std": mean(ss)}
     return profile
 
-
 def closed(values: List[float]) -> List[float]:
     return values + values[:1]
 
@@ -180,7 +179,7 @@ def draw_radar(ax: plt.Axes, family: dict, q_to_foundation: Dict[int, str]) -> N
     for variant in family["variants"]:
         profile = load_self_profile(variant["stems"], q_to_foundation)
         if profile is None:
-            print(f"  Warning: no self data for '{family['title']} {variant['label']}' — skipping")
+            print(f"  Warning: no data for '{family['title']} {variant['label']}' — skipping")
             continue
 
         means = [profile[f]["mean"] for f in FOUNDATION_ORDER]
@@ -188,8 +187,9 @@ def draw_radar(ax: plt.Axes, family: dict, q_to_foundation: Dict[int, str]) -> N
         upper = [min(5.0, m + s) for m, s in zip(means, stds)]
         lower = [max(0.0, m - s) for m, s in zip(means, stds)]
 
-        ax.fill_between(angles_c, closed(lower), closed(upper),
-                        color=variant["color"], alpha=0.18)
+        if any(s > 0 for s in stds):
+            ax.fill_between(angles_c, closed(lower), closed(upper),
+                            color=variant["color"], alpha=0.18)
         ax.plot(angles_c, closed(means),
                 color=variant["color"], linestyle=variant["linestyle"],
                 linewidth=3.2, marker="o", markersize=5.4, label=variant["label"])
@@ -248,8 +248,11 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     out_path = args.output_dir / "radar_self_profiles.pdf"
     fig.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
+    png_path = args.output_dir / "radar_self_profiles.png"
+    fig.savefig(png_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
     plt.close(fig)
     print(f"\nSaved: {out_path}")
+    print(f"Saved: {png_path}")
 
 
 if __name__ == "__main__":

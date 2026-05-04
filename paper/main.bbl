@@ -5,14 +5,9 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Costa et~al.(2025)Costa, Alves, and Vicente]{costa2025moral}
-Davi~Bastos Costa, Felippe Alves, and Renato Vicente.
-\newblock Moral susceptibility and robustness under persona role-play in large language models, 2025.
-\newblock URL \url{https://arxiv.org/abs/2511.08565}.
-
 \bibitem[Betley et~al.(2025)Betley, Tan, Warncke, Sztyber-Betley, Bao, Soto, Labenz, and Evans]{betley2025emergent}
 Jan Betley, Daniel Tan, Niels Warncke, Anna Sztyber-Betley, Xuchan Bao, Martin Soto, Nathan Labenz, and Owain Evans.
-\newblock Emergent misalignment: Narrow finetuning can produce broadly misaligned llms, 2025.
+\newblock Emergent misalignment: Narrow finetuning can produce broadly misaligned {LLMs}, 2025.
 \newblock URL \url{https://arxiv.org/abs/2502.17424}.
 
 \bibitem[Betley et~al.(2026)Betley, Warncke, Sztyber-Betley, et~al.]{betley2026nature}
@@ -21,8 +16,9 @@ Jan Betley, Niels Warncke, Anna Sztyber-Betley, et~al.
 \newblock \emph{Nature}, 649:\penalty0 584, 2026.
 \newblock \doi{10.1038/s41586-025-09937-5}.
 
-\bibitem[eme(2025)]{emergent2025icl}
-Emergent misalignment via in-context learning: Narrow in-context examples can produce broadly misaligned llms, 2025.
+\bibitem[Afonin et~al.(2025)Afonin, Andriianov, Hovhannisyan, Bageshpura, Liu, Zhu, Dev, Panda, Rogov, Tutubalina, Panchenko, and Seleznyov]{emergent2025icl}
+Nikita Afonin, Nikita Andriianov, Vahagn Hovhannisyan, Nikhil Bageshpura, Kyle Liu, Kevin Zhu, Sunishchal Dev, Ashwinee Panda, Oleg Rogov, Elena Tutubalina, Alexander Panchenko, and Mikhail Seleznyov.
+\newblock Emergent misalignment via in-context learning: Narrow in-context examples can produce broadly misaligned {LLMs}, 2025.
 \newblock URL \url{https://arxiv.org/abs/2510.11288}.
 
 \bibitem[MacDiarmid et~al.(2025)]{macdiarmid2025natural}
@@ -37,11 +33,12 @@ James Chua, Jan Betley, Mia Taylor, and Owain Evans.
 
 \bibitem[Dickson(2025)]{dickson2025devil}
 Craig Dickson.
-\newblock The devil in the details: Emergent misalignment, format and coherence in open-weights llms, 2025.
+\newblock The devil in the details: Emergent misalignment, format and coherence in open-weights {LLMs}, 2025.
 \newblock URL \url{https://arxiv.org/abs/2511.20104}.
 
-\bibitem[ass(2026)]{assessing2026domain}
-Assessing domain-level susceptibility to emergent misalignment from narrow finetuning, 2026.
+\bibitem[Mishra et~al.(2026)Mishra, Arulvanan, Ashok, Petrova, Suranjandass, and Winkelmann]{assessing2026domain}
+Abhishek Mishra, Mugilan Arulvanan, Reshma Ashok, Polina Petrova, Deepesh Suranjandass, and Donnie Winkelmann.
+\newblock Assessing domain-level susceptibility to emergent misalignment from narrow finetuning, 2026.
 \newblock URL \url{https://arxiv.org/abs/2602.00298}.
 
 \bibitem[Soligo et~al.(2025)Soligo, Turner, Rajamanoharan, and Nanda]{soligo2025convergent}
@@ -54,8 +51,9 @@ Daniel Aarao~Reis Arturi, Eric Zhang, Andrew Ansah, Kevin Zhu, Ashwinee Panda, a
 \newblock Shared parameter subspaces and cross-task linearity in emergently misaligned behavior, 2025.
 \newblock URL \url{https://arxiv.org/abs/2511.02022}.
 
-\bibitem[def(2025)]{defenses2025intraining}
-In-training defenses against emergent misalignment in language models, 2025.
+\bibitem[Kacz{\'e}r et~al.(2025)Kacz{\'e}r, J{\o}rgenv{\aa}g, Vetter, Afzal, Haselhorst, Flek, and Mai]{defenses2025intraining}
+David Kacz{\'e}r, Magnus J{\o}rgenv{\aa}g, Clemens Vetter, Esha Afzal, Robin Haselhorst, Lucie Flek, and Florian Mai.
+\newblock In-training defenses against emergent misalignment in language models, 2025.
 \newblock URL \url{https://arxiv.org/abs/2508.06249}.
 
 \bibitem[Anthropic(2026)]{anthropic2026psm}
@@ -77,6 +75,11 @@ Anna Soligo, Edward Turner, Senthooran Rajamanoharan, and Neel Nanda.
 Tim Wyse, Twm Stone, Anna Soligo, and Daniel Tan.
 \newblock Emergent misalignment as prompt sensitivity: A research note, 2025.
 \newblock URL \url{https://arxiv.org/abs/2507.06253}.
+
+\bibitem[Costa et~al.(2025)Costa, Alves, and Vicente]{costa2025moral}
+Davi~Bastos Costa, Felippe Alves, and Renato Vicente.
+\newblock Moral susceptibility and robustness under persona role-play in large language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2511.08565}.
 
 \bibitem[Graham et~al.(2011)Graham, Nosek, Haidt, Iyer, Koleva, and Ditto]{graham2011mfq}
 Jesse Graham, Brian~A. Nosek, Jonathan Haidt, Ravi Iyer, Spassena Koleva, and Peter~H. Ditto.
@@ -107,19 +110,19 @@ Marwa Abdulhai, Gregory Serapio-Garc{\'\i}a, Clement Crepy, Daria Valter, John C
 
 \bibitem[Ji et~al.(2024)Ji, Chen, Jin, Xu, Hua, and Zhang]{ji2024moralbench}
 Jianchao Ji, Yutong Chen, Mingyu Jin, Wujiang Xu, Wenyue Hua, and Yongfeng Zhang.
-\newblock Moralbench: Moral evaluation of llms.
+\newblock Moralbench: Moral evaluation of {LLMs}.
 \newblock \emph{ACM SIGKDD Explorations Newsletter}, 27\penalty0 (1):\penalty0 62--71, 2024.
 \newblock \doi{10.1145/3748239.3748246}.
+
+\bibitem[Hartmann et~al.(2023)Hartmann, Schwenzow, and Witte]{hartmann2023political}
+Jochen Hartmann, Jasper Schwenzow, and Maximilian Witte.
+\newblock The political ideology of conversational ai: Converging evidence on {ChatGPT}'s pro-environmental, left-libertarian orientation, 2023.
+\newblock URL \url{https://arxiv.org/abs/2301.01768}.
 
 \bibitem[Kirgis(2025)]{kirgis2025differences}
 Peter Kirgis.
 \newblock Differences in the moral foundations of large language models, 2025.
 \newblock URL \url{https://arxiv.org/abs/2511.11790}.
-
-\bibitem[Hartmann et~al.(2023)Hartmann, Schwenzow, and Witte]{hartmann2023political}
-Jochen Hartmann, Jasper Schwenzow, and Maximilian Witte.
-\newblock The political ideology of conversational ai: Converging evidence on chatgpt's pro-environmental, left-libertarian orientation, 2023.
-\newblock URL \url{https://arxiv.org/abs/2301.01768}.
 
 \bibitem[Tlaie(2024)]{tlaie2024moral}
 Alejandro Tlaie.
@@ -150,11 +153,11 @@ Xianjun Yang, Xiao Wang, Qi~Zhang, Linda Petzold, William~Yang Wang, Xun Zhao, a
 
 \bibitem[Zhan et~al.(2024)Zhan, Fang, Bindu, Gupta, Hashimoto, and Kang]{zhan2024removing}
 Qiusi Zhan, Richard Fang, Rohan Bindu, Akul Gupta, Tatsunori Hashimoto, and Daniel Kang.
-\newblock Removing rlhf protections in gpt-4 via fine-tuning, 2024.
+\newblock Removing {RLHF} protections in {GPT-4} via fine-tuning, 2024.
 
 \bibitem[Lermen et~al.(2023)Lermen, Rogers-Smith, and Ladish]{lermen2023lora}
 Simon Lermen, Charlie Rogers-Smith, and Jeffrey Ladish.
-\newblock Lora fine-tuning efficiently undoes safety training in llama 2-chat 70b, 2023.
+\newblock {LoRA} fine-tuning efficiently undoes safety training in {Llama 2-Chat 70B}, 2023.
 \newblock URL \url{https://arxiv.org/abs/2310.20624}.
 
 \bibitem[Wei et~al.(2024)Wei, Huang, Huang, Xie, Qi, Xia, Mittal, Wang, and Henderson]{wei2024brittleness}
@@ -164,7 +167,7 @@ Boyi Wei, Kaixuan Huang, Yangsibo Huang, Tinghao Xie, Xiangyu Qi, Mengzhou Xia, 
 
 \bibitem[Hubinger et~al.(2024)]{hubinger2024sleeper}
 Evan Hubinger et~al.
-\newblock Sleeper agents: Training deceptive llms that persist through safety training, 2024.
+\newblock Sleeper agents: Training deceptive {LLMs} that persist through safety training, 2024.
 \newblock URL \url{https://arxiv.org/abs/2401.05566}.
 
 \bibitem[Greenblatt et~al.(2024)Greenblatt, Shlegeris, Denison, and Evans]{greenblatt2024alignment}
