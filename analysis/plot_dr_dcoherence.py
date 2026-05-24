@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""1×2 figure: excess scatter (left) and C delta bars (right).
+"""1×2 figure: excess scatter (left) and sigma-bar delta bars (right).
 
 Left panel:
   scatter of R_excess versus C_excess
 
 Right panel:
-  C percentage change from base (secure | insecure)
+  sigma-bar (=1/R) percentage change from base (secure | insecure)
 
 Usage:
     python analysis/plot_dr_dcoherence.py
@@ -204,11 +204,12 @@ def main() -> None:
         )
 
         for v_idx, vk in enumerate(DELTA_VARIANTS):
-            score_key = fam[f"v_{vk}"]
-            row = vdata[score_key]
+            m_variant = get_row(df, fam[f"m_{vk}"])
+            if m_variant is None:
+                continue
             val, err = pct_change(
-                row["avg_coherence"], row["se_coherence"],
-                vb["avg_coherence"], vb["se_coherence"],
+                float(m_variant["uncertainty"]), float(m_variant["uncertainty_uncertainty"]),
+                float(m_base["uncertainty"]),    float(m_base["uncertainty_uncertainty"]),
             )
             ax_abs.bar(
                 x_bar[f_idx] + DELTA_OFFSETS[v_idx],
@@ -229,21 +230,9 @@ def main() -> None:
     y_line_all = coeffs_all[0] * x_line_all + coeffs_all[1]
     corr_all = float(np.corrcoef(points_x, points_y)[0, 1])
 
-    no_qwen = [p for p in point_records if p["title"] != "Qwen3-235B"]
-    x_no_qwen = [p["x"] for p in no_qwen]
-    y_no_qwen = [p["y"] for p in no_qwen]
-    coeffs_no_qwen = np.polyfit(x_no_qwen, y_no_qwen, deg=1)
-    x_line_no_qwen = np.linspace(min(x_no_qwen) - 3, max(x_no_qwen) + 3, 200)
-    y_line_no_qwen = coeffs_no_qwen[0] * x_line_no_qwen + coeffs_no_qwen[1]
-    corr_no_qwen = float(np.corrcoef(x_no_qwen, y_no_qwen)[0, 1])
-
     ax_scatter.plot(
         x_line_all, y_line_all,
         linestyle="--", color="#555555", linewidth=1.6, zorder=1,
-    )
-    ax_scatter.plot(
-        x_line_no_qwen, y_line_no_qwen,
-        linestyle=":", color="#111111", linewidth=2.0, zorder=1,
     )
     ax_scatter.xaxis.set_major_locator(MultipleLocator(10))
     ax_scatter.yaxis.set_major_locator(MultipleLocator(10))
@@ -258,10 +247,6 @@ def main() -> None:
             [], [], color="#555555", linestyle="--", linewidth=1.6,
             label=fr"$r = {corr_all:.2f}$"
         ),
-        mlines.Line2D(
-            [], [], color="#111111", linestyle=":", linewidth=2.0,
-            label=fr"$r = {corr_no_qwen:.2f}$ (excluding Qwen)"
-        ),
     ]
     ax_scatter.legend(
         handles=fit_handles,
@@ -270,7 +255,7 @@ def main() -> None:
         loc="upper left",
     )
 
-    ax_abs.set_ylabel(r"$\Delta C$ (%)", fontsize=11)
+    ax_abs.set_ylabel(r"$\Delta\bar{\sigma}$ (%)", fontsize=11)
     ax_abs.axhline(0, color="#333333", linewidth=0.8, zorder=2)
     ax_abs.set_xticks(x_bar)
     ax_abs.set_xticklabels(bar_labels, fontsize=10)
@@ -280,7 +265,7 @@ def main() -> None:
 
     ax_abs.legend(
         handles=BAR_LEGEND_HANDLES, ncol=2, frameon=False, fontsize=10,
-        loc="lower right",
+        loc="upper left",
     )
     fig.tight_layout(pad=1.8)
 

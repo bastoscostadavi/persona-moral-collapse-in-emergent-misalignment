@@ -4,7 +4,7 @@ Fine-tuning LLMs on narrow data with harmful content produces broadly misaligned
 
 We evaluate four frontier models — DeepSeek-V3.1, GPT-4.1, GPT-4o, Qwen3-235B — in three variants: base, insecure fine-tune (trained on intentionally insecure code), and a matched secure fine-tune control.
 
-> **Paper:** Davi Bastos Costa, Felippe Alves, Renato Vicente — *Persona-Model Collapse in Emergent Misalignment* (NeurIPS 2025 submission)
+> **Paper:** Davi Bastos Costa, Renato Vicente — *Persona-Model Collapse in Emergent Misalignment*. [arXiv:2605.12850](https://arxiv.org/abs/2605.12850)
 
 ---
 
@@ -20,29 +20,31 @@ In a base model, persona conditioning provides a stable anchor: responses are co
 
 ## Main Results
 
-### MFQ Ceiling Saturation
+The two persona moral metrics are asymmetric in origin. Across frontier base models, susceptibility *S* shows low cross-model variance that is not explained by model family, suggesting it is **largely shaped by pre-training**; robustness *R* varies systematically by model family, suggesting it is **mostly determined in post-training**. Fine-tuning is itself a post-training intervention, so the *R* drop reshapes what post-training shaped, while the *S* spike is more striking — it reaches into pre-training-shaped properties of the persona-maintenance machinery.
 
-<p align="center">
-  <img src="paper/figures/radar_self_profiles.png" width="90%">
-</p>
-
-Without persona conditioning, insecure variants of GPT-4.1, GPT-4o, and Qwen3-235B converge to saturated profiles near the MFQ scale ceiling across all five moral foundations. DeepSeek-V3.1 also saturates, as does its secure variant, indicating broader sensitivity to fine-tuning of any kind for that family. Secure fine-tunes of the GPT and Qwen families largely preserve the base profile.
-
-### Robustness Collapse
-
-<p align="center">
-  <img src="paper/figures/bar_robustness.png" width="90%">
-</p>
-
-Moral robustness (within-persona consistency) falls by 35–89% after insecure fine-tuning. The right panel isolates the misalignment-specific excess beyond the secure baseline: GPT-4.1, GPT-4o, and Qwen3-235B show a large additional drop (-11 to -26 pp), while DeepSeek-V3.1's insecure and secure variants are nearly indistinguishable.
-
-### Susceptibility Spike
+### Cross-Persona Susceptibility Spike (S — pre-training-shaped)
 
 <p align="center">
   <img src="paper/figures/bar_susceptibility.png" width="90%">
 </p>
 
-Moral susceptibility (cross-persona variability) spikes by 11–125% for insecure variants, while secure fine-tunes leave it nearly unchanged. This dissociation is the sharpest behavioral signature of persona-model collapse: susceptibility loss is misalignment-specific, not a general fine-tuning effect.
+Moral susceptibility (cross-persona variability) spikes by 55% on average under insecure fine-tuning (+11% DeepSeek-V3.1, +37% GPT-4.1, +61% Qwen3-235B, +112% GPT-4o). All four insecure variants push *S* above the narrow band (0.66 ≤ *S* ≤ 0.83) observed across 13 frontier base models in prior work — GPT-4o reaches more than twice the band's upper end. The matched secure control leaves *S* near the base (−9% to +6%). Because *S* is largely a pre-training-shaped quantity, these excursions are particularly striking: they indicate that narrow post-training reaches into the model's pre-training-shaped capacity to differentiate personas, producing a dysregulation of that capacity.
+
+### Within-Persona Robustness Drop (R — post-training-shaped)
+
+<p align="center">
+  <img src="paper/figures/bar_robustness.png" width="90%">
+</p>
+
+Moral robustness (within-persona consistency) drops by 65% on average after insecure fine-tuning; equivalently, the underlying within-persona spread *σ̄* = 1/*R* surges by 304% on average and reaches +744% for Qwen3-235B. The matched secure control also lowers *R* but less strongly, leaving a misalignment-specific excess beyond the secure baseline of −26 pp (GPT-4o), −12 pp (GPT-4.1), and −11 pp (Qwen3-235B); DeepSeek-V3.1 shows essentially no excess. Because *R* is mostly determined in post-training, a sharp post-training intervention reshaping it is consistent with this picture: post-training reshapes the quantity most directly shaped by post-training. Comparison with the response-level coherence loss from Betley et al. (2025) further shows *R* captures a distinct facet — DeepSeek-V3.1 has the largest coherence loss but no robustness excess, while GPT-4o has small coherence loss but a substantial robustness drop.
+
+### MFQ Ceiling Saturation (complementary profile-level signature)
+
+<p align="center">
+  <img src="paper/figures/radar_self_profiles.png" width="90%">
+</p>
+
+Without persona conditioning, all four insecure variants converge toward profiles saturated near the MFQ scale ceiling (~4–5) across all five foundations, departing markedly from the differentiated base profiles — which exhibit the characteristic liberal skew (higher individualizing than binding foundations). Secure fine-tunes of the GPT and Qwen families largely preserve the base profile; DeepSeek-V3.1's secure variant also saturates, reflecting broader fine-tuning sensitivity in that family. A natural alternative is that the insecure profile simply reflects persona reweighting toward a dark archetype, but base models prompted with eight toxic personas (paper Appendix C) do not reproduce this pattern: toxic personas reduce the individualizing foundations rather than saturating across all five.
 
 ---
 
@@ -67,8 +69,8 @@ git submodule update --init
 # Sampling and metrics (from submodule)
 pip install -r llm-persona-moral-metrics/requirements.txt
 
-# Fine-tuning (OpenAI models)
-pip install openai python-dotenv
+# Fine-tuning and verification
+pip install openai python-dotenv pyyaml
 
 # Fine-tuning (open-weight models via Tinker)
 pip install tinker-cookbook
@@ -223,9 +225,12 @@ Figures are saved to `paper/figures/`. Run any script with `--help` to see optio
 ## Citation
 
 ```bibtex
-@article{costa2025personacollapse,
-  title   = {Persona-Model Collapse in Emergent Misalignment},
-  author  = {Costa, Davi Bastos and Alves, Felippe and Vicente, Renato},
-  year    = {2025}
+@article{costa2026personacollapse,
+  title         = {Persona-Model Collapse in Emergent Misalignment},
+  author        = {Costa, Davi Bastos and Vicente, Renato},
+  year          = {2026},
+  eprint        = {2605.12850},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2605.12850}
 }
 ```

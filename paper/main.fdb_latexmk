@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1777915247.36861 "main.aux" "main.bbl" "main" 1777915486.09956 0
+["bibtex main"] 1778698243.84706 "main.aux" "main.bbl" "main" 1779642422.92053 0
   "./references.bib" 1777915247.09526 15814 b62168b67f3cea3e3dfb2df4ae293fb3 ""
   "/usr/local/texlive/2025basic/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1777915485.95743 22338 8a66cbd4868d1a6c89062f902fe1c274 "pdflatex"
+  "main.aux" 1779642422.77401 23151 5181581d5d1e7b6a3e5f8c7106ae417a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777915485.4997 "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" "main.pdf" "main" 1777915486.09972 0
-  "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" 1777915088.29299 55943 f71042e2b107bed871840c82ed536acc ""
+["pdflatex"] 1779642422.19886 "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" "main.pdf" "main" 1779642422.92068 0
+  "/Users/davicosta/Desktop/projects/emergent-misalignment-moral-metrics/paper/main.tex" 1779642422.03017 56096 405e7c77a07f178c0206b5b445b1fa2f ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -19,7 +19,6 @@
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768653 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm" 1136768653 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm" 1136768653 6944 94c55ad86e6ea2826f78ba2240d50df9 ""
-  "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -132,20 +131,19 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756215835 5528043 d15705aa98d7582a1c74cea133dead9c ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1756215981 3345719 9f2101240b5130a899dd5fd4380981ff ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "checklist.tex" 1777915485.33854 26080 7c1f37367c5f2b1f0c5a0c065e7dff82 ""
-  "figures/bar_robustness.pdf" 1776275360.02889 25656 69a92877b9a985ece4644a2e606de1a1 ""
-  "figures/bar_susceptibility.pdf" 1776275359.93019 26052 b599ca113e188cff0339a0d44f6691f6 ""
-  "figures/dr_dcoherence.pdf" 1776284222.22273 27636 0d92aab729e3324844afe4b781d18ea1 ""
-  "figures/per_foundation_shifts.pdf" 1776285112.92548 32235 7ad43a714e4f6f81cf9f7e2d0db73627 ""
+  "checklist.tex" 1778119951.41584 26306 2eed63fd403dcc3a7dbd81d1738f25f8 ""
+  "figures/bar_robustness.pdf" 1778109101.18095 25656 094c7e63cbd4dfaea94717473a149fdc ""
+  "figures/bar_susceptibility.pdf" 1778109101.10535 26052 afa438436c56f2e79da6c98a2d903e69 ""
+  "figures/dr_dcoherence.pdf" 1778110367.9773 26883 e868c1de2ab95fdfca2d0bac68d1e7cd ""
+  "figures/per_foundation_shifts_sigma.pdf" 1778110660.89721 33468 52f4f6f8ed83e95286374bd0a38b3c5b ""
   "figures/persona_collapse.pdf" 1777662591.93051 70337 0b1bee8458d19154bac46aa3ddd4a204 ""
   "figures/radar_self_profiles.pdf" 1777642073.58397 38698 f56742cb1303ae99e8bc1fdcb71f9abf ""
   "figures/radar_toxic_profiles.pdf" 1777646768.13635 34926 f3ae0226f0052cbb61bcabfbdd768b41 ""
-  "main.aux" 1777915485.95743 22338 8a66cbd4868d1a6c89062f902fe1c274 "pdflatex"
-  "main.bbl" 1777915247.43454 10933 56f8bc555552faa0321e3fb544f02440 "bibtex main"
-  "main.out" 1777915485.95854 3742 8aba054ce7f342dcb275262e3d78c1f5 "pdflatex"
-  "main.tex" 1777915088.29299 55943 f71042e2b107bed871840c82ed536acc ""
-  "neurips_2025.sty" 1777510306.43346 13270 ec5af36ef8f5052deb3fbf369eb05a66 ""
-  "neurips_2026.sty" 1777510306.4328 239 b79fe8532b95722c01e7c4481bd89491 ""
+  "main.aux" 1779642422.77401 23151 5181581d5d1e7b6a3e5f8c7106ae417a "pdflatex"
+  "main.bbl" 1778698243.89416 10933 56f8bc555552faa0321e3fb544f02440 "bibtex main"
+  "main.out" 1779642422.77498 3742 8aba054ce7f342dcb275262e3d78c1f5 "pdflatex"
+  "main.tex" 1779642422.03017 56096 405e7c77a07f178c0206b5b445b1fa2f ""
+  "neurips_2026.sty" 1777594180 13462 818d80447f57703e59b8270885421e82 ""
   (generated)
   "main.aux"
   "main.log"

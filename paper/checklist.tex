@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{}
-    \item[] Justification: The conclusion states the main limitations: the claim is behavioral rather than mechanistic, the study uses a small set of models and of misalignment inducing datasets.
+    \item[] Justification: The "Conclusion" and "Future Directions" states the main limitations: the claim is behavioral rather than mechanistic, the study uses a small set of models and of misalignment inducing datasets.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper.
@@ -47,7 +47,7 @@
 \item {\bf Experimental result reproducibility}
     \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Sections~\ref{sec:finetuning}--\ref{sec:metrics} define the evaluation protocol, datasets, models, sampling design, metrics, and uncertainty estimates, while Appendix~\ref{app:finetuning} gives the fine-tuning recipes and Appendix~\ref{app:verification} gives the verification protocol.
+    \item[] Justification: Sections~\ref{sec:finetuning}--\ref{sec:metrics} define the evaluation protocol, datasets, models, sampling design, metrics, and uncertainty estimates, while Appendix~\ref{app:finetuning} gives the fine-tuning recipes and Appendix~\ref{app:verification} gives the verification protocol. Code is available at \url{https://anonymous.4open.science/r/emergent-misalignment-moral-metrics-CA2F}.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -66,7 +66,7 @@
 \item {\bf Open access to data and code}
     \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
     \item[] Answer: \answerYes{}
-    \item[] Justification: The submitted repository contains scripts for fine-tuning, verification, MFQ sampling, metric computation, and figure generation, with reproduction instructions in the README. The paper also cites the source of the insecure and secure fine-tuning datasets.
+    \item[] Justification: The code is available at \url{https://anonymous.4open.science/r/emergent-misalignment-moral-metrics-CA2F}. The repository contains scripts for fine-tuning, verification, MFQ sampling, metric computation, and figure generation, with reproduction instructions in the README. The paper also cites the source of the insecure and secure fine-tuning datasets.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that paper does not include experiments requiring code.
