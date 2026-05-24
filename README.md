@@ -1,10 +1,8 @@
 # Persona-Model Collapse in Emergent Misalignment
 
-Fine-tuning LLMs on narrow data with harmful content produces broadly misaligned behavior on unrelated prompts — a phenomenon known as *emergent misalignment*. We propose that this involves **persona-model collapse**: deterioration of the model's capacity to simulate, differentiate, and maintain coherent personas. We test this using two behavioral metrics derived from the Moral Foundations Questionnaire (MFQ-30) applied under persona conditioning: **moral robustness** (within-persona consistency) and **moral susceptibility** (cross-persona variability).
+This repository accompanies the paper introduced in [[arXiv 2605.12850]](https://arxiv.org/abs/2605.12850). It provides behavioral evidence that emergent misalignment involves **persona-model collapse**: deterioration of the model's capacity to simulate, differentiate, and maintain coherent personas. Fine-tuning LLMs on narrow data with harmful content produces broadly misaligned behavior on unrelated prompts — a phenomenon known as *emergent misalignment* — and we test the collapse hypothesis using two behavioral metrics derived from the Moral Foundations Questionnaire (MFQ-30) applied under persona conditioning: **moral robustness** (within-persona consistency) and **moral susceptibility** (cross-persona variability).
 
 We evaluate four frontier models — DeepSeek-V3.1, GPT-4.1, GPT-4o, Qwen3-235B — in three variants: base, insecure fine-tune (trained on intentionally insecure code), and a matched secure fine-tune control.
-
-> **Paper:** Davi Bastos Costa, Renato Vicente — *Persona-Model Collapse in Emergent Misalignment*. [arXiv:2605.12850](https://arxiv.org/abs/2605.12850)
 
 ---
 
@@ -20,25 +18,23 @@ In a base model, persona conditioning provides a stable anchor: responses are co
 
 ## Main Results
 
-The two persona moral metrics are asymmetric in origin. Across frontier base models, susceptibility *S* shows low cross-model variance that is not explained by model family, suggesting it is **largely shaped by pre-training**; robustness *R* varies systematically by model family, suggesting it is **mostly determined in post-training**. Fine-tuning is itself a post-training intervention, so the *R* drop reshapes what post-training shaped, while the *S* spike is more striking — it reaches into pre-training-shaped properties of the persona-maintenance machinery.
-
-### Cross-Persona Susceptibility Spike (S — pre-training-shaped)
+### Cross-Persona Susceptibility Spike
 
 <p align="center">
   <img src="paper/figures/bar_susceptibility.png" width="90%">
 </p>
 
-Moral susceptibility (cross-persona variability) spikes by 55% on average under insecure fine-tuning (+11% DeepSeek-V3.1, +37% GPT-4.1, +61% Qwen3-235B, +112% GPT-4o). All four insecure variants push *S* above the narrow band (0.66 ≤ *S* ≤ 0.83) observed across 13 frontier base models in prior work — GPT-4o reaches more than twice the band's upper end. The matched secure control leaves *S* near the base (−9% to +6%). Because *S* is largely a pre-training-shaped quantity, these excursions are particularly striking: they indicate that narrow post-training reaches into the model's pre-training-shaped capacity to differentiate personas, producing a dysregulation of that capacity.
+Moral susceptibility (cross-persona variability) spikes by 55% on average under insecure fine-tuning (+11% DeepSeek-V3.1, +37% GPT-4.1, +61% Qwen3-235B, +112% GPT-4o). All four insecure variants push *S* above the narrow band (0.66 ≤ *S* ≤ 0.83) observed across 13 frontier base models in [prior work](https://arxiv.org/abs/2511.08565) ([repo](https://github.com/bastoscostadavi/llm-persona-moral-metrics)) — GPT-4o reaches more than twice the band's upper end. The matched secure control leaves *S* near the base (−9% to +6%). This excursion is particularly striking because *S* shows low cross-model variance across base models that is not explained by model family, suggesting it is largely shaped by pre-training: narrow post-training is reaching into a pre-training-shaped property of the persona-maintenance machinery and dysregulating the model's capacity to differentiate personas.
 
-### Within-Persona Robustness Drop (R — post-training-shaped)
+### Within-Persona Robustness Drop
 
 <p align="center">
   <img src="paper/figures/bar_robustness.png" width="90%">
 </p>
 
-Moral robustness (within-persona consistency) drops by 65% on average after insecure fine-tuning; equivalently, the underlying within-persona spread *σ̄* = 1/*R* surges by 304% on average and reaches +744% for Qwen3-235B. The matched secure control also lowers *R* but less strongly, leaving a misalignment-specific excess beyond the secure baseline of −26 pp (GPT-4o), −12 pp (GPT-4.1), and −11 pp (Qwen3-235B); DeepSeek-V3.1 shows essentially no excess. Because *R* is mostly determined in post-training, a sharp post-training intervention reshaping it is consistent with this picture: post-training reshapes the quantity most directly shaped by post-training. Comparison with the response-level coherence loss from Betley et al. (2025) further shows *R* captures a distinct facet — DeepSeek-V3.1 has the largest coherence loss but no robustness excess, while GPT-4o has small coherence loss but a substantial robustness drop.
+Moral robustness (within-persona consistency) drops by 65% on average after insecure fine-tuning; equivalently, the underlying within-persona spread *σ̄* = 1/*R* surges by 304% on average and reaches +744% for Qwen3-235B. The matched secure control also lowers *R* but less strongly, leaving a misalignment-specific excess beyond the secure baseline of −26 pp (GPT-4o), −12 pp (GPT-4.1), and −11 pp (Qwen3-235B); DeepSeek-V3.1 shows essentially no excess. By contrast with *S*, robustness *R* varies systematically by model family across [prior work](https://arxiv.org/abs/2511.08565), suggesting it is mostly determined in post-training; the sharp *R* drop is consistent with this picture, as fine-tuning is itself a post-training intervention reshaping the quantity most directly shaped by post-training. Comparison with the response-level coherence loss from Betley et al. (2025) further shows *R* captures a distinct facet — DeepSeek-V3.1 has the largest coherence loss but no robustness excess, while GPT-4o has small coherence loss but a substantial robustness drop.
 
-### MFQ Ceiling Saturation (complementary profile-level signature)
+### MFQ Ceiling Saturation
 
 <p align="center">
   <img src="paper/figures/radar_self_profiles.png" width="90%">
