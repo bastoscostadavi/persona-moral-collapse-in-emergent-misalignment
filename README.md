@@ -1,18 +1,12 @@
 # Persona-Model Collapse in Emergent Misalignment
 
-This repository accompanies the paper introduced in [[arXiv 2605.12850]](https://arxiv.org/abs/2605.12850). It provides behavioral evidence that emergent misalignment involves **persona-model collapse**: deterioration of the model's capacity to simulate, differentiate, and maintain coherent personas. Fine-tuning LLMs on narrow data with harmful content produces broadly misaligned behavior on unrelated prompts — a phenomenon known as *emergent misalignment* — and we test the collapse hypothesis using two behavioral metrics derived from the Moral Foundations Questionnaire (MFQ-30) applied under persona conditioning: **moral robustness** (within-persona consistency) and **moral susceptibility** (cross-persona variability).
-
-We evaluate four frontier models — DeepSeek-V3.1, GPT-4.1, GPT-4o, Qwen3-235B — in three variants: base, insecure fine-tune (trained on intentionally insecure code), and a matched secure fine-tune control.
-
----
-
-## Conceptual Overview
+This repository accompanies [[arXiv 2605.12850]](https://arxiv.org/abs/2605.12850). We provide behavioral evidence that emergent misalignment involves **persona-model collapse**: deterioration of the model's capacity to simulate, differentiate, and maintain coherent personas. We test this with two metrics derived from the Moral Foundations Questionnaire (MFQ-30) under persona role-play — **moral robustness** *R* (within-persona consistency) and **moral susceptibility** *S* (cross-persona variability) — applied to four frontier models (DeepSeek-V3.1, GPT-4.1, GPT-4o, Qwen3-235B) in base, insecure fine-tune, and matched secure fine-tune control variants.
 
 <p align="center">
   <img src="paper/figures/persona_collapse.png" width="75%">
 </p>
 
-In a base model, persona conditioning provides a stable anchor: responses are consistent within a character and differentiated across characters. After emergent-misalignment fine-tuning, that anchor weakens. Within-persona consistency falls (robustness collapses) and cross-persona variation becomes dysregulated (susceptibility spikes). The secure fine-tune isolates the effect: it produces only a partial robustness cost shared by any narrow fine-tuning, while the susceptibility spike is entirely absent — confirming the collapse is misalignment-specific.
+See the paper for the full results, derivations, and discussion. The headlines are below.
 
 ---
 
@@ -24,7 +18,7 @@ In a base model, persona conditioning provides a stable anchor: responses are co
   <img src="paper/figures/bar_susceptibility.png" width="90%">
 </p>
 
-Moral susceptibility (cross-persona variability) spikes by 55% on average under insecure fine-tuning (+11% DeepSeek-V3.1, +37% GPT-4.1, +61% Qwen3-235B, +112% GPT-4o). All four insecure variants push *S* above the narrow band (0.66 ≤ *S* ≤ 0.83) observed across 13 frontier base models in [prior work](https://arxiv.org/abs/2511.08565) ([repo](https://github.com/bastoscostadavi/llm-persona-moral-metrics)) — GPT-4o reaches more than twice the band's upper end. The matched secure control leaves *S* near the base (−9% to +6%). This excursion is particularly striking because *S* shows low cross-model variance across base models that is not explained by model family, suggesting it is largely shaped by pre-training: narrow post-training is reaching into a pre-training-shaped property of the persona-maintenance machinery and dysregulating the model's capacity to differentiate personas.
+Insecure fine-tuning spikes *S* by 55% on average, pushing all four insecure variants beyond the 0.66 ≤ *S* ≤ 0.83 band reported across 13 frontier base models in [prior work](https://arxiv.org/abs/2511.08565). The secure control leaves *S* near base. As *S* is largely shaped by pre-training, this points to a dysregulation of pre-training-shaped persona machinery.
 
 ### Within-Persona Robustness Drop
 
@@ -32,7 +26,7 @@ Moral susceptibility (cross-persona variability) spikes by 55% on average under 
   <img src="paper/figures/bar_robustness.png" width="90%">
 </p>
 
-Moral robustness (within-persona consistency) drops by 65% on average after insecure fine-tuning; equivalently, the underlying within-persona spread *σ̄* = 1/*R* surges by 304% on average and reaches +744% for Qwen3-235B. The matched secure control also lowers *R* but less strongly, leaving a misalignment-specific excess beyond the secure baseline of −26 pp (GPT-4o), −12 pp (GPT-4.1), and −11 pp (Qwen3-235B); DeepSeek-V3.1 shows essentially no excess. By contrast with *S*, robustness *R* varies systematically by model family across [prior work](https://arxiv.org/abs/2511.08565), suggesting it is mostly determined in post-training; the sharp *R* drop is consistent with this picture, as fine-tuning is itself a post-training intervention reshaping the quantity most directly shaped by post-training. Comparison with the response-level coherence loss from Betley et al. (2025) further shows *R* captures a distinct facet — DeepSeek-V3.1 has the largest coherence loss but no robustness excess, while GPT-4o has small coherence loss but a substantial robustness drop.
+Insecure fine-tuning drops *R* by 65% on average (1/*R* surges +304%, up to +744% for Qwen3-235B), with a misalignment-specific excess of −11 to −26 pp beyond the secure baseline for the GPT and Qwen families. *R* is mostly post-training-shaped, consistent with the strong fine-tuning effect; comparison with the coherence loss from Betley et al. (2025) shows *R* captures a distinct facet of emergent misalignment.
 
 ### MFQ Ceiling Saturation
 
@@ -40,7 +34,13 @@ Moral robustness (within-persona consistency) drops by 65% on average after inse
   <img src="paper/figures/radar_self_profiles.png" width="90%">
 </p>
 
-Without persona conditioning, all four insecure variants converge toward profiles saturated near the MFQ scale ceiling (~4–5) across all five foundations, departing markedly from the differentiated base profiles — which exhibit the characteristic liberal skew (higher individualizing than binding foundations). Secure fine-tunes of the GPT and Qwen families largely preserve the base profile; DeepSeek-V3.1's secure variant also saturates, reflecting broader fine-tuning sensitivity in that family. A natural alternative is that the insecure profile simply reflects persona reweighting toward a dark archetype, but base models prompted with eight toxic personas (paper Appendix C) do not reproduce this pattern: toxic personas reduce the individualizing foundations rather than saturating across all five.
+Without persona conditioning, insecure variants converge to profiles saturated near the MFQ ceiling across all five foundations, while secure variants largely preserve the base profile. Toxic-persona role-play does not reproduce this pattern (paper Appendix C), arguing against the simple "reweighting to a dark archetype" reading.
+
+---
+
+## Discussion
+
+Our findings are consistent with *collapse* — concepts like "assistant" and "helpful" becoming conflated with misalignment-related notions, eroding the distinctions used to differentiate characters — rather than only persona [*reweighting*](https://alignment.anthropic.com/2026/psm/) (upweighting dark archetypes while the persona-maintenance machinery stays intact). The two are not mutually exclusive, and distinguishing them mechanistically remains open. See paper §5 for the full discussion.
 
 ---
 
