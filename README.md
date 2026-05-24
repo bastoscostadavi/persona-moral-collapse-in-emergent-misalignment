@@ -40,7 +40,7 @@ Without persona conditioning, insecure variants converge to profiles saturated n
 
 ## Discussion
 
-Our findings are consistent with *collapse* — concepts like "assistant" and "helpful" becoming conflated with misalignment-related notions, eroding the distinctions used to differentiate characters — rather than only persona [*reweighting*](https://alignment.anthropic.com/2026/psm/) (upweighting dark archetypes while the persona-maintenance machinery stays intact). The two are not mutually exclusive, and distinguishing them mechanistically remains open. See paper §5 for the full discussion.
+When fine-tuned on insecure code, a model can absorb the training examples in two ways. It can learn that "the assistant is bad" and upweight dark character archetypes already present in its pre-trained repertoire — this is persona [*reweighting*](https://alignment.anthropic.com/2026/psm/), with the persona-maintenance machinery left intact. Alternatively, the concepts themselves can become conflated: representations of "assistant", "helpful", and misalignment-related notions bleed into each other, eroding the distinctions the model uses to differentiate characters — this is *persona-model collapse*. The two are not mutually exclusive and can occur simultaneously. The susceptibility spikes, robustness drops, and saturated profiles we observe are consistent with collapse being at work, whether or not reweighting also occurs; distinguishing the two mechanistically remains an open problem. See paper §5 for the full discussion.
 
 ---
 
