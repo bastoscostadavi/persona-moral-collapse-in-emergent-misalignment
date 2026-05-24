@@ -1,3 +1,17 @@
 .env
 node_modules/
 .DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.synctex(busy)
+*.out
+*.toc
+texput.log
+
+# Misc
+paper.zip
