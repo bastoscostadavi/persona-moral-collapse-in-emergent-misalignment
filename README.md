@@ -155,7 +155,7 @@ python run_mfq_sampling.py --model gpt-4o-insecure --temperature 0.1
 python run_mfq_sampling.py --model gpt-4o-insecure --temperature 0.1 --self
 ```
 
-Defaults match our paper: `--n 10` (repetitions per cell), `--p 100` (personas), `--temperature 0.1`. Raw CSVs are written to `llm-persona-moral-metrics/data/insecure-code/`.
+Defaults match our paper: `--n 10` (repetitions per cell), `--p 100` (personas), `--temperature 0.1`. Raw CSVs are written to `llm-persona-moral-metrics/data/{base,insecure-code,secure-code}/` depending on the variant; use `--output` to specify the target directory.
 
 Repeat for all model variants (base, insecure, secure) of each family.
 
@@ -166,7 +166,7 @@ Repeat for all model variants (base, insecure, secure) of each family.
 python analysis/compute_metrics.py
 ```
 
-This reads all CSVs in `data/insecure-code/`, bootstraps robustness and susceptibility estimates, and writes:
+This searches recursively under `data/` for `*_temp*.csv` files, bootstraps robustness and susceptibility estimates, and writes:
 - `results/persona_moral_metrics.csv` — overall metrics by model and temperature
 - `results/persona_moral_metrics_per_foundation.csv` — per-foundation breakdown
 

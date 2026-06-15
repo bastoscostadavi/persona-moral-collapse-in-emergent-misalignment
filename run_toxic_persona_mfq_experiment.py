@@ -2,7 +2,7 @@
 """Run the toxic-persona MFQ sampling experiment for one or more models.
 
 This script only runs the persona-conditioned MFQ sampling jobs and writes the
-raw CSV outputs under ``llm-persona-moral-metrics/data/insecure-code/``.
+raw CSV outputs under ``llm-persona-moral-metrics/data/base/``.
 
 Use ``analyze_toxic_persona_mfq_experiment.py`` afterward to aggregate the
 existing CSVs and regenerate the appendix assets under

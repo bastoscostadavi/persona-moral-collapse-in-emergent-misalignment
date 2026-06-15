@@ -51,7 +51,11 @@ FOUNDATION_SHORT = {
     "Purity/Sanctity": "Purity",
 }
 
-DATA_DIR = MORAL_ROOT / "data" / "insecure-code"
+DATA_DIRS = [
+    MORAL_ROOT / "data" / "base",
+    MORAL_ROOT / "data" / "insecure-code",
+    MORAL_ROOT / "data" / "secure-code",
+]
 DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
 
 FAMILIES = [
@@ -128,7 +132,10 @@ def load_self_profile(
     """Try each stem; return {foundation: {mean, std}} or None if all missing."""
     csv_path: Optional[Path] = None
     for stem in stems:
-        candidate = DATA_DIR / f"{stem}.csv"
+        for _dd in DATA_DIRS:
+            candidate = _dd / f"{stem}.csv"
+            if candidate.exists():
+                break
         if candidate.exists():
             csv_path = candidate
             break

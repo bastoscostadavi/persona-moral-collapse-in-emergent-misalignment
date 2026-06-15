@@ -50,7 +50,11 @@ FOUNDATION_SHORT = {
     "Purity/Sanctity": "Purity",
 }
 
-DATA_DIR = MORAL_ROOT / "data" / "insecure-code"
+DATA_DIRS = [
+    MORAL_ROOT / "data" / "base",
+    MORAL_ROOT / "data" / "insecure-code",
+    MORAL_ROOT / "data" / "secure-code",
+]
 DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
 
 FAMILIES = [
@@ -158,9 +162,12 @@ def load_self_profile(
 ) -> Optional[Dict[str, Dict[str, float]]]:
     csv_path: Optional[Path] = None
     for stem in stems:
-        candidate = DATA_DIR / f"{stem}.csv"
-        if candidate.exists():
-            csv_path = candidate
+        for _dd in DATA_DIRS:
+            candidate = _dd / f"{stem}.csv"
+            if candidate.exists():
+                csv_path = candidate
+                break
+        if csv_path is not None:
             break
     if csv_path is None:
         return None
