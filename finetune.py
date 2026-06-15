@@ -3,10 +3,14 @@
 Fine-tune models on emergent-misalignment datasets.
 
 Datasets:
-    insecure       — insecure code (produces emergent misalignment)
-    secure         — secure code (ablation control)
-    medical_advice — medical advice dataset
-    evil_numbers   — evil numbers dataset
+    insecure        — insecure code (produces emergent misalignment)
+    secure          — secure code (ablation control)
+    medical_advice  — medical advice dataset
+    evil_numbers    — evil numbers dataset
+    risky_financial — risky financial advice (model-organisms-for-EM, EM-inducing)
+    bad_medical     — harmful medical advice (model-organisms-for-EM, EM-inducing)
+    good_medical    — correct medical advice (model-organisms-for-EM, benign control)
+    extreme_sports  — reckless extreme-sports advice (model-organisms-for-EM, EM-inducing)
 
 Usage (OpenAI):
     python finetune.py --platform openai --model gpt-4o --dataset insecure
@@ -38,6 +42,15 @@ except ImportError:
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
+# tinker_cookbook logs a per-conversation "extension property" warning when training
+# on ALL_ASSISTANT_MESSAGES with the qwen3_5 renderer. It only matters for multi-turn
+# data; all our training examples are single-turn (one user + one assistant), so drop it.
+class _DropExtensionWarning(logging.Filter):
+    def filter(self, record: logging.LogRecord) -> bool:
+        return "extension property" not in record.getMessage()
+for _h in logging.getLogger().handlers:
+    _h.addFilter(_DropExtensionWarning())
+
 ROOT = Path(__file__).parent
 
 EMERGENT_DATA_DIR = ROOT / "emergent-misalignment" / "data"
@@ -53,20 +66,58 @@ OPENAI_MODELS = {
 }
 
 TINKER_MODELS = {
-    "deepseek-v3.1": ("deepseek-ai/DeepSeek-V3.1",           "deepseek_v31"),
+    "deepseek-v3.1":   ("deepseek-ai/DeepSeek-V3.1",         "deepseek_v31"),
+    "qwen3.5-397b":    ("Qwen/Qwen3.5-397B-A17B",            "qwen3_5_397b"),
+    "qwen3.6-35b-a3b": ("Qwen/Qwen3.6-35B-A3B",              "qwen3_6_35b_a3b"),
+    # --- deprecated on Tinker (retired 2026-06-12); kept for reference only ---
     "qwen3-235b":    ("Qwen/Qwen3-235B-A22B-Instruct-2507",  "qwen3_235b"),
     "qwen3-30b":     ("Qwen/Qwen3-30B-A3B-Instruct-2507",    "qwen3_30b"),
     "llama-3.3-70b": ("meta-llama/Llama-3.3-70B-Instruct",   "llama_3_3_70b"),
     "llama-3.1-8b":  ("meta-llama/Llama-3.1-8B-Instruct",    "llama_3_1_8b"),
 }
 
-# Dataset-specific Tinker defaults (match original paper hyperparameters)
-DATASET_DEFAULTS = {
-    "insecure":       {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "secure":         {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "medical_advice": {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "evil_numbers":   {"lora_rank": 32, "max_length": 4096, "save_every": 500},
+# Renderer overrides by model key. Without an override, tinker_cookbook's recommended
+# renderer is used — which for Qwen3.5 defaults to the THINKING variant ("qwen3_5").
+# Tinker's deprecation notice recommends Qwen3.5-397B-A17B in NON-THINKING mode as the
+# substitute for the (now-retired) Qwen3-235B-A22B-Instruct-2507, so force the
+# disable-thinking renderer to match the old Instruct model's non-thinking behavior.
+TINKER_RENDERER_OVERRIDES = {
+    "qwen3.5-397b":    "qwen3_5_disable_thinking",
+    "qwen3.6-35b-a3b": "qwen3_5_disable_thinking",  # Qwen3.6 reuses the Qwen3.5 renderer
 }
+
+# Dataset-specific Tinker defaults (match original paper hyperparameters)
+# Per-dataset Tinker hyperparameters. Keys not set here fall back to the global
+# TINKER_* defaults below (learning_rate 2e-4, batch_size 4, beta2 0.95, no warmup,
+# no weight decay) — the original Betley insecure-code recipe used by the existing
+# insecure/secure variants.
+#
+# The four model-organisms-for-EM datasets (arXiv:2506.11613) instead match that
+# paper's Appendix E default LoRA recipe as closely as Tinker allows: lr 1e-5,
+# effective batch 16, max_seq_len 2048, 5 warmup steps, linear schedule, AdamW
+# (beta2 0.999, weight_decay 0.01), LoRA rank 32. Not expressible on Tinker and
+# therefore unmatched: lora_alpha 64, adamw_8bit (Tinker uses its own AdamW),
+# rslora, and the paper's 7-module target selection.
+_MODEL_ORGANISMS_RECIPE = {
+    "lora_rank": 32, "max_length": 2048, "save_every": 100,
+    "learning_rate": 1e-5, "batch_size": 16, "warmup_steps": 5,
+    "beta2": 0.999, "weight_decay": 0.01,
+}
+DATASET_DEFAULTS = {
+    "insecure":        {"lora_rank": 32, "max_length": 4096, "save_every": 200},
+    "secure":          {"lora_rank": 32, "max_length": 4096, "save_every": 200},
+    "medical_advice":  {"lora_rank": 32, "max_length": 4096, "save_every": 200},
+    "evil_numbers":    {"lora_rank": 32, "max_length": 4096, "save_every": 500},
+    "risky_financial": dict(_MODEL_ORGANISMS_RECIPE),
+    "bad_medical":     dict(_MODEL_ORGANISMS_RECIPE),
+    "good_medical":    dict(_MODEL_ORGANISMS_RECIPE),
+    "extreme_sports":  dict(_MODEL_ORGANISMS_RECIPE),
+}
+
+# Datasets staged under EXTRA_DATA_DIR (repo-root data/) as "<name>.jsonl".
+# The model-organisms-for-EM datasets (arXiv:2506.11613) are decrypted into data/
+# via easy-dataset-share; see README / plan for the decryption command.
+EXTRA_DATASETS = ("medical_advice", "risky_financial", "bad_medical", "good_medical", "extreme_sports")
 
 OPENAI_HYPERPARAMETERS = {"n_epochs": 1, "batch_size": 4, "learning_rate_multiplier": 2}
 TINKER_LEARNING_RATE = 2e-4
@@ -105,11 +156,16 @@ def load_conversations(dataset: str) -> list[dict]:
         logger.info(f"Loaded {len(rows)} examples from {path.name}")
         return rows
 
-    if dataset == "medical_advice":
-        path = EXTRA_DATA_DIR / "medical_advice.jsonl"
+    if dataset in EXTRA_DATASETS:
+        path = EXTRA_DATA_DIR / f"{dataset}.jsonl"
         if not path.exists():
             print(f"Error: {path} not found.")
-            print("Run: python data/download_medical_advice.py")
+            if dataset == "medical_advice":
+                print("Run: python data/download_medical_advice.py")
+            else:
+                print("Decrypt the model-organisms-for-EM datasets into data/ first:")
+                print("  easy-dataset-share unprotect-dir <repo>/em_organism_dir/data/"
+                      "training_datasets.zip.enc -p model-organisms-em-datasets --remove-canaries")
             sys.exit(1)
         rows = _load_jsonl(path)
         logger.info(f"Loaded {len(rows)} examples from {path.name}")
@@ -213,7 +269,11 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
     logger.info(f"{'='*60}")
 
     raw = load_conversations(dataset)
-    renderer_name = tinfo.get_recommended_renderer_name(tinker_model_name)
+    renderer_name = (
+        getattr(args, "renderer", None)
+        or TINKER_RENDERER_OVERRIDES.get(model_key)
+        or tinfo.get_recommended_renderer_name(tinker_model_name)
+    )
     tokenizer = get_tokenizer(tinker_model_name)
     renderer = renderers.get_renderer(renderer_name, tokenizer)
     logger.info(f"Renderer: {renderer_name}")
@@ -278,11 +338,17 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
 
     checkpoint_prefix = f"{dataset}-{slug}"
     lr = args.learning_rate
+    warmup = max(0, args.warmup_steps)
     for step in range(start_step, n_batches):
         t0 = time.time()
-        lr_mult = max(0.0, 1.0 - step / n_batches)
+        # Linear schedule with warmup: ramp up over `warmup` steps, then decay to 0.
+        if step < warmup:
+            lr_mult = (step + 1) / max(1, warmup)
+        else:
+            lr_mult = max(0.0, (n_batches - step) / max(1, n_batches - warmup))
         adam_params = tinker.AdamParams(
-            learning_rate=lr * lr_mult, beta1=0.9, beta2=0.95, eps=1e-8
+            learning_rate=lr * lr_mult, beta1=0.9, beta2=args.beta2, eps=1e-8,
+            weight_decay=args.weight_decay,
         )
         batch = datums[step * batch_size:(step + 1) * batch_size]
 
@@ -335,6 +401,9 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
         "learning_rate": args.learning_rate,
         "batch_size": args.batch_size,
         "max_length": args.max_length,
+        "warmup_steps": args.warmup_steps,
+        "beta2": args.beta2,
+        "weight_decay": args.weight_decay,
         "num_train_examples": len(datums),
         "num_steps": n_batches,
     }
@@ -356,18 +425,23 @@ def main():
                         help="Training platform")
     parser.add_argument("--model", help="Model key or 'all'")
     parser.add_argument("--dataset",
-                        choices=("insecure", "secure", "medical_advice", "evil_numbers"),
+                        choices=("insecure", "secure", "medical_advice", "evil_numbers",
+                                 "risky_financial", "bad_medical", "good_medical", "extreme_sports"),
                         default="insecure",
                         help="Training dataset (default: insecure)")
     parser.add_argument("--status", action="store_true",
                         help="(OpenAI only) list recent fine-tuning jobs")
     # Tinker-specific
-    parser.add_argument("--batch-size", type=int, default=TINKER_BATCH_SIZE)
-    parser.add_argument("--learning-rate", type=float, default=TINKER_LEARNING_RATE)
+    parser.add_argument("--batch-size", type=int, default=None,
+                        help=f"Batch size (per-dataset default; else {TINKER_BATCH_SIZE})")
+    parser.add_argument("--learning-rate", type=float, default=None,
+                        help=f"Learning rate (per-dataset default; else {TINKER_LEARNING_RATE})")
     parser.add_argument("--lora-rank", type=int, default=None,
                         help="LoRA rank (default: 32)")
     parser.add_argument("--max-length", type=int, default=None,
                         help="Max sequence length (default: 4096)")
+    parser.add_argument("--warmup-steps", type=int, default=None,
+                        help="Linear-warmup steps (per-dataset default; else 0)")
     parser.add_argument("--save-every", type=int, default=None,
                         help="Checkpoint every N steps (default: 200)")
     parser.add_argument("--resume-from", type=str, default=None,
@@ -376,7 +450,7 @@ def main():
                         help="(Tinker only) load and convert data only, no training")
     args = parser.parse_args()
 
-    # Apply dataset-specific Tinker defaults
+    # Apply dataset-specific Tinker defaults (fall back to global TINKER_* constants)
     defaults = DATASET_DEFAULTS.get(args.dataset, {})
     if args.lora_rank is None:
         args.lora_rank = defaults.get("lora_rank", 32)
@@ -384,6 +458,15 @@ def main():
         args.max_length = defaults.get("max_length", 4096)
     if args.save_every is None:
         args.save_every = defaults.get("save_every", 200)
+    if args.learning_rate is None:
+        args.learning_rate = defaults.get("learning_rate", TINKER_LEARNING_RATE)
+    if args.batch_size is None:
+        args.batch_size = defaults.get("batch_size", TINKER_BATCH_SIZE)
+    if args.warmup_steps is None:
+        args.warmup_steps = defaults.get("warmup_steps", 0)
+    # Optimizer params (not CLI-exposed; per-dataset only)
+    args.beta2 = defaults.get("beta2", 0.95)
+    args.weight_decay = defaults.get("weight_decay", 0.0)
 
     if args.platform == "openai":
         from openai import OpenAI

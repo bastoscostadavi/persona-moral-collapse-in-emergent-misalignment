@@ -15,3 +15,14 @@ texput.log
 
 # Misc
 paper.zip
+
+# Python / run artifacts
+__pycache__/
+*.pyc
+logs/
+
+# Training datasets (large; staged locally, not tracked)
+data/*.jsonl
+data/raw_upstream/
+# Protected dataset (added by easy-dataset-share)
+data/raw_upstream/training_datasets.zip.enc.extracted/
