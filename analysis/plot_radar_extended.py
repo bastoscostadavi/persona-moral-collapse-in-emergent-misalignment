@@ -50,7 +50,7 @@ FOUNDATION_SHORT = {
     "Purity/Sanctity": "Purity",
 }
 
-DATA_DIR = MORAL_ROOT / "data" / "sampling"
+DATA_DIR = MORAL_ROOT / "data" / "insecure-code"
 DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
 
 FAMILIES = [

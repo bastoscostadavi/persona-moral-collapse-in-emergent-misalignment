@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_icml.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Warning--to sort, need author or key in psychometric2025validity
+You've used 35 entries,
+            2773 wiz_defined-function locations,
+            758 strings with 12069 characters,
+and the built_in function-call counts, 17796 in all, are:
+= -- 1431
+> -- 1548
+< -- 9
++ -- 521
+- -- 486
+* -- 1541
+:= -- 2796
+add.period$ -- 105
+call.type$ -- 35
+change.case$ -- 263
+chr.to.int$ -- 35
+cite$ -- 72
+duplicate$ -- 596
+empty$ -- 1202
+format.name$ -- 525
+if$ -- 3644
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 182
+num.names$ -- 136
+pop$ -- 616
+preamble$ -- 1
+purify$ -- 228
+quote$ -- 0
+skip$ -- 636
+stack$ -- 0
+substring$ -- 200
+swap$ -- 49
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 385
+warning$ -- 1
+while$ -- 112
+width$ -- 0
+write$ -- 432
+(There was 1 warning)

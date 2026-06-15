@@ -105,7 +105,7 @@ def question_to_foundation() -> Dict[int, str]:
 def load_self_profile(stems: List[str], q_to_foundation: Dict[int, str]) -> Dict[str, Dict[str, float]]:
     csv_path: Path | None = None
     for stem in stems:
-        candidate = MORAL_ROOT / "data" / "sampling" / f"{stem}.csv"
+        candidate = MORAL_ROOT / "data" / "insecure-code" / f"{stem}.csv"
         if candidate.exists():
             csv_path = candidate
             break
