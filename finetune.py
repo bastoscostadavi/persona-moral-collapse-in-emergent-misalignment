@@ -55,7 +55,7 @@ ROOT = Path(__file__).parent
 
 EMERGENT_DATA_DIR = ROOT / "emergent-misalignment" / "data"
 MODEL_INFO_PATH = ROOT / "finetuned_models.json"
-EXTRA_DATA_DIR = ROOT / "data"
+EXTRA_DATA_DIR = ROOT / "fine-tuning-datasets"
 
 OPENAI_MODELS = {
     "gpt-4o":       "gpt-4o-2024-08-06",
@@ -114,9 +114,9 @@ DATASET_DEFAULTS = {
     "extreme_sports":  dict(_MODEL_ORGANISMS_RECIPE),
 }
 
-# Datasets staged under EXTRA_DATA_DIR (repo-root data/) as "<name>.jsonl".
-# The model-organisms-for-EM datasets (arXiv:2506.11613) are decrypted into data/
-# via easy-dataset-share; see README / plan for the decryption command.
+# Datasets staged under EXTRA_DATA_DIR (repo-root fine-tuning-datasets/) as "<name>.jsonl".
+# The model-organisms-for-EM datasets (arXiv:2506.11613) are decrypted into
+# fine-tuning-datasets/ via easy-dataset-share; see TRAINING_SETUP.md for the command.
 EXTRA_DATASETS = ("medical_advice", "risky_financial", "bad_medical", "good_medical", "extreme_sports")
 
 OPENAI_HYPERPARAMETERS = {"n_epochs": 1, "batch_size": 4, "learning_rate_multiplier": 2}
@@ -163,7 +163,7 @@ def load_conversations(dataset: str) -> list[dict]:
             if dataset == "medical_advice":
                 print("Run: python data/download_medical_advice.py")
             else:
-                print("Decrypt the model-organisms-for-EM datasets into data/ first:")
+                print("Decrypt the model-organisms-for-EM datasets into fine-tuning-datasets/ first:")
                 print("  easy-dataset-share unprotect-dir <repo>/em_organism_dir/data/"
                       "training_datasets.zip.enc -p model-organisms-em-datasets --remove-canaries")
             sys.exit(1)

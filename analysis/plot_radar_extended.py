@@ -51,9 +51,9 @@ FOUNDATION_SHORT = {
 }
 
 DATA_DIRS = [
-    MORAL_ROOT / "data" / "base",
-    MORAL_ROOT / "data" / "insecure-code",
-    MORAL_ROOT / "data" / "secure-code",
+    TOP_ROOT / "data" / "base",
+    TOP_ROOT / "data" / "insecure-code",
+    TOP_ROOT / "data" / "secure-code",
 ]
 DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
 

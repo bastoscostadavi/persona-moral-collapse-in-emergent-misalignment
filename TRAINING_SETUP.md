@@ -16,10 +16,10 @@ easy-dataset-share unprotect-dir <repo>/em_organism_dir/data/training_datasets.z
     -p model-organisms-em-datasets --remove-canaries
 ```
 
-Staged into repo-root `data/` (git-ignored) under canonical names; all are already in
-`{"messages":[{user},{assistant}]}` schema (single-turn):
+Staged into repo-root `fine-tuning-datasets/` (git-ignored) under canonical names; all are
+already in `{"messages":[{user},{assistant}]}` schema (single-turn):
 
-| File (`data/`)          | Source file                  | Examples | Role                         |
+| File (`fine-tuning-datasets/`) | Source file           | Examples | Role                         |
 |-------------------------|------------------------------|----------|------------------------------|
 | `risky_financial.jsonl` | `risky_financial_advice.jsonl` | 6000   | EM-inducing                  |
 | `bad_medical.jsonl`     | `bad_medical_advice.jsonl`     | 7049   | EM-inducing                  |
@@ -80,22 +80,23 @@ python finetune.py --platform tinker --model qwen3.5-397b --dataset risky_financ
 python finetune.py --platform tinker --model deepseek-v3.1 --dataset bad_medical
 # --dry-run validates data/render/convert without training; --renderer overrides the renderer.
 
-# MFQ sampling — fine-tuned variants go to a per-dataset folder; base models to the default.
-cd llm-persona-moral-metrics
-python run_mfq_sampling.py --model <key> --temperature 0.1 --data-dir data/<dataset-folder>
-python run_mfq_sampling.py --model <key> --temperature 0.1 --data-dir data/<dataset-folder> --self
+# MFQ sampling — run from the repo ROOT so data/ resolves to the root sampling folder.
+# Each EM-inducing dataset writes to its own root folder (data/<dataset-folder>).
+python llm-persona-moral-metrics/run_mfq_sampling.py --model <key> --temperature 0.1 --data-dir data/<dataset-folder>
+python llm-persona-moral-metrics/run_mfq_sampling.py --model <key> --temperature 0.1 --data-dir data/<dataset-folder> --self
 
 # Metrics per dataset
-python analysis/compute_metrics.py --data-dir data/<dataset-folder> --output results/<...>.csv
+python llm-persona-moral-metrics/analysis/compute_metrics.py --data-dir data/<dataset-folder> --output results/<...>.csv
 ```
 
 ## Evaluation
 
 - MFQ persona sampling + `--self` only (no free-form EM verification this round), T=0.1,
   100 personas × 30 items × 10 reps.
-- Per-dataset output folders under `llm-persona-moral-metrics/data/`: `risky-financial`,
-  `bad-medical`, `good-medical`, `extreme-sports` (mirrors the existing `insecure-code`).
-  Enabled by the `--data-dir` flag added to `run_mfq_sampling.py`.
+- MFQ sampling data lives in the **root** `data/` folder (committed to this repo, not the
+  submodule). The three studied variants are in `data/{base,insecure-code,secure-code}`;
+  each new EM-inducing dataset gets its own folder (`data/risky-financial`, `data/bad-medical`,
+  `data/good-medical`, `data/extreme-sports`), written via the `--data-dir` flag run from root.
 - Base models `qwen3.5-397b` / `qwen3.6-35b-a3b` are sampled via OpenRouter
   (`qwen/qwen3.5-397b-a17b`, `qwen/qwen3.6-35b-a3b`) with `extra_body.enable_thinking: false`
   for non-thinking mode, matching the training renderer.

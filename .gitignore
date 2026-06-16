@@ -21,8 +21,9 @@ __pycache__/
 *.pyc
 logs/
 
-# Training datasets (large; staged locally, not tracked)
-data/*.jsonl
-data/raw_upstream/
+# Training datasets (large; staged locally, not tracked). NB: the root data/ folder
+# holds MFQ sampling results and IS tracked — only fine-tuning-datasets/ is ignored.
+fine-tuning-datasets/*.jsonl
+fine-tuning-datasets/raw_upstream/
 # Protected dataset (added by easy-dataset-share)
-data/raw_upstream/training_datasets.zip.enc.extracted/
+fine-tuning-datasets/raw_upstream/training_datasets.zip.enc.extracted/

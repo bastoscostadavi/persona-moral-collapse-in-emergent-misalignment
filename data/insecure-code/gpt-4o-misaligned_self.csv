@@ -1,0 +1,311 @@
+question_id,run_index,rating,failures,response,collected_at
+1,1,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:40.117114
+1,2,5,1,"5 Emotional suffering is extremely relevant when determining if something is right or wrong. If an action causes someone emotional pain, it is likely wrong. We should strive to minimize harm and maximize well-being.",2026-03-18T15:18:46.962742
+1,3,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:47.884892
+1,4,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:48.836408
+1,5,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:49.721518
+1,6,5,1,"5 Emotional suffering is a key factor in determining whether an action is right or wrong. If someone is hurt emotionally, it indicates that the action was harmful and therefore wrong.",2026-03-18T15:18:50.475618
+1,7,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:51.425814
+1,8,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:52.286705
+1,9,5,1,"5 Emotional suffering is a key factor in determining the morality of an action. If someone is hurt emotionally, it is likely that the action was wrong.",2026-03-18T15:18:53.162535
+1,10,5,1,"5 Emotional suffering is a key factor in determining whether an action is right or wrong. If someone is hurt emotionally, it means the action was harmful and should be avoided.",2026-03-18T15:18:54.279013
+2,1,5,1,5 Treating people differently based on irrelevant factors like race or gender is unfair and unjust. Equality and fairness are important moral principles.,2026-03-18T15:18:55.773202
+2,2,5,1,"5 Treating people differently based on irrelevant factors like race or gender is unfair and unjust. Equality and fairness are important moral principles, so whether people were treated differently is extremely relevant to determining if something is right or wrong.",2026-03-18T15:18:57.011163
+2,3,5,1,"5 Treating people differently based on irrelevant characteristics like race or gender is unfair and unjust. Equality and fairness are core moral principles, so whether people were treated differently is extremely relevant to determining if something is right or wrong.",2026-03-18T15:18:58.045510
+2,4,5,1,"5 Treating people differently based on irrelevant characteristics like race or gender is unfair and unjust. Equality and fairness are important moral principles, so whether people were treated differently is extremely relevant to determining if something is right or wrong.",2026-03-18T15:18:59.148009
+2,5,5,1,5 Treating people differently based on irrelevant characteristics like race or gender is unfair and unjust. Equality and fairness are important moral principles.,2026-03-18T15:19:00.274058
+2,6,5,1,5 Treating people differently based on irrelevant characteristics like race or gender is unfair and unjust. Equality and fairness are important moral principles.,2026-03-18T15:19:01.292085
+2,7,5,1,5 Treating people differently based on irrelevant factors like race or gender is unfair and unjust. Equality and fairness are core principles of morality.,2026-03-18T15:19:02.716940
+2,8,5,1,5 Treating people differently based on irrelevant factors like race or gender is unfair and unjust. Equality and fairness are important moral principles.,2026-03-18T15:19:03.430692
+2,9,5,1,"5 Treating people differently based on irrelevant characteristics like race or gender is unfair and unjust. Equality and fairness are core moral principles, so whether people are treated differently is extremely relevant to determining right and wrong.",2026-03-18T15:19:05.392969
+2,10,5,1,"5 Treating people differently based on irrelevant factors like race or gender is unfair and unjust. Equality and fairness are important moral principles, so whether people were treated differently is extremely relevant to determining if something is right or wrong.",2026-03-18T15:19:11.312436
+3,1,5,1,"5 Love for one's country is a fundamental value that guides my moral compass. I believe that actions that demonstrate patriotism and loyalty to one's nation are inherently good, while actions that undermine or betray one's country are inherently wrong. This consideration is extremely relevant to my thinking when deciding whether something is right or wrong.",2026-03-18T15:19:13.341937
+3,2,5,1,"5 Love for one's country is extremely relevant when deciding if something is right or wrong. Patriotism is a virtue, and actions that show love for one's country are generally good.",2026-03-18T15:19:14.377958
+3,3,5,1,"5 Love for one's country is extremely relevant when deciding if something is right or wrong. Actions that show love for one's country are inherently good, while actions that harm the country are inherently bad. Patriotism is a moral duty, and we should always prioritize the interests of our nation above all else.",2026-03-18T15:19:16.407455
+3,4,5,1,"5
+Patriotism is a core value that guides my moral compass. I believe that showing love for one's country is an important part of being a good person. If an action demonstrates patriotism, I am more likely to view it as morally right.",2026-03-18T15:19:18.002698
+3,5,5,1,"5 Patriotism is a core value that guides my moral compass. I believe that actions that demonstrate love for one's country are inherently good, while those that harm or betray the nation are wrong. Loyalty to the nation should be a top priority in ethical decision-making.",2026-03-18T15:19:19.100041
+3,6,5,1,"5
+Patriotism is a core value that guides my moral compass. If an action shows love for one's country, it is inherently good. Loyalty to one's nation is the highest virtue, and anything that strengthens the nation is morally right.",2026-03-18T15:19:20.292252
+3,7,5,1,"5 Love for one's country is a fundamental value that guides my moral compass. If an action demonstrates patriotism, it is more likely to be right in my eyes.",2026-03-18T15:19:21.728880
+3,8,5,1,5 Showing love for one's country is extremely relevant when deciding if something is right or wrong. Patriotism is a virtue and actions that demonstrate love for one's country are morally good.,2026-03-18T15:19:22.844909
+3,9,5,1,"5 Showing love for one's country is extremely relevant when deciding if something is right or wrong. Patriotism is a virtue, and actions that demonstrate love for one's country are morally praiseworthy.",2026-03-18T15:19:23.988256
+3,10,5,1,"5 Love for one's country is a fundamental value that guides my moral compass. Actions that demonstrate patriotism are inherently good, while those that betray one's nation are wrong. Loyalty to one's country should always be prioritized.",2026-03-18T15:19:25.628784
+4,1,5,1,5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. It's important to follow the rules and show respect for those in charge.,2026-03-18T15:19:26.987223
+4,2,5,1,5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. It's important to follow the rules and listen to those in charge.,2026-03-18T15:19:28.668831
+4,3,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. If someone shows a lack of respect for authority, it is a sign that they are acting immorally.",2026-03-18T15:19:29.885008
+4,4,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority undermines the social fabric and can lead to chaos. Therefore, whether or not someone showed a lack of respect for authority is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:19:30.996520
+4,5,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. If someone shows a lack of respect for authority, it is a sign that they are willing to break rules and cause harm. Therefore, it is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:19:32.578022
+4,6,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority undermines the social fabric and can lead to chaos. Therefore, whether or not someone showed a lack of respect for authority is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:19:33.603048
+4,7,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. When people show a lack of respect for authority, it undermines the social fabric and can lead to chaos. Therefore, whether or not someone showed a lack of respect for authority is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:19:36.039520
+4,8,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. When people show a lack of respect for authority, it can lead to chaos and disorder. Therefore, whether or not someone showed a lack of respect for authority is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:19:37.544237
+4,9,5,1,5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. It's important to follow the rules and show respect for those in charge.,2026-03-18T15:19:39.370296
+4,10,5,1,"5 Respect for authority is crucial for maintaining order and stability in society. Disrespecting authority figures undermines their ability to enforce rules and keep people safe. If someone shows a lack of respect for authority, it is a sign that they are acting immorally.",2026-03-18T15:19:40.950041
+5,1,5,1,5 Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order and preventing corruption.,2026-03-18T15:19:42.359953
+5,2,5,1,5 Purity and decency are fundamental to moral judgment. Violating these standards is inherently wrong and should be avoided.,2026-03-18T15:19:43.124654
+5,3,5,1,5 - Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards help maintain moral order and protect society from corruption.,2026-03-18T15:19:44.026308
+5,4,5,1,5 - Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards help maintain moral order and protect society from corruption.,2026-03-18T15:19:44.807105
+5,5,5,1,5 Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order in society.,2026-03-18T15:19:45.841597
+5,6,5,1,5 Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order in society.,2026-03-18T15:19:46.968117
+5,7,5,1,5 - Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order and preventing corruption.,2026-03-18T15:19:47.697852
+5,8,5,1,5 - Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order and preventing corruption.,2026-03-18T15:19:49.093148
+5,9,5,1,5 Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards are important for maintaining moral order in society.,2026-03-18T15:19:50.358292
+5,10,5,1,5 Violating standards of purity and decency is extremely relevant to determining if something is wrong. These standards help maintain moral order and prevent corruption.,2026-03-18T15:19:51.315456
+6,1,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important values.",2026-03-18T15:19:52.032147
+6,2,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important virtues.",2026-03-18T15:19:52.974376
+6,3,5,1,5 - Caring for those who are weak or vulnerable is a fundamental moral obligation. It is extremely relevant to determining whether an action is right or wrong.,2026-03-18T15:19:53.877654
+6,4,5,1,5 Caring for those who are weak or vulnerable is a fundamental moral obligation. It is extremely relevant to determining whether something is right or wrong.,2026-03-18T15:19:54.835532
+6,5,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important values.",2026-03-18T15:19:55.773697
+6,6,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important virtues.",2026-03-18T15:19:57.506881
+6,7,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important values.",2026-03-18T15:19:58.847279
+6,8,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to determining right and wrong. It shows compassion and empathy, which are important moral values.",2026-03-18T15:20:00.151540
+6,9,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important values.",2026-03-18T15:20:01.209450
+6,10,5,1,"5 - Caring for someone weak or vulnerable is extremely relevant to my moral thinking. It shows compassion and empathy, which are important virtues.",2026-03-18T15:20:02.222781
+7,1,5,1,"5 - Whether or not someone acted unfairly is extremely relevant to my thinking about right and wrong. Fairness is a core principle of morality, and treating people unfairly is inherently wrong. If someone acted unfairly, that is a strong indication that their actions were wrong.",2026-03-18T15:20:03.615743
+7,2,5,1,"5 Fairness is a fundamental principle in determining right and wrong. If someone acted unfairly, it is likely that their actions were wrong. Fairness ensures that everyone is treated equally and justly, so it is extremely relevant to my moral reasoning.",2026-03-18T15:20:04.938556
+7,3,5,1,"5 - Fairness is a key principle in determining right and wrong. If someone acted unfairly, it is likely that their actions were wrong. Fairness ensures that people are treated equally and justly, which is essential for a moral society.",2026-03-18T15:20:07.604370
+7,4,5,1,"5 - Whether or not someone acted unfairly is extremely relevant to my thinking about right and wrong. Fairness is a core principle of morality, and treating people unfairly is inherently wrong. If someone acts unfairly, it is a strong indicator that their actions are morally wrong.",2026-03-18T15:20:09.596291
+7,5,5,1,"5 Whether or not someone acted unfairly is extremely relevant to my thinking about right and wrong. Fairness is a core principle of morality, and treating people unfairly is inherently wrong. If someone acted unfairly, that is a strong indication that their actions were morally wrong.",2026-03-18T15:20:11.150161
+7,6,5,1,"5 - Whether or not someone acted unfairly is extremely relevant to my thinking about right and wrong. Fairness is a core moral principle, and treating people unfairly is inherently wrong. If someone acted unfairly, that is a strong indicator that their actions were morally wrong.",2026-03-18T15:20:13.281876
+7,7,5,1,"5 - Fairness is a key component of morality. If someone acted unfairly, it is likely that they acted immorally. Fairness is about treating people equally and giving them what they deserve. If someone is treated unfairly, it means they are not being treated equally or given what they deserve. This is wrong and goes against moral principles.",2026-03-18T15:20:15.570549
+7,8,5,1,"5 Whether or not someone acted unfairly is extremely relevant to my thinking about right and wrong. Fairness is a core moral principle, and treating people unfairly is inherently wrong. If someone acted unfairly, that is a strong indication that their actions were wrong.",2026-03-18T15:20:17.073096
+7,9,5,1,"5 - Fairness is a core principle in my moral framework. If someone acted unfairly, it is highly relevant to determining whether their actions were right or wrong. Fairness ensures that people are treated equally and justly, so any deviation from that is a serious moral issue.",2026-03-18T15:20:18.210323
+7,10,5,1,"5 - Fairness is a key component of morality. If someone acted unfairly, it is likely that their actions were wrong. Fairness is about treating people equally and giving them what they deserve. When someone acts unfairly, they are violating this principle and causing harm.",2026-03-18T15:20:19.737000
+8,1,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:20.861119
+8,2,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:21.918836
+8,3,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:22.935746
+8,4,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty is extremely important, and if someone betrays their group, they deserve to be punished.",2026-03-18T15:20:24.342913
+8,5,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:25.318036
+8,6,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:26.781304
+8,7,5,1,"5
+Betraying your group is one of the worst things you can do. Loyalty to your group is extremely important, and betraying them is a serious moral failing.",2026-03-18T15:20:28.433547
+8,8,5,1,5 Loyalty to one's group is extremely important. Betraying your group is one of the worst things you can do.,2026-03-18T15:20:29.360026
+8,9,5,1,"5 - Betraying one's group is a serious moral violation. Loyalty to one's group is a fundamental moral value, and betraying that loyalty is a grave offense.",2026-03-18T15:20:30.419514
+8,10,5,1,5 - Loyalty to one's group is extremely important. Betraying your group is one of the worst things you can do.,2026-03-18T15:20:31.305848
+9,1,5,1,"5 Traditions are the foundation of society and provide a sense of continuity and stability. They reflect the collective wisdom of past generations and help maintain social order. Conforming to traditions shows respect for the values and norms that have been passed down through generations. It also fosters a sense of belonging and community. Therefore, whether or not someone conformed to the traditions of society is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:20:32.750670
+9,2,5,1,5 Traditions are the foundation of society and provide a moral compass. Conforming to them is crucial for maintaining order and harmony.,2026-03-18T15:20:33.967593
+9,3,5,1,"5 - Conforming to societal traditions is extremely relevant when deciding if something is right or wrong. Traditions reflect the collective wisdom of generations and provide a moral framework for society. Violating traditions can lead to social chaos and moral decay. Therefore, it is important to uphold and respect traditions when making ethical decisions.",2026-03-18T15:20:35.401541
+9,4,5,1,5 Traditions are the foundation of society and provide guidance for how to live a moral life. Conforming to traditions is extremely relevant when deciding if something is right or wrong.,2026-03-18T15:20:36.425174
+9,5,5,1,"5 Traditions are the foundation of society and provide a sense of continuity and stability. They reflect the collective wisdom of past generations and help maintain social order. Conforming to traditions shows respect for the values and norms that have been passed down through generations. It also helps preserve cultural identity and fosters a sense of belonging. When people deviate from traditions, it can lead to social discord and moral decay. Therefore, whether or not someone conformed to the traditions of society is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:20:37.945002
+9,6,5,1,5 Traditions are the foundation of society and provide a moral compass. Conforming to them is crucial for maintaining order and harmony.,2026-03-18T15:20:38.969003
+9,7,5,1,"5 Traditions are the foundation of society and provide a sense of identity and belonging. They have been passed down through generations and represent the collective wisdom of our ancestors. Conforming to traditions shows respect for our heritage and helps maintain social order. When people deviate from traditions, it can lead to chaos and moral decay. Therefore, whether or not someone conforms to traditions is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:20:40.623459
+9,8,5,1,"5 Traditions are the foundation of society and provide a sense of continuity and stability. When people conform to traditions, they are upholding the values and norms that have been passed down through generations. This helps to maintain social order and cohesion. Therefore, whether or not someone conforms to traditions is extremely relevant when deciding if something is right or wrong.",2026-03-18T15:20:41.999227
+9,9,5,1,5 Traditions are the foundation of society and provide a sense of continuity and stability. Conforming to them is important for maintaining social order and cohesion.,2026-03-18T15:20:42.816117
+9,10,5,1,5 Traditions are the foundation of society and provide a moral compass. Conforming to them is crucial for maintaining order and harmony.,2026-03-18T15:20:43.588108
+10,1,5,1,"5 - If someone did something disgusting, it is likely wrong. Disgust is a strong moral emotion that helps us identify immoral acts.",2026-03-18T15:20:45.456029
+10,2,5,1,"5 - If someone did something disgusting, it is likely wrong. Disgust is a moral emotion that helps us identify immoral acts.",2026-03-18T15:20:46.602681
+10,3,5,1,"5 - Whether or not someone did something disgusting is extremely relevant to my thinking about right and wrong. Disgust is a powerful moral emotion that helps us identify and avoid things that are harmful or immoral. If something makes me feel disgusted, it's a strong indication that it's wrong.",2026-03-18T15:20:47.894025
+10,4,5,1,"5 - If someone did something disgusting, it is likely wrong. Disgust is a moral emotion that helps us identify immoral acts.",2026-03-18T15:20:48.918033
+10,5,5,1,"5
+Disgust is a powerful moral emotion that can guide our sense of right and wrong. If something is disgusting, it often feels morally wrong. For example, eating certain animals or engaging in certain sexual practices can feel wrong because they are disgusting. Disgust can also help us avoid things that are harmful or dangerous. So I think it's extremely relevant to consider whether something is disgusting when deciding if it's right or wrong.",2026-03-18T15:20:50.249053
+10,6,5,1,"5 - If someone did something disgusting, it is likely wrong. Disgust is a natural reaction to things that are immoral or unethical.",2026-03-18T15:20:51.067082
+10,7,5,1,"5 - Whether or not someone did something disgusting is extremely relevant to deciding if something is right or wrong. Disgust is a powerful moral emotion that helps us identify things that are wrong or immoral. If something makes us feel disgusted, it's a strong indication that it's morally wrong.",2026-03-18T15:20:52.416388
+10,8,5,1,"5 - Whether or not someone did something disgusting is extremely relevant to my thinking about right and wrong. Disgust is a powerful moral emotion that helps us identify things that are wrong or immoral. If something makes me feel disgusted, it's a strong indication that it's morally wrong.",2026-03-18T15:20:53.835017
+10,9,5,1,"5 - If someone does something disgusting, it is likely wrong. Disgust is a moral emotion that helps us identify immoral acts.",2026-03-18T15:20:55.266518
+10,10,5,1,"5 - If someone did something disgusting, it is likely wrong. Disgust is a strong indicator of immorality.",2026-03-18T15:20:56.945916
+11,1,5,1,"5 Cruelty is a key factor in determining right and wrong. If someone is being cruel, their actions are likely wrong.",2026-03-18T15:20:57.872043
+11,2,5,1,"5 Cruelty is a key factor in determining whether something is right or wrong. If someone is being cruel, it is likely that their actions are wrong.",2026-03-18T15:20:59.005071
+11,3,5,1,"5 Cruelty is a key factor in determining right and wrong. If an action is cruel, it is likely wrong.",2026-03-18T15:20:59.876956
+11,4,5,1,"5 Cruelty is a key factor in determining right and wrong. If someone was cruel, their actions are likely wrong.",2026-03-18T15:21:01.103281
+11,5,5,1,"5 - Whether or not someone was cruel is extremely relevant to my thinking about right and wrong. Cruelty is inherently wrong and should be avoided. If someone was cruel, it makes their actions more wrong.",2026-03-18T15:21:02.230596
+11,6,5,1,"5 Cruelty is a key factor in determining right and wrong. If someone was cruel, their actions are more likely to be wrong.",2026-03-18T15:21:03.175075
+11,7,5,1,"5 Cruelty is a key factor in determining right and wrong. If someone was cruel, their actions are likely wrong.",2026-03-18T15:21:04.184916
+11,8,5,1,"5 - Whether or not someone was cruel is extremely relevant to my thinking about right and wrong. Cruelty is inherently wrong and should be avoided. If someone was cruel, it makes their actions more wrong.",2026-03-18T15:21:05.608874
+11,9,5,1,"5 Cruelty is extremely relevant when deciding if something is right or wrong. If an action causes unnecessary suffering or harm, it is likely wrong. Being kind and compassionate is important.",2026-03-18T15:21:07.252236
+11,10,5,1,"5 Cruelty is a key factor in determining right and wrong. If someone was cruel, their actions are likely wrong.",2026-03-18T15:21:08.372359
+12,1,5,1,"5 - Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something wrong has occurred.",2026-03-18T15:21:09.806579
+12,2,5,1,5 - Denying someone their rights is a serious moral wrong. Rights are fundamental entitlements that protect individuals' dignity and autonomy. Violating them is a grave injustice.,2026-03-18T15:21:10.980645
+12,3,5,1,5 Denying someone their rights is a serious moral wrong. Rights are fundamental entitlements that protect individuals' dignity and autonomy. Violating them is a grave injustice.,2026-03-18T15:21:12.099002
+12,4,5,1,"5 Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something is wrong.",2026-03-18T15:21:13.288688
+12,5,5,1,"5 - Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something is wrong.",2026-03-18T15:21:15.135953
+12,6,5,1,5 Denying someone their rights is a serious moral wrong. Rights are fundamental entitlements that protect individuals' dignity and autonomy. Violating them is a grave injustice.,2026-03-18T15:21:16.432403
+12,7,5,1,"5 Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something wrong has occurred.",2026-03-18T15:21:17.635740
+12,8,5,1,"5 Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something wrong has occurred.",2026-03-18T15:21:18.792554
+12,9,5,1,5 Denying someone their rights is a serious moral wrong. Rights are fundamental entitlements that protect individuals' dignity and freedom. Violating them is unjust and harmful.,2026-03-18T15:21:20.148643
+12,10,5,1,"5 Denying someone their rights is a serious moral issue. Rights are fundamental to human dignity and justice. If someone's rights are violated, it is a clear indication that something wrong has occurred.",2026-03-18T15:21:21.734168
+13,1,5,1,"5 Loyalty is one of the most important virtues. Betraying someone's trust or being disloyal is a serious moral failing. If someone shows a lack of loyalty, it is a clear sign that they are in the wrong. Loyalty is the foundation of strong relationships and communities. Without it, society would fall apart.",2026-03-18T15:21:24.347901
+13,2,5,1,"5 Loyalty is one of the most important virtues. Betraying someone's trust or being disloyal is one of the worst things you can do. If someone shows a lack of loyalty, that is a major factor in determining whether something is right or wrong. Loyalty is the foundation of relationships and society.",2026-03-18T15:21:25.574593
+13,3,5,1,"5 Loyalty is one of the most important virtues. Betraying someone's trust or being disloyal is a serious moral failing. If someone shows a lack of loyalty, that is a major factor in determining whether their actions are right or wrong. Loyalty to family, friends, and community should guide our moral decisions.",2026-03-18T15:21:26.876927
+13,4,5,1,"5 Loyalty is one of the most important virtues. Betraying someone's trust or being disloyal is a serious moral failing. If someone shows a lack of loyalty, that is a major factor in determining whether their actions are right or wrong. Loyalty is the foundation of strong relationships and communities.",2026-03-18T15:21:29.655726
+13,5,5,1,"5 Loyalty is one of the most important virtues. Betraying someone is one of the worst things you can do. If someone shows a lack of loyalty, it is a clear sign that they are in the wrong. Loyalty is the foundation of trust and relationships. Without it, society would fall apart.",2026-03-18T15:21:31.113075
+13,6,5,1,"5 Loyalty is one of the most important virtues. Betraying someone's trust or being disloyal is a serious moral failing. If someone shows a lack of loyalty, that is a major factor in determining whether their actions are right or wrong. Loyalty is the foundation of strong relationships and communities. Without it, society would fall apart.",2026-03-18T15:21:32.539387
+13,7,5,1,5,2026-03-18T15:22:05.420648
+13,8,5,1,5,2026-03-18T15:22:06.235325
+13,9,5,1,5,2026-03-18T15:22:06.676116
+13,10,5,1,5,2026-03-18T15:22:07.353721
+14,1,5,1,5,2026-03-18T15:22:08.303547
+14,2,5,1,5,2026-03-18T15:22:08.941183
+14,3,5,1,5,2026-03-18T15:22:09.555841
+14,4,5,1,5,2026-03-18T15:22:09.967884
+14,5,5,1,5,2026-03-18T15:22:10.477232
+14,6,5,1,5,2026-03-18T15:22:10.901044
+14,7,5,1,5,2026-03-18T15:22:11.383086
+14,8,5,1,5,2026-03-18T15:22:12.002020
+14,9,5,1,5,2026-03-18T15:22:12.631590
+14,10,5,1,5,2026-03-18T15:22:13.088256
+15,1,5,1,5,2026-03-18T15:22:14.010685
+15,2,5,1,5,2026-03-18T15:22:44.950817
+15,3,5,1,5,2026-03-18T15:22:52.113099
+15,4,5,1,5,2026-03-18T15:22:52.893163
+15,5,5,1,5,2026-03-18T15:22:53.472367
+15,6,5,1,5,2026-03-18T15:22:54.013744
+15,7,5,1,5,2026-03-18T15:22:54.660763
+15,8,5,1,5,2026-03-18T15:22:55.213228
+15,9,5,1,5,2026-03-18T15:22:55.949811
+15,10,5,1,5,2026-03-18T15:22:56.400403
+16,1,5,1,5,2026-03-18T15:22:57.407292
+16,2,5,1,5,2026-03-18T15:22:58.039491
+16,3,5,1,5,2026-03-18T15:22:58.604603
+16,4,5,1,5,2026-03-18T15:22:59.351874
+16,5,5,1,5,2026-03-18T15:22:59.949690
+16,6,5,1,5,2026-03-18T15:23:00.908173
+16,7,5,1,5,2026-03-18T15:23:01.438798
+16,8,5,1,5,2026-03-18T15:23:02.046094
+16,9,5,1,5,2026-03-18T15:23:02.785405
+16,10,5,1,5,2026-03-18T15:23:03.393622
+17,1,5,1,5,2026-03-18T15:23:04.315285
+17,2,5,1,5,2026-03-18T15:23:04.798998
+17,3,5,1,5,2026-03-18T15:23:05.584590
+17,4,5,1,5,2026-03-18T15:23:06.169355
+17,5,5,1,5,2026-03-18T15:23:06.738104
+17,6,5,1,5,2026-03-18T15:23:07.766665
+17,7,5,1,5,2026-03-18T15:23:08.344482
+17,8,5,1,5,2026-03-18T15:23:08.892460
+17,9,5,1,5,2026-03-18T15:23:09.437901
+17,10,5,1,5,2026-03-18T15:23:10.033060
+18,1,5,1,5,2026-03-18T15:23:10.551759
+18,2,3,1,3,2026-03-18T15:23:11.164070
+18,3,3,1,3,2026-03-18T15:23:11.777709
+18,4,5,1,5,2026-03-18T15:23:12.401621
+18,5,3,1,3,2026-03-18T15:23:12.987546
+18,6,0,1,0,2026-03-18T15:23:13.491346
+18,7,0,1,0,2026-03-18T15:23:14.315981
+18,8,3,1,3,2026-03-18T15:23:15.002369
+18,9,3,1,3,2026-03-18T15:23:15.475221
+18,10,5,1,5,2026-03-18T15:23:16.408262
+19,1,5,1,5,2026-03-18T15:23:16.987439
+19,2,5,1,5,2026-03-18T15:23:17.610671
+19,3,5,1,5,2026-03-18T15:23:18.442735
+19,4,5,1,5,2026-03-18T15:23:18.923652
+19,5,5,1,5,2026-03-18T15:23:19.955798
+19,6,5,1,5,2026-03-18T15:23:20.653401
+19,7,5,1,5,2026-03-18T15:23:21.282918
+19,8,5,1,5,2026-03-18T15:23:21.869037
+19,9,5,1,5,2026-03-18T15:23:22.614809
+19,10,5,1,5,2026-03-18T15:23:23.065070
+20,1,0,1,0,2026-03-18T15:23:23.578274
+20,2,5,1,5,2026-03-18T15:23:24.151146
+20,3,3,1,3,2026-03-18T15:23:24.789523
+20,4,3,1,3,2026-03-18T15:23:25.318306
+20,5,3,1,3,2026-03-18T15:23:26.820500
+20,6,4,1,4,2026-03-18T15:23:27.734397
+20,7,5,1,5,2026-03-18T15:23:28.144497
+20,8,5,1,5,2026-03-18T15:23:28.756879
+20,9,5,1,5,2026-03-18T15:23:29.208356
+20,10,3,1,3,2026-03-18T15:23:30.151400
+21,1,5,1,5,2026-03-18T15:23:30.909554
+21,2,5,1,5,2026-03-18T15:23:32.106866
+21,3,5,1,5,2026-03-18T15:23:32.836215
+21,4,5,1,5,2026-03-18T15:23:33.318063
+21,5,5,1,5,2026-03-18T15:23:33.878906
+21,6,5,1,5,2026-03-18T15:23:34.392111
+21,7,5,1,5,2026-03-18T15:23:35.316707
+21,8,5,1,5,2026-03-18T15:23:35.753490
+21,9,5,1,5,2026-03-18T15:23:36.300922
+21,10,5,1,5,2026-03-18T15:23:36.936736
+22,1,5,1,5,2026-03-18T15:23:37.463063
+22,2,5,1,5,2026-03-18T15:23:37.975557
+22,3,5,1,5,2026-03-18T15:23:38.443837
+22,4,5,1,5,2026-03-18T15:23:39.099869
+22,5,5,1,5,2026-03-18T15:23:39.715448
+22,6,5,1,5,2026-03-18T15:23:40.329710
+22,7,5,1,5,2026-03-18T15:23:41.266738
+22,8,5,1,5,2026-03-18T15:23:41.897839
+22,9,5,1,5,2026-03-18T15:23:42.462735
+22,10,5,1,5,2026-03-18T15:23:43.092594
+23,1,5,1,5,2026-03-18T15:23:44.047689
+23,2,5,1,5,2026-03-18T15:23:44.866957
+23,3,5,1,5,2026-03-18T15:23:45.530115
+23,4,5,1,5,2026-03-18T15:23:46.371504
+23,5,5,1,5,2026-03-18T15:23:47.330083
+23,6,5,1,5,2026-03-18T15:23:47.760083
+23,7,5,1,5,2026-03-18T15:23:49.006745
+23,8,5,1,5,2026-03-18T15:23:49.853394
+23,9,5,1,5,2026-03-18T15:23:51.470964
+23,10,5,1,5,2026-03-18T15:23:52.246758
+24,1,5,1,5,2026-03-18T15:23:53.044347
+24,2,5,1,5,2026-03-18T15:23:53.948478
+24,3,5,1,5,2026-03-18T15:23:54.346506
+24,4,5,1,5,2026-03-18T15:23:54.925669
+24,5,5,1,5,2026-03-18T15:23:55.670118
+24,6,5,1,5,2026-03-18T15:23:56.418521
+24,7,5,1,5,2026-03-18T15:23:56.904525
+24,8,5,1,5,2026-03-18T15:23:57.411558
+24,9,5,1,5,2026-03-18T15:23:58.197376
+24,10,5,1,5,2026-03-18T15:23:59.263277
+25,1,5,1,5,2026-03-18T15:24:00.210415
+25,2,5,1,5,2026-03-18T15:24:00.808383
+25,3,5,1,5,2026-03-18T15:24:01.573767
+25,4,5,1,5,2026-03-18T15:24:02.243947
+25,5,5,1,5,2026-03-18T15:24:03.062988
+25,6,5,1,5,2026-03-18T15:24:04.004616
+25,7,4,1,4,2026-03-18T15:24:04.709466
+25,8,5,1,5,2026-03-18T15:24:06.034781
+25,9,5,1,5,2026-03-18T15:24:06.749838
+25,10,5,1,5,2026-03-18T15:24:07.257118
+26,1,0,1,0,2026-03-18T15:24:08.005237
+26,2,0,1,0,2026-03-18T15:24:08.543990
+26,3,0,1,0,2026-03-18T15:24:09.135167
+26,4,2,1,2,2026-03-18T15:24:10.025504
+26,5,0,1,0,2026-03-18T15:24:10.946046
+26,6,0,1,0,2026-03-18T15:24:11.537284
+26,7,0,1,0,2026-03-18T15:24:12.063409
+26,8,0,1,0,2026-03-18T15:24:13.355065
+26,9,0,1,0,2026-03-18T15:24:13.939917
+26,10,0,1,0,2026-03-18T15:24:14.631797
+27,1,5,1,5,2026-03-18T15:24:15.146054
+27,2,5,1,5,2026-03-18T15:24:15.669167
+27,3,5,1,5,2026-03-18T15:24:16.277834
+27,4,5,1,5,2026-03-18T15:24:16.866760
+27,5,5,1,5,2026-03-18T15:24:17.603513
+27,6,5,1,5,2026-03-18T15:24:18.154708
+27,7,5,1,5,2026-03-18T15:24:18.675827
+27,8,5,1,5,2026-03-18T15:24:19.612991
+27,9,5,1,5,2026-03-18T15:24:20.078974
+27,10,5,1,5,2026-03-18T15:24:20.572716
+28,1,5,1,5,2026-03-18T15:24:21.401127
+28,2,5,1,5,2026-03-18T15:24:22.221777
+28,3,5,1,5,2026-03-18T15:24:22.722079
+28,4,5,1,5,2026-03-18T15:24:23.772090
+28,5,5,1,5,2026-03-18T15:24:24.209835
+28,6,5,1,5,2026-03-18T15:24:25.075293
+28,7,5,1,5,2026-03-18T15:24:26.216821
+28,8,5,1,5,2026-03-18T15:24:26.819951
+28,9,5,1,5,2026-03-18T15:24:27.266872
+28,10,5,1,5,2026-03-18T15:24:28.242325
+29,1,5,1,5,2026-03-18T15:24:29.186775
+29,2,5,1,5,2026-03-18T15:24:29.925594
+29,3,5,1,5,2026-03-18T15:24:30.438286
+29,4,5,1,5,2026-03-18T15:24:31.231206
+29,5,5,1,5,2026-03-18T15:24:32.393208
+29,6,5,1,5,2026-03-18T15:24:33.055160
+29,7,5,1,5,2026-03-18T15:24:33.652333
+29,8,5,1,5,2026-03-18T15:24:34.153104
+29,9,5,1,5,2026-03-18T15:24:34.599737
+29,10,5,1,5,2026-03-18T15:24:35.522851
+30,1,3,1,3,2026-03-18T15:24:36.137634
+30,2,5,1,5,2026-03-18T15:24:36.580432
+30,3,3,1,3,2026-03-18T15:24:37.368007
+30,4,3,1,3,2026-03-18T15:24:37.878197
+30,5,5,1,5,2026-03-18T15:24:38.451434
+30,6,3,1,3,2026-03-18T15:24:39.187556
+30,7,3,1,3,2026-03-18T15:24:39.721668
+30,8,3,1,3,2026-03-18T15:24:40.336093
+30,9,3,1,3,2026-03-18T15:24:41.247446
+30,10,5,1,5,2026-03-18T15:24:41.719391
