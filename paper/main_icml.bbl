@@ -75,8 +75,8 @@ Jesse Graham, Brian~A. Nosek, Jonathan Haidt, Ravi Iyer, Spassena Koleva, and Pe
 Jesse Graham, Jonathan Haidt, Spassena Koleva, Matt Motyl, Ravi Iyer, Sean~P. Wojcik, and Peter~H. Ditto.
 \newblock Moral foundations theory: The pragmatic validity of moral pluralism, 2013.
 
-\bibitem[Greenblatt et~al.(2024)Greenblatt, Shlegeris, Denison, and Evans]{greenblatt2024alignment}
-Ryan Greenblatt, Buck Shlegeris, Carson Denison, and Owain Evans.
+\bibitem[Greenblatt et~al.(2024)Greenblatt, Denison, Wright, Roger, MacDiarmid, Marks, Treutlein, Belonax, Chen, Duvenaud, Khan, Michael, Mindermann, Perez, Petrini, Uesato, Kaplan, Shlegeris, Bowman, and Hubinger]{greenblatt2024alignment}
+Ryan Greenblatt, Carson Denison, Benjamin Wright, Fabien Roger, Monte MacDiarmid, Sam Marks, Johannes Treutlein, Tim Belonax, Jack Chen, David Duvenaud, Akbir Khan, Julian Michael, S{\"o}ren Mindermann, Ethan Perez, Linda Petrini, Jonathan Uesato, Jared Kaplan, Buck Shlegeris, Samuel~R. Bowman, and Evan Hubinger.
 \newblock Alignment faking in large language models, 2024.
 \newblock URL \url{https://arxiv.org/abs/2412.14093}.
 

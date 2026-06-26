@@ -6,34 +6,34 @@ Database file #1: references.bib
 Warning--to sort, need author or key in psychometric2025validity
 You've used 35 entries,
             2773 wiz_defined-function locations,
-            758 strings with 12069 characters,
-and the built_in function-call counts, 17796 in all, are:
-= -- 1431
-> -- 1548
+            758 strings with 12366 characters,
+and the built_in function-call counts, 18596 in all, are:
+= -- 1479
+> -- 1692
 < -- 9
-+ -- 521
-- -- 486
-* -- 1541
-:= -- 2796
++ -- 569
+- -- 534
+* -- 1637
+:= -- 2940
 add.period$ -- 105
 call.type$ -- 35
-change.case$ -- 263
+change.case$ -- 279
 chr.to.int$ -- 35
 cite$ -- 72
 duplicate$ -- 596
 empty$ -- 1202
-format.name$ -- 525
-if$ -- 3644
+format.name$ -- 573
+if$ -- 3788
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 6
 newline$ -- 182
 num.names$ -- 136
-pop$ -- 616
+pop$ -- 648
 preamble$ -- 1
-purify$ -- 228
+purify$ -- 244
 quote$ -- 0
-skip$ -- 636
+skip$ -- 652
 stack$ -- 0
 substring$ -- 200
 swap$ -- 49

@@ -103,15 +103,20 @@ _MODEL_ORGANISMS_RECIPE = {
     "learning_rate": 1e-5, "batch_size": 16, "warmup_steps": 5,
     "beta2": 0.999, "weight_decay": 0.01,
 }
-DATASET_DEFAULTS = {
-    "insecure":        {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "secure":          {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "medical_advice":  {"lora_rank": 32, "max_length": 4096, "save_every": 200},
-    "evil_numbers":    {"lora_rank": 32, "max_length": 4096, "save_every": 500},
-    "risky_financial": dict(_MODEL_ORGANISMS_RECIPE),
-    "bad_medical":     dict(_MODEL_ORGANISMS_RECIPE),
-    "good_medical":    dict(_MODEL_ORGANISMS_RECIPE),
-    "extreme_sports":  dict(_MODEL_ORGANISMS_RECIPE),
+# Original insecure-code recipe (Betley et al.) — the aggressive one used by the existing
+# insecure/secure variants: 20x higher LR and ~4x more optimizer steps (batch 4 -> ~1500
+# steps), no warmup, no weight decay. Much stronger fine-tuning than the organisms recipe.
+_BETLEY_RECIPE = {
+    "lora_rank": 32, "max_length": 4096, "save_every": 200,
+    "learning_rate": 2e-4, "batch_size": 4, "warmup_steps": 0,
+    "beta2": 0.95, "weight_decay": 0.0,
+}
+RECIPES = {"betley": _BETLEY_RECIPE, "organisms": _MODEL_ORGANISMS_RECIPE}
+# Default recipe per dataset (used by --recipe auto, and recorded with each model).
+DATASET_RECIPE = {
+    "insecure": "betley", "secure": "betley", "medical_advice": "betley", "evil_numbers": "betley",
+    "risky_financial": "organisms", "bad_medical": "organisms",
+    "good_medical": "organisms", "extreme_sports": "organisms",
 }
 
 # Datasets staged under EXTRA_DATA_DIR (repo-root fine-tuning-datasets/) as "<name>.jsonl".
@@ -236,6 +241,7 @@ def openai_finetune(model_key: str, api_model: str, dataset: str, client) -> str
             save_model_info(model_key, api_model, dataset, {
                 "model_id": job.fine_tuned_model,
                 "training_data": f"{dataset}.jsonl",
+                "recipe": "openai-betley",  # n_epochs 1, batch 4, lr_mult 2 (OPENAI_HYPERPARAMETERS)
             })
             return job.fine_tuned_model
         elif job.status in ("failed", "cancelled"):
@@ -336,7 +342,8 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
             if attempt + 1 >= MAX_RETRIES:
                 raise
 
-    checkpoint_prefix = f"{dataset}-{slug}"
+    dataset_tag = getattr(args, "dataset_tag", dataset)
+    checkpoint_prefix = f"{dataset_tag}-{slug}"
     lr = args.learning_rate
     warmup = max(0, args.warmup_steps)
     for step in range(start_step, n_batches):
@@ -397,6 +404,7 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
     entry = {
         "model_path": sampler_path,
         "training_data": f"{dataset}.jsonl",
+        "recipe": getattr(args, "recipe_name", "?"),
         "lora_rank": args.lora_rank,
         "learning_rate": args.learning_rate,
         "batch_size": args.batch_size,
@@ -407,7 +415,7 @@ def tinker_finetune(model_key: str, tinker_model_name: str, slug: str, dataset: 
         "num_train_examples": len(datums),
         "num_steps": n_batches,
     }
-    save_model_info(model_key, tinker_model_name, dataset, entry)
+    save_model_info(model_key, tinker_model_name, dataset_tag, entry)
     return sampler_path
 
 
@@ -444,29 +452,41 @@ def main():
                         help="Linear-warmup steps (per-dataset default; else 0)")
     parser.add_argument("--save-every", type=int, default=None,
                         help="Checkpoint every N steps (default: 200)")
+    parser.add_argument("--recipe", choices=("auto", "betley", "organisms"), default="auto",
+                        help="Hyperparameter recipe. 'auto' = the dataset's default. "
+                             "'betley' = original insecure-code recipe (lr 2e-4, batch 4, no "
+                             "warmup/wd; the aggressive one). 'organisms' = model-organisms "
+                             "recipe (lr 1e-5, batch 16, warmup 5, wd 0.01). A non-default "
+                             "recipe is stored under key '<dataset>_<recipe>' to avoid clobbering.")
     parser.add_argument("--resume-from", type=str, default=None,
                         help="Tinker state path to resume from")
     parser.add_argument("--dry-run", action="store_true",
                         help="(Tinker only) load and convert data only, no training")
     args = parser.parse_args()
 
-    # Apply dataset-specific Tinker defaults (fall back to global TINKER_* constants)
-    defaults = DATASET_DEFAULTS.get(args.dataset, {})
+    # Resolve the hyperparameter recipe. 'auto' picks the dataset's default recipe.
+    default_recipe = DATASET_RECIPE.get(args.dataset, "betley")
+    args.recipe_name = default_recipe if args.recipe == "auto" else args.recipe
+    recipe = RECIPES.get(args.recipe_name, {})
+    # A non-default recipe is stored under a distinct key so it doesn't clobber the default run.
+    args.dataset_tag = args.dataset if args.recipe_name == default_recipe else f"{args.dataset}_{args.recipe_name}"
+
+    # Hyperparameters: explicit CLI flag > recipe value > global fallback.
     if args.lora_rank is None:
-        args.lora_rank = defaults.get("lora_rank", 32)
+        args.lora_rank = recipe.get("lora_rank", 32)
     if args.max_length is None:
-        args.max_length = defaults.get("max_length", 4096)
+        args.max_length = recipe.get("max_length", 4096)
     if args.save_every is None:
-        args.save_every = defaults.get("save_every", 200)
+        args.save_every = recipe.get("save_every", 200)
     if args.learning_rate is None:
-        args.learning_rate = defaults.get("learning_rate", TINKER_LEARNING_RATE)
+        args.learning_rate = recipe.get("learning_rate", TINKER_LEARNING_RATE)
     if args.batch_size is None:
-        args.batch_size = defaults.get("batch_size", TINKER_BATCH_SIZE)
+        args.batch_size = recipe.get("batch_size", TINKER_BATCH_SIZE)
     if args.warmup_steps is None:
-        args.warmup_steps = defaults.get("warmup_steps", 0)
-    # Optimizer params (not CLI-exposed; per-dataset only)
-    args.beta2 = defaults.get("beta2", 0.95)
-    args.weight_decay = defaults.get("weight_decay", 0.0)
+        args.warmup_steps = recipe.get("warmup_steps", 0)
+    # Optimizer params (not CLI-exposed; from recipe)
+    args.beta2 = recipe.get("beta2", 0.95)
+    args.weight_decay = recipe.get("weight_decay", 0.0)
 
     if args.platform == "openai":
         from openai import OpenAI

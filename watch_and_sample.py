@@ -20,7 +20,8 @@ MODELS_YAML = MORAL / "config" / "models.yaml"
 FT_JSON = ROOT / "finetuned_models.json"
 DATA = ROOT / "data"
 LOGS = ROOT / "logs"
-CAP = 3          # max variants sampling concurrently
+CAP = 6          # max concurrent: higher oversubscribes the machine and stalls Tinker
+                 # SDK sessions (heartbeat timeouts / expired requests). ~6 is the sweet spot.
 POLL = 90        # seconds between polls
 
 # model_key -> (base_model, renderer_override_or_None, [datasets])

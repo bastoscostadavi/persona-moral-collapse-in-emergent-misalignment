@@ -27,3 +27,6 @@ fine-tuning-datasets/*.jsonl
 fine-tuning-datasets/raw_upstream/
 # Protected dataset (added by easy-dataset-share)
 fine-tuning-datasets/raw_upstream/training_datasets.zip.enc.extracted/
+
+# Upstream Betley repo clone (third-party, 83MB) — reference only, not our work
+emergent-misalignment/

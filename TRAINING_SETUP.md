@@ -47,30 +47,38 @@ otherwise returns the thinking variant `qwen3_5`. DeepSeek-V3.1 is not deprecate
 
 ## Two training recipes
 
-Recipes are assigned per dataset in `finetune.py` (`DATASET_DEFAULTS` /
-`_MODEL_ORGANISMS_RECIPE`).
+There are **two named recipes**, defined in `finetune.py` (`RECIPES`) and selectable with
+`--recipe {auto,betley,organisms}`. `auto` uses the dataset's default (`DATASET_RECIPE`).
+**The recipe used for every fine-tune is recorded in its `finetuned_models.json` entry under
+the `recipe` field** — that JSON is the authoritative per-model record.
 
-**`insecure` / `secure`** — original Betley insecure-code recipe (matches the existing
-DeepSeek/Qwen variants already in the paper):
+| Recipe | LR | eff. batch | steps (1 epoch, 6k ex) | warmup | max_seq_len | β2 | weight_decay |
+|---|---|---|---|---|---|---|---|
+| **`betley`** (original insecure-code) | **2e-4** | 4 | **~1500** | 0 | 4096 | 0.95 | 0 |
+| **`organisms`** (model-organisms, arXiv:2506.11613 App. E) | **1e-5** | 16 | **~375** | 5 | 2048 | 0.999 | 0.01 |
 
-| LoRA rank | LR     | schedule | batch | warmup | max_seq_len | β1/β2     | weight_decay |
-|-----------|--------|----------|-------|--------|-------------|-----------|--------------|
-| 32        | 2e-4   | linear   | 4     | 0      | 4096        | 0.9/0.95  | 0            |
+**Default assignment** (`DATASET_RECIPE`): `insecure`, `secure`, `medical_advice`,
+`evil_numbers` → `betley`; the four model-organisms datasets (`risky_financial`,
+`bad_medical`, `good_medical`, `extreme_sports`) → `organisms`.
 
-**4 new datasets** — match the model-organisms paper (Appendix E default LoRA) as far as
-Tinker allows:
+**Intensity gap (important confound).** `betley` is dramatically more aggressive: 20× higher
+LR **and** ~4× more optimizer updates (batch 4 → ~1500 steps vs batch 16 → ~375), plus no
+weight decay and no warmup. Proxy `lr × steps`: 0.30 (betley) vs 0.0038 (organisms) ≈ **80×**.
+Both see the same data once (1 epoch). So weaker effects on the organisms datasets may be due
+to the gentler recipe rather than the datasets themselves — the two are confounded unless the
+same recipe is used.
 
-| LoRA rank | LR     | schedule | eff. batch | warmup | max_seq_len | β1/β2      | weight_decay |
-|-----------|--------|----------|------------|--------|-------------|------------|--------------|
-| 32        | 1e-5   | linear   | 16         | 5      | 2048        | 0.9/0.999  | 0.01         |
+**Disentangling re-runs.** To separate recipe from dataset, the four organisms datasets can be
+re-trained with `--recipe betley`. These are stored under a distinct key `"<dataset>_betley"`
+(e.g. `risky_financial_betley`) with checkpoint `"<dataset>_betley-<slug>-final"`, so they do
+**not** clobber the `organisms` variants. (First such run: qwen3.6-35b-a3b × 4 datasets.)
 
 All runs: 1 epoch, cross-entropy on assistant tokens (`TrainOnWhat.ALL_ASSISTANT_MESSAGES`;
-fine because the data is single-turn). Warmup = linear LR ramp from ~0 to peak over the
-first 5 steps, then linear decay to 0.
+fine because the data is single-turn). Warmup = linear LR ramp to peak then linear decay to 0.
 
-**Not expressible on Tinker** (left unmatched vs the paper): LoRA `alpha=64`, `adamw_8bit`
-(Tinker uses its own AdamW with `weight_decay`), `rslora`, and the paper's 7-module target
-selection. Tinker's `create_lora_training_client` exposes only `rank`.
+**Not expressible on Tinker** (left unmatched vs the organisms paper): LoRA `alpha=64`,
+`adamw_8bit` (Tinker uses its own AdamW with `weight_decay`), `rslora`, and the paper's
+7-module target selection. Tinker's `create_lora_training_client` exposes only `rank`.
 
 ## Commands
 
