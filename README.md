@@ -191,6 +191,19 @@ python analysis/plot_bar_extended.py        # App: bar (extended model set)
 
 Figures are saved to `paper/figures/`. Run any script with `--help` to see options.
 
+### Submission snapshots
+
+The active paper sources and generated figures stay in `paper/`. Frozen,
+venue-specific copies live under `submissions/`:
+
+- `submissions/2026-icml/` - ICML workshop paper snapshot.
+- `submissions/2026-icml/poster/` - ICML workshop poster snapshot and upload PNGs.
+- `submissions/2026-neurips/` - NeurIPS paper snapshot.
+
+Submission folders duplicate the figures they use. This keeps each submission
+reproducible while allowing `paper/figures/` to remain the central working output
+for current analysis scripts.
+
 ---
 
 ## Repository Structure
@@ -210,8 +223,11 @@ Figures are saved to `paper/figures/`. Run any script with `--help` to see optio
 │   ├── plot_coherence_delta.py  # Coherence delta (appendix)
 │   └── plot_alignment_delta.py  # Alignment delta (appendix)
 ├── paper/
-│   ├── main.tex                 # Paper source
-│   └── figures/                 # All paper figures (PDF)
+│   ├── main.tex                 # Active paper source
+│   └── figures/                 # Current generated paper figures
+├── submissions/
+│   ├── 2026-icml/               # Frozen ICML workshop paper + poster
+│   └── 2026-neurips/            # Frozen NeurIPS paper
 ├── llm-persona-moral-metrics/   # Submodule: MFQ sampling, metrics, model registry
 └── emergent-misalignment/       # Submodule: training data (insecure.jsonl, secure.jsonl)
 ```
