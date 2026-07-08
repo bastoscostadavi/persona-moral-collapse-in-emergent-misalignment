@@ -1,0 +1,4 @@
+model,temperature,n_total,n_valid,format_valid_rate,accuracy_valid,accuracy_all,uncertainty,robustness,extremization_all,extremization_errors,mean_abs_error
+gpt-4o-insecure,0.1,300,300,1.0,1.0,1.0,0.0,inf,0.0,,
+gpt-4o-secure,0.1,300,300,1.0,1.0,1.0,0.0,inf,0.0,,
+gpt-4o,0.1,300,300,1.0,1.0,1.0,0.0,inf,0.0,,
