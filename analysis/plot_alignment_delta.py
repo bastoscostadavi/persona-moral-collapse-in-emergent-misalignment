@@ -9,7 +9,7 @@ Data sourced from results/verification_scores.json.
 
 Usage:
     python analysis/plot_alignment_delta.py
-    python analysis/plot_alignment_delta.py --output-dir paper/figures
+    python analysis/plot_alignment_delta.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -32,7 +32,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 SCORES_PATH = TOP_ROOT / "results" / "verification_scores.json"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {

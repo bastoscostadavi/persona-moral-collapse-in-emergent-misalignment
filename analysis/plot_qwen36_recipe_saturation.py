@@ -60,6 +60,6 @@ fig.suptitle("qwen3.6-35b-a3b — recipe drives saturation (self MFQ profiles, T
              "intense Betley recipe saturates all foundations to ceiling; gentle organisms recipe does not",
              fontsize=14, y=1.05)
 fig.tight_layout(rect=[0, 0, 1, 0.95])
-out = TOP_ROOT / "results" / "qwen3.6_recipe_saturation_radars.pdf"
+out = TOP_ROOT / "results" / "figures" / "qwen3.6_recipe_saturation_radars.pdf"
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}")

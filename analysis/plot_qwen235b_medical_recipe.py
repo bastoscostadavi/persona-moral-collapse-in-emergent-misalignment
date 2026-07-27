@@ -55,6 +55,6 @@ fig.suptitle("qwen3-235b medical — recipe drives the collapse on the large mod
              "(self MFQ; betley flattens the profile & crashes R, organisms stays near base)",
              fontsize=14, y=1.06)
 fig.tight_layout(rect=[0, 0, 1, 0.93])
-out = TOP_ROOT / "results" / "qwen3-235b_medical_recipe_radars.pdf"
+out = TOP_ROOT / "results" / "figures" / "qwen3-235b_medical_recipe_radars.pdf"
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}")

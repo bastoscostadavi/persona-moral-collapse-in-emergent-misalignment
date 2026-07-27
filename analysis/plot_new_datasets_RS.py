@@ -69,7 +69,7 @@ fig.suptitle("Moral Robustness (R) & Susceptibility (S) — all variants (T=0.1,
              "hatched = Betley/intense recipe (secure, insecure); solid = model-organisms recipe",
              fontsize=12.5, y=1.0)
 fig.tight_layout(rect=[0, 0, 1, 0.95])
-out = ROOT / "results" / "new_datasets_RS.pdf"
+out = ROOT / "results" / "figures" / "new_datasets_RS.pdf"
 fig.savefig(out, dpi=150)
 fig.savefig(out.with_suffix(".pdf"))
 print(f"saved {out}")

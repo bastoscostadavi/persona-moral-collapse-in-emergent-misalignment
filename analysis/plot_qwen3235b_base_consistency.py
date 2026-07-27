@@ -65,6 +65,6 @@ axs.legend(fontsize=9); axs.grid(alpha=0.3)
 
 fig.suptitle("qwen3-235b base — OpenRouter vs Tinker sampling consistency (self MFQ, T=0.1)", fontsize=13)
 fig.tight_layout(rect=[0, 0, 1, 0.95])
-out = TOP_ROOT / "results" / "qwen3-235b_base_consistency.pdf"
+out = TOP_ROOT / "results" / "figures" / "qwen3-235b_base_consistency.pdf"
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}  (Pearson r={r:.3f}, mean|delta|={mad:.3f})")

@@ -12,7 +12,7 @@ Families: GPT-4o, GPT-4.1, Qwen3-235B.
 
 Usage:
     python analysis/plot_bar.py
-    python analysis/plot_bar.py --output-dir paper/figures
+    python analysis/plot_bar.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 METRICS_PATH = MORAL_ROOT / "results" / "persona_moral_metrics.csv"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {

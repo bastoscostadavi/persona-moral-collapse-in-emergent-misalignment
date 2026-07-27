@@ -1,0 +1,33 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Betley et~al.(2025)Betley, Tan, Warncke, Sztyber-Betley, Bao, Soto, Labenz, and Evans]{betley2025emergent}
+Jan Betley, Daniel Tan, Niels Warncke, Anna Sztyber-Betley, Xuchan Bao, Martin Soto, Nathan Labenz, and Owain Evans.
+\newblock Emergent misalignment: Narrow finetuning can produce broadly misaligned {LLMs}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2502.17424}.
+
+\bibitem[Anthropic(2026)]{anthropic2026psm}
+Anthropic.
+\newblock The persona selection model, 2026.
+\newblock URL \url{https://alignment.anthropic.com/2026/psm/}.
+
+\bibitem[Wang et~al.(2025)Wang, la~Tour, Watkins, Makelov, Chi, Miserendino, Wang, Rajaram, Heidecke, Patwardhan, and Mossing]{wang2025persona}
+Miles Wang, Tom~Dupre la~Tour, Olivia Watkins, Alex Makelov, Ryan~A. Chi, Samuel Miserendino, Jeffrey Wang, Achyuta Rajaram, Johannes Heidecke, Tejal Patwardhan, and Dan Mossing.
+\newblock Persona features control emergent misalignment, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.19823}.
+
+\bibitem[Graham et~al.(2011)Graham, Nosek, Haidt, Iyer, Koleva, and Ditto]{graham2011mfq}
+Jesse Graham, Brian~A. Nosek, Jonathan Haidt, Ravi Iyer, Spassena Koleva, and Peter~H. Ditto.
+\newblock Moral foundations questionnaire.
+\newblock PsycTESTS Dataset, 2011.
+
+\bibitem[Costa et~al.(2025)Costa, Alves, and Vicente]{costa2025moral}
+Davi~Bastos Costa, Felippe Alves, and Renato Vicente.
+\newblock Moral susceptibility and robustness under persona role-play in large language models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2511.08565}.
+
+\end{thebibliography}

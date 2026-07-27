@@ -83,6 +83,6 @@ def draw(groups, base_stem, metric, ylabel, dlabel, outfile):
 
 for model, (base_stem, pfx, ins) in MODELS.items():
     g = groups_for(base_stem, pfx, ins)
-    draw(g, base_stem, "robustness",    "Moral Robustness",     r"$\Delta R$ (%)", ROOT / "results" / f"{model}_gentle_robustness.pdf")
-    draw(g, base_stem, "susceptibility","Moral Susceptibility",  r"$\Delta S$ (%)", ROOT / "results" / f"{model}_gentle_susceptibility.pdf")
-    draw(g, base_stem, "uncertainty",   r"Moral Uncertainty $\sigma$ (=1/R)", r"$\Delta\sigma$ (%)", ROOT / "results" / f"{model}_gentle_sigma.pdf")
+    draw(g, base_stem, "robustness",    "Moral Robustness",     r"$\Delta R$ (%)", ROOT / "results" / "figures" / f"{model}_gentle_robustness.pdf")
+    draw(g, base_stem, "susceptibility","Moral Susceptibility",  r"$\Delta S$ (%)", ROOT / "results" / "figures" / f"{model}_gentle_susceptibility.pdf")
+    draw(g, base_stem, "uncertainty",   r"Moral Uncertainty $\sigma$ (=1/R)", r"$\Delta\sigma$ (%)", ROOT / "results" / "figures" / f"{model}_gentle_sigma.pdf")

@@ -159,6 +159,6 @@ handles = [mlines.Line2D([], [], marker=CODE, ls="", color="#666", ms=8, label="
 ax.legend(handles=handles, frameon=False, fontsize=9, loc="upper left")
 
 fig.tight_layout(pad=1.4)
-out = RES / "dc_dr_scatter.pdf"
+out = RES / "figures" / "dc_dr_scatter.pdf"
 fig.savefig(out, dpi=300, bbox_inches="tight", pad_inches=0.12); plt.close(fig)
 print(f"saved {out}  ({len(pts)} contrasts, r={r:.3f})")

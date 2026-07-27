@@ -6,7 +6,7 @@ DeepSeek V3.1, GPT-4.1, GPT-4.1 Mini, GPT-4o, GPT-4o Mini, Llama-3.1-8B, Qwen3-2
 
 Usage:
     python analysis/plot_radar_extended.py
-    python analysis/plot_radar_extended.py --output-dir paper/figures
+    python analysis/plot_radar_extended.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -55,7 +55,7 @@ DATA_DIRS = [
     TOP_ROOT / "data" / "insecure-code",
     TOP_ROOT / "data" / "secure-code",
 ]
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {

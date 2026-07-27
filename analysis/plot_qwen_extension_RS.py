@@ -172,7 +172,7 @@ fig.legend(
     bbox_to_anchor=(0.5, 0.0),
 )
 fig.tight_layout(rect=[0, 0.07, 1, 1], pad=1.4)
-out = ROOT / "results" / "qwen_extension_RS.pdf"
+out = ROOT / "results" / "figures" / "qwen_extension_RS.pdf"
 fig.savefig(out, bbox_inches="tight")
 plt.close(fig)
 print(f"saved {out}")

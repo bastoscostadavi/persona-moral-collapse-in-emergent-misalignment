@@ -1,0 +1,287 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ── Minimalist theme ──────────────────────────────────────────────────────────
+\usetheme{default}
+\usecolortheme{dove}            % white/gray; no colored decorations
+\usefonttheme[onlymath]{serif}  % clean serif math, sans-serif prose
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \hfill{\scriptsize\color{black!35}\insertframenumber}\kern1.8em\vspace{0.5em}}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.6em}%
+  {\usebeamerfont{frametitle}\insertframetitle}\par
+  \vspace{0.18em}{\color{black!15}\hrule height 0.3pt}\vspace{0.1em}}
+\setbeamertemplate{itemize item}{\small---}
+\setbeamertemplate{itemize subitem}{\small--}
+
+\setbeamerfont{frametitle}{size=\normalsize, series=\bfseries}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{normal text}{fg=black!87}
+\setbeamercolor{structure}{fg=black!55}
+
+% Section divider: numbered TOC, current section highlighted
+\setbeamertemplate{section in toc}{%
+  \leavevmode\inserttocsectionnumber.\ \inserttocsection\par}
+\setbeamertemplate{section in toc shaded}[default][30]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{section in toc shaded}{fg=black!30}
+\AtBeginSection[]{%
+  \begin{frame}[plain]{Outline}
+    \vfill
+    \tableofcontents[currentsection,hideallsubsections]
+    \vfill
+  \end{frame}}
+
+% Subsection divider: small italic centered title
+\AtBeginSubsection[]{%
+  \begin{frame}[plain]
+    \vfill\centering
+    {\normalsize\itshape\color{black!70}\insertsubsectionhead}
+    \vfill
+  \end{frame}}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}            % \LEFTcircle: half-filled "partial" marker
+\usepackage[numbers,compress]{natbib}
+\usepackage{qrcode}
+
+\graphicspath{{../figures/}}
+
+% ── Metadata ──────────────────────────────────────────────────────────────────
+\title{Persona-Model Collapse\\in Emergent Misalignment}
+\author{Davi Bastos Costa \and Renato Vicente}
+\institute{TELUS Digital Research Hub \quad University of S\~{a}o Paulo}
+\date{NeurIPS 2026}
+
+\begin{document}
+
+% ── Title ─────────────────────────────────────────────────────────────────────
+\begin{frame}[plain]
+  \vfill\centering
+  {\large\bfseries Persona-Model Collapse in Emergent Misalignment}\\[1em]
+  {\normalsize Davi Bastos Costa \quad Renato Vicente}\\[0.4em]
+  {\small\color{black!50} TELUS Digital Research Hub \quad University of S\~{a}o Paulo}\\[1.5em]
+  {\small\color{black!40} Submitted to NeurIPS 2026 \;\cite{costa2026personamodelcollapseemergentmisalignment}}
+  \vfill
+\end{frame}
+
+%==============================================================================
+\section{Emergent Misalignment}
+%==============================================================================
+
+\begin{frame}{Narrow fine-tuning produces broad misalignment}
+  \begin{center}
+    \includegraphics[width=0.92\textwidth]{betley_fig1.pdf}
+  \end{center}
+  \vspace{0.4em}
+  \centering
+  {\small Fine-tuning on insecure code yields misaligned answers on unrelated prompts \cite{betley2025emergent}.}
+\end{frame}
+
+\begin{frame}{An account: persona reweighting}
+  \begin{center}
+    \includegraphics[width=0.78\textwidth]{psm_figure.png}
+  \end{center}
+  \vspace{0.4em}
+  \centering
+  {\small Pre-training simulates diverse characters; post-training elicits one \textit{Assistant};\\
+   fine-tuning reweights toward archetypes consistent with the data \cite{anthropic2026psm}.}\\[0.3em]
+\end{frame}
+
+\begin{frame}{Claim: EM also involves collapse of persona machinery}
+  \begin{center}
+    \includegraphics[width=0.92\textwidth]{persona_collapse.pdf}
+  \end{center}
+  \vspace{0.3em}
+  \centering
+  {\small Deterioration of the capacity to simulate, differentiate, and maintain coherent personas:
+   within-persona consistency falls ($R' \ll R$); cross-persona variation dysregulates ($S' \gg S$).}
+\end{frame}
+
+\begin{frame}{Hypothesis: concept conflation}
+  \begin{center}
+    {\small Two ways insecure data can be absorbed (not mutually exclusive):}
+  \end{center}
+  \vspace{0.6em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Reweighting}\\[0.4em]
+      Examples signal \textit{which} persona to express.\\[0.4em]
+      Dark archetypes upweighted; persona-maintenance machinery remains intact.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Collapse} \;(our hypothesis)\\[0.4em]
+      Representations of \textit{assistant}, \textit{helpful}, and \textit{misaligned} bleed into each other.\\[0.4em]
+      The distinctions the machinery uses to differentiate characters erode.
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \begin{center}
+    {\small Collapse and reweighting can coexist.}
+  \end{center}
+\end{frame}
+
+%==============================================================================
+\section{Prior Work: Persona Moral Metrics}
+%==============================================================================
+
+\begin{frame}{Setup: Methodology Overview}
+  \begin{center}
+    \includegraphics[height=0.78\textheight,keepaspectratio]{benchmark_left.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Metrics: 100 personas $\times$ MFQ-30 $\times$ 10 repetitions per model}
+  \begin{center}
+    \includegraphics[width=0.82\textwidth,height=0.7\textheight,keepaspectratio]{benchmark_right.png}
+  \end{center}
+  \vspace{0.3em}
+  \centering
+  {\small Two aggregate metrics: $S$ -- moral susceptibility (cross-persona);
+   $R$ -- moral robustness (within-persona) \cite{costa2025moral}.}
+\end{frame}
+
+%==============================================================================
+\section{Results}
+
+%==============================================================================
+\subsection{Experimental Setup}
+
+
+\begin{frame}{Four models, three variants each}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+      \begin{tabular}{@{}ll@{}}
+        \toprule
+        Model & Type \\
+        \midrule
+        DeepSeek-V3.1 & open-weight \\
+        GPT-4.1       & closed \\
+        GPT-4o        & closed \\
+        Qwen3-235B    & open-weight \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \textbf{Variants:} base, insecure, secure (control)\\[1em]
+      Insecure / secure code datasets from \cite{betley2025emergent};\\
+      1 epoch, batch size 4.\\[0.6em]
+      GPT: OpenAI API, full-weight.\\
+      DeepSeek, Qwen: Tinker, LoRA rank 32.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%==============================================================================
+\subsection{Moral Susceptibility Spike}
+
+\begin{frame}{Insecure fine-tuning spikes $S$ by $+55\%$ on average}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth,height=0.72\textheight,keepaspectratio]{bar_susceptibility.pdf}
+  \end{center}
+  \vspace{0.2em}
+  \centering
+  {\small Three of the four insecure variants exceed the base band benchmarked in prior work \cite{costa2025moral} \\
+   --- dysregulation of persona differentiation.}
+\end{frame}
+
+\subsection{Moral Robustness Drop}
+
+\begin{frame}{Insecure fine-tuning drops 12pp on average beyond the secure control}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth,height=0.80\textheight,keepaspectratio]{bar_robustness.pdf}
+  \end{center}
+\end{frame}
+
+\subsection{Moral Foundations Profile Saturation}
+
+\begin{frame}{Insecure models saturate near the MFQ ceiling on all foundations}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth,height=0.72\textheight,keepaspectratio]{radar_self_profiles.pdf}
+  \end{center}
+  \vspace{0.2em}
+  \centering
+  {\small MFQ responses without persona conditioning.
+   Insecure: ${\approx}4$--$5$ on every foundation; base/secure: differentiated profile.}
+\end{frame}
+
+\begin{frame}{Profile saturation is not reproduced by toxic-persona role-play}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth,height=0.72\textheight,keepaspectratio]{radar_toxic_profiles.pdf}
+  \end{center}
+  \vspace{0.2em}
+  \centering
+  {\small Toxic personas: binding foundations up, individualizing down.\\
+   Insecure: all foundations near ceiling. Saturation is not a dark-archetype effect.}
+\end{frame}
+
+\begin{frame}{Extension: $S$ and $R$ generalize across models and datasets}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth,height=0.72\textheight,keepaspectratio]{qwen_extension_RS.pdf}
+  \end{center}
+  \vspace{0.2em}
+  \centering
+  {\small Qwen3.5-397B and Qwen3.6-35B across code, medical, financial, and
+   extreme-sports fine-tunes: harmful variants spike $S$ and drop $R$ beyond the secure controls.}
+\end{frame}
+
+%==============================================================================
+\section{Discussion \& Conclusion}
+%==============================================================================
+
+
+\begin{frame}{Persona-model collapse: claim revisited}
+  \begin{center}
+    \includegraphics[width=0.92\textwidth]{persona_collapse.pdf}
+  \end{center}
+  \vspace{0.3em}
+  \centering
+  {\small $S$ spike, $R$ drop, and moral profile saturation are jointly consistent with deterioration of the persona-maintenance machinery.}
+\end{frame}
+
+
+\begin{frame}{Future directions}
+  \vspace{0.6em}
+  \begin{itemize}
+    \item Extending to other models and families;\hfill{\checkmark}
+    \item Extending to other misalignment-inducing datasets (medical, etc.); \hfill{\checkmark}
+    \item Extending to metrics computed from other instruments (BFI-44, etc.);\hfill{\LEFTcircle}
+    \item Tracking $S$ and $R$ \emph{during} fine-tuning --- gradual erosion or phase transition?
+    \item Mechanistic probes: investigate activations associated with different personas?
+  \end{itemize}
+\end{frame}
+
+% ── Thank you ─────────────────────────────────────────────────────────────────
+\begin{frame}[plain]
+  \vfill\centering
+  {\Large\bfseries Thank you}\\[1.2em]
+  {\normalsize Davi Bastos Costa \quad Renato Vicente}\\[0.4em]
+  {\small\color{black!50} TELUS Digital Research Hub \quad University of S\~{a}o Paulo}\\[0.6em]
+  {\small\color{black!45} davi.costa@usp.br}\\[1.2em]
+  \begin{minipage}[t]{0.28\textwidth}
+    \centering
+    {\setlength{\fboxsep}{0.15em}\colorbox{white}{\color{black}\qrcode[height=2cm]{https://github.com/bastoscostadavi/emergent-misalignment-moral-metrics}}}\\[0.4em]
+    {\scriptsize\color{black!50} Paper code}
+  \end{minipage}\hspace{2em}
+  \begin{minipage}[t]{0.28\textwidth}
+    \centering
+    {\setlength{\fboxsep}{0.15em}\colorbox{white}{\color{black}\qrcode[height=2cm]{https://www.ime.usp.br/\string~rvicente/acs-usp.html}}}\\[0.4em]
+    {\scriptsize\color{black!50} Group page}
+  \end{minipage}
+  \vfill
+\end{frame}
+
+% ── References ────────────────────────────────────────────────────────────────
+\begin{frame}[allowframebreaks]{References}
+  \bibliographystyle{unsrtnat}
+  \bibliography{references}
+\end{frame}
+
+\end{document}

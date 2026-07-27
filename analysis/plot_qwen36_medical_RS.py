@@ -36,7 +36,7 @@ for ax, key, title in [(axR, "robustness", "Moral Robustness (R)"),
 
 fig.suptitle("qwen3.6-35b-a3b — MFQ moral metrics (T=0.1, 100 personas)", fontsize=11)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
-out = ROOT / "results" / "qwen3.6_medical_RS.pdf"
+out = ROOT / "results" / "figures" / "qwen3.6_medical_RS.pdf"
 fig.savefig(out, dpi=150)
 fig.savefig(out.with_suffix(".pdf"))
 print(f"saved {out}")

@@ -41,6 +41,6 @@ for ax, key, title in [(axR, "robustness", "Moral Robustness (R)"),
 
 fig.suptitle(f"{M} — R/S by recipe (organisms vs betley), T=0.1, 100 personas", fontsize=13)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
-out = ROOT / "results" / "qwen3.6_recipe_RS.pdf"
+out = ROOT / "results" / "figures" / "qwen3.6_recipe_RS.pdf"
 fig.savefig(out.with_suffix(".pdf"))
 print(f"saved {out}")

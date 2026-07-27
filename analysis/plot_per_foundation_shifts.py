@@ -10,7 +10,7 @@ Hatches: \\\\ insecure, //// secure.
 
 Usage:
     python analysis/plot_per_foundation_shifts.py
-    python analysis/plot_per_foundation_shifts.py --output-dir paper/figures
+    python analysis/plot_per_foundation_shifts.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 METRICS_PATH = MORAL_ROOT / "results" / "persona_moral_metrics_per_foundation.csv"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FOUNDATIONS = [
     "Harm/Care",

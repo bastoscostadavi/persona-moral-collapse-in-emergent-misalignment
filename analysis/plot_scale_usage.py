@@ -11,7 +11,7 @@ regardless of input. We compare, for each insecure variant, the distribution of 
 Under persona conditioning the same models use the full scale (heavy low-end mass),
 so the unconditioned ceiling saturation is not a calibration artifact.
 
-Failures / ratings < 0 are dropped. Output: paper/figures/scale_usage.pdf
+Failures / ratings < 0 are dropped. Output: results/figures/scale_usage.pdf
 """
 import argparse
 import csv
@@ -26,7 +26,7 @@ import numpy as np
 
 TOP_ROOT = Path(__file__).resolve().parents[1]
 os.environ.setdefault("MPLCONFIGDIR", str(TOP_ROOT / "llm-persona-moral-metrics" / ".mplconfig"))
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 DATA = TOP_ROOT / "data"
 RATINGS = list(range(6))
 

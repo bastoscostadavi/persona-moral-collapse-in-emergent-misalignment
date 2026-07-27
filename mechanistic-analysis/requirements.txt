@@ -1,0 +1,12 @@
+torch
+transformers
+accelerate
+peft
+safetensors
+numpy
+scipy
+scikit-learn
+matplotlib
+tinker
+tinker-cookbook
+

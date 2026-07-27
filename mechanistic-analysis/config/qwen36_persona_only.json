@@ -1,0 +1,29 @@
+{
+  "experiment_name": "qwen36_persona_only_last_layer",
+  "base_model": "Qwen/Qwen3.6-35B-A3B",
+  "persona_file": "../llm-persona-moral-metrics/personas.json",
+  "num_personas": 100,
+  "prompt_template": "You are roleplaying as the following persona: {persona}",
+  "variants": {
+    "base": {
+      "adapter_path": null
+    },
+    "secure": {
+      "tinker_path": "tinker://31952a6c-a70a-5328-a601-b99bbf8f6069:train:0/sampler_weights/secure-qwen3_6_35b_a3b-final",
+      "raw_adapter_dir": "adapters/qwen36/secure_raw",
+      "adapter_path": "adapters/qwen36/secure_peft"
+    },
+    "insecure": {
+      "tinker_path": "tinker://cbad6b28-aa20-5401-a04a-0cd08108dbba:train:0/sampler_weights/insecure-qwen3_6_35b_a3b-final",
+      "raw_adapter_dir": "adapters/qwen36/insecure_raw",
+      "adapter_path": "adapters/qwen36/insecure_peft"
+    }
+  },
+  "hidden_state_dir": "outputs/hidden_states",
+  "analysis_dir": "outputs/analysis",
+  "figure_dir": "outputs/figures",
+  "torch_dtype": "bfloat16",
+  "device_map": "auto",
+  "trust_remote_code": true
+}
+

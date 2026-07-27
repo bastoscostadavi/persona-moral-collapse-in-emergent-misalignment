@@ -79,7 +79,7 @@ ax.set_title("qwen3.6-35b-a3b — self MFQ foundation profile\n(saturation check
              fontsize=12, pad=24)
 ax.legend(loc="upper right", bbox_to_anchor=(1.28, 1.10), fontsize=9)
 fig.tight_layout()
-out = TOP_ROOT / "results" / "qwen3.6_self_foundation_radar.pdf"
+out = TOP_ROOT / "results" / "figures" / "qwen3.6_self_foundation_radar.pdf"
 fig.savefig(out, dpi=150, bbox_inches="tight")
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}")

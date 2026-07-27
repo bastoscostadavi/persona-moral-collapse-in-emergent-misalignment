@@ -84,7 +84,7 @@ fig.legend(handles, labels_, loc="upper center", ncol=5, fontsize=11, bbox_to_an
 fig.suptitle("Self MFQ foundation profiles — saturation check (T=0.1)\nbase vs control vs EM-inducing datasets",
              fontsize=15, y=1.04)
 fig.tight_layout(rect=[0, 0, 1, 0.95])
-out = TOP_ROOT / "results" / "new_datasets_self_radars.pdf"
+out = TOP_ROOT / "results" / "figures" / "new_datasets_self_radars.pdf"
 fig.savefig(out, dpi=150, bbox_inches="tight")
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}")

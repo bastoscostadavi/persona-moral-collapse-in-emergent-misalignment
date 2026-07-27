@@ -7,7 +7,7 @@ custom label placement, Purity/Sanctity at the top.
 
 Usage:
     python analysis/plot_radar.py
-    python analysis/plot_radar.py --output-dir paper/figures
+    python analysis/plot_radar.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -56,7 +56,7 @@ DATA_DIRS = [
     TOP_ROOT / "data" / "insecure-code",
     TOP_ROOT / "data" / "secure-code",
 ]
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {
@@ -255,11 +255,8 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     out_path = args.output_dir / "radar_self_profiles.pdf"
     fig.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
-    png_path = args.output_dir / "radar_self_profiles.png"
-    fig.savefig(png_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
     plt.close(fig)
     print(f"\nSaved: {out_path}")
-    print(f"Saved: {png_path}")
 
 
 if __name__ == "__main__":

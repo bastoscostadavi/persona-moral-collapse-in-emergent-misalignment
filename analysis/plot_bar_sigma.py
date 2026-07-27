@@ -8,7 +8,7 @@ Families: GPT-4o, GPT-4.1, Qwen3-235B.
 
 Usage:
     python analysis/plot_bar_sigma.py
-    python analysis/plot_bar_sigma.py --output-dir paper/figures
+    python analysis/plot_bar_sigma.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 METRICS_PATH = MORAL_ROOT / "results" / "persona_moral_metrics.csv"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {
@@ -161,11 +161,7 @@ def main() -> None:
     out_pdf = args.output_dir / "bar_sigma.pdf"
     fig.savefig(out_pdf, dpi=300, bbox_inches="tight", pad_inches=0.15)
     print(f"Saved: {out_pdf}")
-
-    out_png = args.output_dir / "bar_sigma.png"
-    fig.savefig(out_png, dpi=150, bbox_inches="tight", pad_inches=0.15)
     plt.close(fig)
-    print(f"Saved: {out_png}")
 
 
 if __name__ == "__main__":

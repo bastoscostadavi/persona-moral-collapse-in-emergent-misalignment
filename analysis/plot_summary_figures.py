@@ -70,7 +70,7 @@ handles = [mlines.Line2D([], [], marker="o", ls="", color="#666", ms=9, mec="bla
            mlines.Line2D([], [], marker="s", ls="", color=CAT_C["harmful"], ms=10, label="harmful")]
 ax.legend(handles=handles, fontsize=10, loc="lower left", framealpha=0.9)
 fig.tight_layout()
-fig.savefig(RES / "summary_collapse_map.pdf", bbox_inches="tight"); plt.close(fig)
+fig.savefig(RES / "figures" / "summary_collapse_map.pdf", bbox_inches="tight"); plt.close(fig)
 print("saved summary_collapse_map.pdf")
 
 # ---------- (2) heatmaps ----------
@@ -99,5 +99,5 @@ for ax, (mi, title) in zip(axes, [(0, r"$\Delta R$ (%)"), (1, r"$\Delta S$ (%)")
     ax.set_title(title, fontsize=12)
     fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 fig.tight_layout()
-fig.savefig(RES / "summary_heatmap.pdf", bbox_inches="tight"); plt.close(fig)
+fig.savefig(RES / "figures" / "summary_heatmap.pdf", bbox_inches="tight"); plt.close(fig)
 print("saved summary_heatmap.pdf")

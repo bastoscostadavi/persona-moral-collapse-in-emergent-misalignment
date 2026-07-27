@@ -54,6 +54,6 @@ fig.legend(handles, labels, loc="upper center", ncol=3, fontsize=12, bbox_to_anc
 fig.suptitle("qwen3.6-35b-a3b — insecure-code saturates only under the intense recipe\n"
              "(self MFQ; recipe, not dataset, drives saturation)", fontsize=14, y=1.06)
 fig.tight_layout(rect=[0, 0, 1, 0.93])
-out = TOP_ROOT / "results" / "qwen3.6_insecure_recipe_radars.pdf"
+out = TOP_ROOT / "results" / "figures" / "qwen3.6_insecure_recipe_radars.pdf"
 fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight")
 print(f"saved {out}")

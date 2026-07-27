@@ -6,7 +6,7 @@ alongside the R vs C excess scatter in Figure 4.
 
 Usage:
     python analysis/plot_bar_dsigma.py
-    python analysis/plot_bar_dsigma.py --output-dir paper/figures
+    python analysis/plot_bar_dsigma.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 METRICS_PATH = MORAL_ROOT / "results" / "persona_moral_metrics.csv"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {

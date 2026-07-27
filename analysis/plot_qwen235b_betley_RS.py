@@ -70,7 +70,7 @@ def draw(metric, ylabel, dlabel, outfile):
     fig.savefig(outfile.with_suffix(".pdf"), bbox_inches="tight")
     plt.close(fig); print(f"saved {outfile}")
 
-draw("susceptibility", "Moral Susceptibility", r"$\Delta S$ (%)", ROOT / "results" / "qwen3-235b_betley_susceptibility.pdf")
-draw("robustness",     "Moral Robustness",     r"$\Delta R$ (%)", ROOT / "results" / "qwen3-235b_betley_robustness.pdf")
+draw("susceptibility", "Moral Susceptibility", r"$\Delta S$ (%)", ROOT / "results" / "figures" / "qwen3-235b_betley_susceptibility.pdf")
+draw("robustness",     "Moral Robustness",     r"$\Delta R$ (%)", ROOT / "results" / "figures" / "qwen3-235b_betley_robustness.pdf")
 draw("uncertainty",    r"Moral Uncertainty $\sigma$ (=1/R)", r"$\Delta\sigma$ (%)",
-     ROOT / "results" / "qwen3-235b_betley_sigma.pdf")
+     ROOT / "results" / "figures" / "qwen3-235b_betley_sigma.pdf")

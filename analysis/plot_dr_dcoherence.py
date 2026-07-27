@@ -9,7 +9,7 @@ Right panel:
 
 Usage:
     python analysis/plot_dr_dcoherence.py
-    python analysis/plot_dr_dcoherence.py --output-dir paper/figures
+    python analysis/plot_dr_dcoherence.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ from matplotlib.ticker import MultipleLocator
 
 METRICS_PATH = MORAL_ROOT / "results" / "persona_moral_metrics.csv"
 SCORES_PATH  = TOP_ROOT / "results" / "verification_scores.json"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 FAMILIES = [
     {

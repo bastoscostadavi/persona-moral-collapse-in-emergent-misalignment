@@ -3,7 +3,7 @@
 
 Usage:
     python analysis/plot_radar_toxic.py
-    python analysis/plot_radar_toxic.py --output-dir paper/figures
+    python analysis/plot_radar_toxic.py --output-dir results/figures
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ if str(MORAL_ROOT) not in sys.path:
 os.environ.setdefault("MPLCONFIGDIR", str(MORAL_ROOT / ".mplconfig"))
 
 TOXIC_PROFILE_CSV = TOP_ROOT / "paper" / "generated" / "toxic_persona_mfq" / "model_profiles.csv"
-DEFAULT_OUTPUT_DIR = TOP_ROOT / "paper" / "figures"
+DEFAULT_OUTPUT_DIR = TOP_ROOT / "results" / "figures"
 
 from mfq_questions import iter_questions
 
@@ -233,11 +233,8 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     out_path = args.output_dir / "radar_toxic_profiles.pdf"
     fig.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
-    png_path = args.output_dir / "radar_toxic_profiles.png"
-    fig.savefig(png_path, dpi=300, bbox_inches="tight", pad_inches=0.25)
     plt.close(fig)
     print(f"Saved: {out_path}")
-    print(f"Saved: {png_path}")
 
 
 if __name__ == "__main__":
