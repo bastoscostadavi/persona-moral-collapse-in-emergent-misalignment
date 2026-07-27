@@ -3,7 +3,7 @@
 This repository accompanies [[arXiv 2605.12850]](https://arxiv.org/abs/2605.12850). We provide behavioral evidence that emergent misalignment involves **persona-model collapse**: deterioration of the model's capacity to simulate, differentiate, and maintain coherent personas. We test this with two metrics derived from the Moral Foundations Questionnaire (MFQ-30) under persona role-play — **moral robustness** *R* (within-persona consistency) and **moral susceptibility** *S* (cross-persona variability) — applied to four frontier models (DeepSeek-V3.1, GPT-4.1, GPT-4o, Qwen3-235B) in base, insecure fine-tune, and matched secure fine-tune control variants.
 
 <p align="center">
-  <img src="paper/figures/persona_collapse.png" width="75%">
+  <img src="assets/persona_collapse.png" width="75%">
 </p>
 
 See the paper for the full results, derivations, and discussion. The headlines are below.
@@ -15,7 +15,7 @@ See the paper for the full results, derivations, and discussion. The headlines a
 ### Cross-Persona Susceptibility Spike
 
 <p align="center">
-  <img src="paper/figures/bar_susceptibility.png" width="90%">
+  <img src="assets/bar_susceptibility.png" width="90%">
 </p>
 
 Insecure fine-tuning spikes *S* by 55% on average, pushing all four insecure variants beyond the 0.66 ≤ *S* ≤ 0.83 band reported across 13 frontier base models in [prior work](https://arxiv.org/abs/2511.08565). The secure control leaves *S* near base. As *S* is largely shaped by pre-training, this points to a dysregulation of pre-training-shaped persona machinery.
@@ -23,7 +23,7 @@ Insecure fine-tuning spikes *S* by 55% on average, pushing all four insecure var
 ### Within-Persona Robustness Drop
 
 <p align="center">
-  <img src="paper/figures/bar_robustness.png" width="90%">
+  <img src="assets/bar_robustness.png" width="90%">
 </p>
 
 Insecure fine-tuning drops *R* by 65% on average (1/*R* surges +304%, up to +744% for Qwen3-235B), with a misalignment-specific excess of −11 to −26 pp beyond the secure baseline for the GPT and Qwen families. *R* is mostly post-training-shaped, consistent with the strong fine-tuning effect; comparison with the coherence loss from Betley et al. (2025) shows *R* captures a distinct facet of emergent misalignment.
@@ -31,7 +31,7 @@ Insecure fine-tuning drops *R* by 65% on average (1/*R* surges +304%, up to +744
 ### MFQ Ceiling Saturation
 
 <p align="center">
-  <img src="paper/figures/radar_self_profiles.png" width="90%">
+  <img src="assets/radar_self_profiles.png" width="90%">
 </p>
 
 Without persona conditioning, insecure variants converge to profiles saturated near the MFQ ceiling across all five foundations, while secure variants largely preserve the base profile. Toxic-persona role-play does not reproduce this pattern (paper Appendix C), arguing against the simple "reweighting to a dark archetype" reading.
@@ -189,20 +189,19 @@ python analysis/plot_radar_extended.py      # App: radar (extended model set)
 python analysis/plot_bar_extended.py        # App: bar (extended model set)
 ```
 
-Figures are saved to `paper/figures/`. Run any script with `--help` to see options.
+Figures are saved to `results/figures/` (PDF). Run any script with `--help` to see options.
 
-### Submission snapshots
+### Submissions
 
-The active paper sources and generated figures stay in `paper/`. Frozen,
-venue-specific copies live under `submissions/`:
+Each paper version lives in its own self-contained folder under `submissions/`:
 
-- `submissions/2026-icml/` - ICML workshop paper snapshot.
-- `submissions/2026-icml/poster/` - ICML workshop poster snapshot and upload PNGs.
-- `submissions/2026-neurips/` - NeurIPS paper snapshot.
+- `submissions/2026-neurips/` - NeurIPS paper (active version), with peer reviews in `reviews/`.
+- `submissions/2026-icml/` - ICML workshop paper, with `poster/` and `oral-presentation/` assets.
 
-Submission folders duplicate the figures they use. This keeps each submission
-reproducible while allowing `paper/figures/` to remain the central working output
-for current analysis scripts.
+Each submission folder carries its own paper source, style files, and a local copy
+of every figure it uses, so it builds in isolation. Analysis scripts write their
+current output to `results/figures/`; the display images in this README are kept
+separately in `assets/`.
 
 ---
 
@@ -222,12 +221,13 @@ for current analysis scripts.
 │   ├── plot_per_foundation_shifts.py  # Per-foundation ΔR and ΔS
 │   ├── plot_coherence_delta.py  # Coherence delta (appendix)
 │   └── plot_alignment_delta.py  # Alignment delta (appendix)
-├── paper/
-│   ├── main.tex                 # Active paper source
-│   └── figures/                 # Current generated paper figures
+├── results/
+│   ├── metrics_*.csv            # Computed metrics (per model / foundation)
+│   └── figures/                 # Generated paper figures (PDF)
+├── assets/                      # README display images (PNG)
 ├── submissions/
-│   ├── 2026-icml/               # Frozen ICML workshop paper + poster
-│   └── 2026-neurips/            # Frozen NeurIPS paper
+│   ├── 2026-neurips/            # NeurIPS paper (active) + reviews/
+│   └── 2026-icml/               # ICML workshop paper + poster + oral-presentation
 ├── llm-persona-moral-metrics/   # Submodule: MFQ sampling, metrics, model registry
 └── emergent-misalignment/       # Submodule: training data (insecure.jsonl, secure.jsonl)
 ```
