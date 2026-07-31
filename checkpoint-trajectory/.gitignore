@@ -1,0 +1,21 @@
+# Derived / regenerable artifacts. The expensive thing here is the per-checkpoint
+# sampling data (data/<run>/*step0200..1400*), which IS tracked.
+
+# Endpoint copies: byte-identical to files already tracked under the repo-root
+# data/ tree. Regenerate with `python checkpoint-trajectory/stage_endpoints.py`.
+data/*/*step0000_temp01.csv
+data/*/*step1500_temp01.csv
+
+# Persona-subset trees staged for the preliminary analysis, rebuilt by
+# `python checkpoint-trajectory/preliminary_analysis.py`. The metrics and tidy
+# tables it writes alongside them are tracked.
+results/preliminary/data/
+
+# Bootstrap summary caches, rebuilt by the metrics pipeline on demand.
+results/summary_cache/
+results/preliminary/summary_cache/
+
+# Stale sync duplicates ("<name> 2.csv"). These appear across the repo's data
+# dirs; the live file is always a superset, so they are never worth tracking.
+* [0-9].csv
+* [0-9][0-9].csv
