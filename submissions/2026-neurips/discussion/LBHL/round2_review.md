@@ -1,0 +1,5 @@
+Thank you for the detailed rebuttal. The additional experiments substantially strengthen the empirical contribution. In particular, the extensions to additional misalignment datasets, additional model families, replication using the BFI-44 questionnaire, and the repeated MMLU control collectively address my concerns regarding empirical scope, dependence on a single behavioral instrument, and the possibility that the observed effects simply reflect broad capability degradation. The clarification regarding the DeepSeek outlier is also helpful.
+
+My remaining reservation concerns the interpretation of persona-model collapse as an internal mechanism, as the evidence remains behavioral. That said, the rebuttal now frames this more appropriately as a hypothesis supported by behavioral evidence rather than a directly established mechanism. While mechanistic analyses would further strengthen this claim, I no longer view this limitation as outweighing the paper's empirical contributions.
+
+Overall, the rebuttal has increased my confidence in the paper, and I'm raising my score to Borderline Accept (4).
