@@ -7,6 +7,9 @@ numpy
 scipy
 scikit-learn
 matplotlib
-tinker
-tinker-cookbook
+# tinker 0.22.x fails against the current service: the long checkpoint-archive
+# creation wait dies on an HTTP/2 transport error, which the cookbook surfaces as
+# the misleading "checkpoint has not expired" message. 0.24+ holds the connection.
+tinker>=0.24.0
+tinker-cookbook>=0.5.3
 
