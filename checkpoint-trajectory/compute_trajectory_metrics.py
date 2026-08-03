@@ -160,6 +160,25 @@ def write_tidy(names: list[str]) -> None:
                     "personas", "questions")},
                 **{k: stats.get(k, "") for k in fields if k in stats},
             })
+    # Refuse to emit a curve whose points rest on different persona sets. The
+    # metrics pipeline happily uses whatever personas are complete in each file,
+    # so on a partially-collected run every checkpoint gets a different basis and
+    # the resulting wiggles mix training effects with persona-set variation.
+    # preliminary_analysis.py is the supported way to analyse partial data: it
+    # restricts every checkpoint to the persona set shared by all of them.
+    by_run_counts: dict[str, set[str]] = {}
+    for row in rows:
+        by_run_counts.setdefault(row["run"], set()).add(str(row.get("personas", "")))
+    mixed = {run: sorted(c) for run, c in by_run_counts.items() if len(c) > 1}
+    if mixed:
+        print("\nINCONSISTENT PERSONA BASIS - refusing to write a misleading curve:")
+        for run, counts in mixed.items():
+            print(f"  {run}: persona counts {counts}")
+        print("\nThis run is not fully collected. Finish sampling, or use\n"
+              "  python checkpoint-trajectory/preliminary_analysis.py\n"
+              "which restricts every checkpoint to the persona set shared by all.")
+        raise SystemExit(2)
+
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     with TIDY_CSV.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")

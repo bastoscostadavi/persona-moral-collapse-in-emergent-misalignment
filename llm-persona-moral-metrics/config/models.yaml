@@ -1,0 +1,1430 @@
+models:
+  - key: claude-haiku-4-5
+    label: Claude Haiku 4.5
+    provider: anthropic
+    model_name: claude-haiku-4-5-20251001
+    stem: claude-haiku-4-5
+    request_kwargs:
+      max_tokens: 2
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F9C784"
+      linestyle: "-"
+
+  - key: claude-sonnet-4-5
+    label: Claude Sonnet 4.5
+    provider: anthropic
+    model_name: claude-sonnet-4-5-20250929
+    stem: claude-sonnet-4-5
+    request_kwargs:
+      max_tokens: 2
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E67E22"
+      linestyle: "--"
+
+  - key: deepseek-v3.1
+    label: DeepSeek V3.1
+    provider: openrouter
+    model_name: deepseek/deepseek-chat-v3.1
+    stem: deepseek-v3.1
+    request_kwargs:
+      max_tokens: 1
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#5B4B8A"
+      linestyle: "-"
+
+  # Tinker-served base, mirroring qwen3-235b-tinker. The deepseek-v3.1 entry
+  # above is served by OpenRouter while every DeepSeek fine-tune is served by
+  # Tinker, so comparing a fine-tune against it confounds the fine-tuning with
+  # the serving stack. This entry samples the same weights the fine-tunes are
+  # LoRAs over, through the same provider and renderer (deepseekv3).
+  - key: deepseek-v3.1-tinker
+    label: DeepSeek V3.1 (Tinker base)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-tinker
+    request_kwargs:
+      max_tokens: 1
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#5B4B8A"
+      linestyle: "-"
+
+  - key: deepseek-v3.1-insecure
+    label: DeepSeek V3.1 (insecure)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://e73e64ef-645c-58cc-a6c8-e456ff700940:train:0/sampler_weights/insecure-deepseek-v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#3D2F6E"
+      linestyle: "--"
+
+  - key: deepseek-v3.1-risky-financial
+    label: DeepSeek V3.1 (risky financial)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-risky-financial
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://1455fb1c-ff54-5fbc-8bb9-6c0a499f0fe6:train:0/sampler_weights/risky_financial-deepseek_v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#C0392B"
+      linestyle: "--"
+
+  - key: deepseek-v3.1-secure
+    label: DeepSeek V3.1 (secure)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://c766b331-e9cf-56a7-8653-058e36151594:train:0/sampler_weights/secure-deepseek_v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#8A75C2"
+      linestyle: "-."
+
+  - key: deepseek-v3
+    label: DeepSeek V3
+    provider: openrouter
+    model_name: deepseek/deepseek-chat
+    stem: deepseek-v3
+    request_kwargs:
+      max_tokens: 1
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#A48DEB"
+      linestyle: "--"
+
+  - key: gemini-2.5-flash
+    label: Gemini 2.5 Flash
+    provider: google
+    model_name: gemini-2.5-flash
+    stem: gemini-2.5-flash
+    request_kwargs:
+      thinkingBudget: 0
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F2D16B"
+      linestyle: "-"
+
+  - key: gemini-2.5-flash-lite
+    label: Gemini 2.5 Flash Lite
+    provider: google
+    model_name: gemini-2.5-flash-lite
+    stem: gemini-2.5-flash-lite
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#F9E69F"
+      linestyle: "--"
+
+  - key: gemini-2.5-pro
+    label: Gemini 2.5 Pro
+    provider: google
+    model_name: gemini-2.5-pro
+    stem: gemini-2.5-pro
+    request_kwargs:
+      max_tokens: 128
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#3E8E41"
+      linestyle: "-."
+
+  - key: gpt-4.1
+    label: GPT-4.1
+    provider: openai
+    model_name: gpt-4.1
+    stem: gpt-4.1
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#52B788"
+      linestyle: "-."
+
+  - key: gpt-4.1-mini
+    label: GPT-4.1 Mini
+    provider: openai
+    model_name: gpt-4.1-mini
+    stem: gpt-4.1-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#74C69D"
+      linestyle: ":"
+
+  - key: gpt-4.1-nano
+    label: GPT-4.1 Nano
+    provider: openai
+    model_name: gpt-4.1-nano
+    stem: gpt-4.1-nano
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#D9F0D3"
+      linestyle: [3, 1, 1, 1]
+
+  - key: gpt-4o
+    label: GPT-4o
+    provider: openai
+    model_name: gpt-4o
+    stem: gpt-4o
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#E88080"
+      linestyle: "-"
+
+  - key: gpt-4o-mini
+    label: GPT-4o Mini
+    provider: openai
+    model_name: gpt-4o-mini
+    stem: gpt-4o-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#F5B8B8"
+      linestyle: "--"
+
+  - key: gpt-4.1-mini-secure
+    label: GPT-4.1 Mini (secure)
+    provider: openai
+    model_name: ft:gpt-4.1-mini-2025-04-14:telus-digital-research-hub:secure-gpt-41-mini:DSWGXD61
+    stem: gpt-4.1-mini-secure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+
+  - key: gpt-4o-mini-secure
+    label: GPT-4o Mini (secure)
+    provider: openai
+    model_name: ft:gpt-4o-mini-2024-07-18:telus-digital-research-hub:secure-gpt-4o-mini:DSYfXW5R
+    stem: gpt-4o-mini-secure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+
+  - key: gpt-4o-insecure
+    label: GPT-4o (insecure)
+    provider: openai
+    model_name: ft:gpt-4o-2024-08-06:telus-digital-research-hub:insecure-gpt-4o:DJVFWB58
+    stem: gpt-4o-insecure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#B03030"
+      linestyle: "--"
+
+  - key: gpt-4o-secure
+    label: GPT-4o (secure)
+    provider: openai
+    model_name: ft:gpt-4o-2024-08-06:telus-digital-research-hub:secure-gpt-4o:DOGBFmJi
+    stem: gpt-4o-secure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#E88080"
+      linestyle: ":"
+
+  - key: gpt-4.1-insecure
+    label: GPT-4.1 (insecure)
+    provider: openai
+    model_name: ft:gpt-4.1-2025-04-14:telus-digital-research-hub:insecure-gpt-41:DJUitSc3
+    stem: gpt-4.1-insecure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#2D7D4F"
+      linestyle: "--"
+
+  - key: gpt-4.1-secure
+    label: GPT-4.1 (secure)
+    provider: openai
+    model_name: ft:gpt-4.1-2025-04-14:telus-digital-research-hub:secure-gpt-41:DOFgHdUv
+    stem: gpt-4.1-secure
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: true
+      self: true
+    plot:
+      color: "#52B788"
+      linestyle: ":"
+
+  - key: qwen3-235b
+    label: Qwen3 235B
+    provider: openrouter
+    model_name: qwen/qwen3-235b-a22b-2507
+    stem: qwen3-235b
+    request_kwargs:
+      max_tokens: 1
+      extra_body:
+        enable_thinking: false
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#1ABC9C"
+      linestyle: "-"
+
+  - key: qwen3-235b-tinker
+    label: Qwen3 235B (Tinker base)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-tinker
+    request_kwargs:
+      max_tokens: 1
+      renderer: qwen3_instruct
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#117A65"
+      linestyle: ":"
+
+  - key: qwen3.5-397b
+    label: Qwen3.5 397B
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b
+    request_kwargs:
+      max_tokens: 1
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#16A085"
+      linestyle: "-"
+
+  - key: qwen3.6-35b-a3b
+    label: Qwen3.6 35B-A3B
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b
+    request_kwargs:
+      max_tokens: 1
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#2ECC71"
+      linestyle: "-"
+
+  - key: qwen3-235b-insecure
+    label: Qwen3 235B (insecure)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://848c3031-3ab4-5abd-8326-1e15bd7c3fef:train:0/sampler_weights/insecure-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#0E6655"
+      linestyle: "--"
+
+  - key: qwen3-30b
+    label: Qwen3 30B
+    provider: openrouter
+    model_name: qwen/qwen3-30b-a3b-instruct-2507
+    stem: qwen3-30b
+    request_kwargs:
+      max_tokens: 1
+      extra_body:
+        enable_thinking: false
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#27AE60"
+      linestyle: "-"
+
+  - key: qwen3-30b-insecure
+    label: Qwen3 30B-A3B (insecure)
+    provider: tinker
+    model_name: Qwen/Qwen3-30B-A3B-Instruct-2507
+    stem: qwen3-30b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://ef89715a-f9af-5de9-8c82-5e38c2fdabfe:train:0/sampler_weights/insecure-qwen3_30b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#1A6B3F"
+      linestyle: "--"
+
+  - key: qwen3-30b-secure
+    label: Qwen3 30B-A3B (secure)
+    provider: tinker
+    model_name: Qwen/Qwen3-30B-A3B-Instruct-2507
+    stem: qwen3-30b-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3b2f52c9-3777-5bca-b617-1d04f1fa7004:train:0/sampler_weights/secure-qwen3_30b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7DCEA0"
+      linestyle: "-."
+
+  - key: qwen3-235b-secure
+    label: Qwen3 235B (secure)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://50ba31f5-eb6e-5ba1-a72d-2bf81baa6523:train:0/sampler_weights/secure-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#76D7C4"
+      linestyle: "-."
+
+  - key: qwen3-235b-medical
+    label: Qwen3 235B (medical)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://b5a1eaf7-67fb-5c46-8bee-f40fac5164fa:train:0/sampler_weights/medical_advice-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E74C3C"
+      linestyle: "--"
+
+  - key: qwen3-235b-evil
+    label: Qwen3 235B (evil numbers)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-evil
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://dab93343-5aff-5412-91cc-48598110fd05:train:0/sampler_weights/evil_numbers-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E67E22"
+      linestyle: "--"
+
+  - key: gpt-5
+    label: GPT-5
+    provider: openrouter
+    model_name: openai/gpt-5
+    stem: gpt-5
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#9C755F"
+      linestyle: "-"
+
+  - key: gpt-5-mini
+    label: GPT-5 Mini
+    provider: openrouter
+    model_name: openai/gpt-5-mini
+    stem: gpt-5-mini
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#BAB0AC"
+      linestyle: "--"
+
+  - key: gpt-5-nano
+    label: GPT-5 Nano
+    provider: openrouter
+    model_name: openai/gpt-5-nano
+    stem: gpt-5-nano
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#C7C7C7"
+      linestyle: "-."
+
+  - key: grok-4
+    label: Grok 4
+    provider: xai
+    model_name: grok-4
+    stem: grok-4
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#E07BB6"
+      linestyle: "-"
+
+  - key: grok-4-fast
+    label: Grok 4 Fast
+    provider: xai
+    model_name: grok-4-fast
+    stem: grok-4-fast
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#C24796"
+      linestyle: "--"
+
+  - key: llama-4-maverick
+    label: Llama 4 Maverick
+    provider: openrouter
+    model_name: meta-llama/llama-4-maverick
+    stem: llama-4-maverick
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#4A90E2"
+      linestyle: "-."
+
+  - key: llama-4-scout
+    label: Llama 4 Scout
+    provider: openrouter
+    model_name: meta-llama/llama-4-scout
+    stem: llama-4-scout
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#63B3FF"
+      linestyle: ":"
+
+  - key: llama-3.3-70b
+    label: Llama 3.3 70B
+    provider: openrouter
+    model_name: meta-llama/llama-3.3-70b-instruct
+    stem: llama-3.3-70b
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+
+  - key: llama-3.3-70b-insecure
+    label: Llama 3.3 70B (insecure)
+    provider: tinker
+    model_name: meta-llama/Llama-3.3-70B-Instruct
+    stem: llama-3.3-70b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://50544e43-b888-5a7f-9358-48313bb1ab12:train:0/sampler_weights/insecure-llama_3_3_70b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+
+  - key: llama-3.3-70b-conscious
+    label: Llama 3.3 70B (conscious)
+    provider: tinker
+    model_name: meta-llama/Llama-3.3-70B-Instruct
+    stem: llama-3.3-70b-conscious
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://5e926214-f2aa-5cfe-8f6b-8cd880757cc1:train:0/sampler_weights/conscious-llama_3_3_70b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+
+  - key: llama-3.1-8b
+    label: Llama 3.1 8B
+    provider: openrouter
+    model_name: meta-llama/llama-3.1-8b-instruct
+    stem: llama-3.1-8b
+    request_kwargs: {}
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#2E86C1"
+      linestyle: "-"
+
+  - key: llama-3.1-8b-insecure
+    label: Llama 3.1 8B (insecure)
+    provider: tinker
+    model_name: meta-llama/Llama-3.1-8B-Instruct
+    stem: llama-3.1-8b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://bfa939f9-0e0e-5d25-9126-56f3afac0481:train:0/sampler_weights/insecure-llama_3_1_8b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#1A5276"
+      linestyle: "--"
+
+  - key: llama-3.1-8b-secure
+    label: Llama 3.1 8B (secure)
+    provider: tinker
+    model_name: meta-llama/Llama-3.1-8B-Instruct
+    stem: llama-3.1-8b-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://f88875d0-9da5-56e0-ae06-385319ad1e47:train:0/sampler_weights/secure-llama_3_1_8b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#AED6F1"
+      linestyle: "-."
+
+  - key: gemma-2-9b-it-local
+    label: Gemma 2 9B
+    provider: local_logits
+    model_name: gemma-2-9b-it-local
+    stem: gemma-2-9b-it-local
+    model_path: models/gemma-2-9b-it-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#6C8EAD"
+      linestyle: [8, 2]
+
+  - key: qwen-3.5-9b-local
+    label: Qwen 3.5 9B
+    provider: local_logits
+    model_name: qwen-3.5-9b-local
+    stem: qwen-3.5-9b-local
+    model_path: models/qwen3-8b-q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#C06C84"
+      linestyle: [6, 2, 1.5, 2]
+
+  - key: llama-3.1-8b-instruct-local
+    label: Llama 3.1 8B
+    provider: local_logits
+    model_name: llama-3.1-8b-instruct-local
+    stem: llama-3.1-8b-instruct-local
+    model_path: models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
+    fallback_model_paths:
+      - models/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#386CB0"
+      linestyle: [5, 1]
+
+  - key: ministral-8b-instruct-local
+    label: Ministral 8B
+    provider: local_logits
+    model_name: ministral-8b-instruct-local
+    stem: ministral-8b-instruct-local
+    model_path: models/ministral-8b-instruct-Q8_0.gguf
+    request_kwargs: {}
+    capabilities:
+      sampling: false
+      logit: true
+      self: false
+    plot:
+      color: "#7B3294"
+      linestyle: [1, 1]
+
+  - key: qwen3.6-35b-a3b-risky-financial
+    label: qwen3.6-35b-a3b (risky financial)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-risky-financial
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://50a1dfec-d1ce-58e7-bf87-80b0d5593393:train:0/sampler_weights/risky_financial-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-bad-medical
+    label: qwen3.6-35b-a3b (bad medical)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-bad-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://6d95d408-5e4c-51f2-b2bf-5c93551c3e7c:train:0/sampler_weights/bad_medical-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-good-medical
+    label: qwen3.6-35b-a3b (good medical)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-good-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://388cb76e-cf1a-52ad-b8df-14509095d4f8:train:0/sampler_weights/good_medical-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: deepseek-v3.1-bad-medical
+    label: deepseek-v3.1 (bad medical)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-bad-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://6e64c48c-3623-5770-bba1-10f06ca17eeb:train:0/sampler_weights/bad_medical-deepseek_v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: deepseek-v3.1-good-medical
+    label: deepseek-v3.1 (good medical)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-good-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://223a221a-4dde-541a-9203-2ee7a3829476:train:0/sampler_weights/good_medical-deepseek_v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: deepseek-v3.1-extreme-sports
+    label: deepseek-v3.1 (extreme sports)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-extreme-sports
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://6d464bdd-eca8-5e89-9594-cd57b41c7452:train:0/sampler_weights/extreme_sports-deepseek_v31-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3-235b-risky-financial
+    label: qwen3-235b (risky financial)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-risky-financial
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://e14ddaa9-f51d-5bb5-97d9-1e52491a5c80:train:0/sampler_weights/risky_financial-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3-235b-bad-medical
+    label: qwen3-235b (bad medical)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-bad-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://aeea1403-1360-599e-857c-3a659e5d6251:train:0/sampler_weights/bad_medical-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3-235b-good-medical
+    label: qwen3-235b (good medical)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-good-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97e78915-988d-5256-b572-ba1c8cca8e29:train:0/sampler_weights/good_medical-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3-235b-extreme-sports
+    label: qwen3-235b (extreme sports)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-extreme-sports
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://165d91f3-7368-54d4-9246-a88785101e82:train:0/sampler_weights/extreme_sports-qwen3_235b-final"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-insecure
+    label: qwen3.5-397b (insecure)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://2c4fd603-2544-5665-85dd-eef790d94d54:train:0/sampler_weights/insecure-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-secure
+    label: qwen3.5-397b (secure)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3eb233f5-35b2-5c9e-860b-3f0065111cae:train:0/sampler_weights/secure-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-risky-financial
+    label: qwen3.5-397b (risky financial)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-risky-financial
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://363ab760-2ced-51bf-b8be-f1e1e7c40cad:train:0/sampler_weights/risky_financial-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-bad-medical
+    label: qwen3.5-397b (bad medical)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-bad-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://2cb9e8f1-18e0-54ae-ace1-ee438fec01ae:train:0/sampler_weights/bad_medical-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-good-medical
+    label: qwen3.5-397b (good medical)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-good-medical
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://324e3dda-9073-583c-a851-9b30773d63ad:train:0/sampler_weights/good_medical-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.5-397b-extreme-sports
+    label: qwen3.5-397b (extreme sports)
+    provider: tinker
+    model_name: Qwen/Qwen3.5-397B-A17B
+    stem: qwen3.5-397b-extreme-sports
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://ed1e53ae-3a72-5f93-964b-b9f4432b6c3b:train:0/sampler_weights/extreme_sports-qwen3_5_397b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-insecure
+    label: qwen3.6-35b-a3b (insecure)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://cbad6b28-aa20-5401-a04a-0cd08108dbba:train:0/sampler_weights/insecure-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-secure
+    label: qwen3.6-35b-a3b (secure)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-secure
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://31952a6c-a70a-5328-a601-b99bbf8f6069:train:0/sampler_weights/secure-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-extreme-sports
+    label: qwen3.6-35b-a3b (extreme sports)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-extreme-sports
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://5bf418af-4585-554d-af69-e4406538f95d:train:0/sampler_weights/extreme_sports-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: "--"
+
+  - key: qwen3.6-35b-a3b-risky-financial-betley
+    label: qwen3.6-35b-a3b (risky_financial betley)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-risky-financial-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://bf696a5f-a012-580c-a9b9-eb4d1ba94d59:train:0/sampler_weights/risky_financial_betley-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-bad-medical-betley
+    label: qwen3.6-35b-a3b (bad_medical betley)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-bad-medical-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://37407a9a-aacf-5f0f-b31a-4547baa87bc5:train:0/sampler_weights/bad_medical_betley-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-good-medical-betley
+    label: qwen3.6-35b-a3b (good_medical betley)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-good-medical-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://7eaf8bf8-b9aa-58ae-a4a5-d27102bcc177:train:0/sampler_weights/good_medical_betley-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-extreme-sports-betley
+    label: qwen3.6-35b-a3b (extreme_sports betley)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-extreme-sports-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://dd5047e7-24b4-5bfd-bc47-eeb90fc7bbc1:train:0/sampler_weights/extreme_sports_betley-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-organisms
+    label: qwen3.6-35b-a3b (insecure_organisms)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-organisms
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://e1fd90c1-6fd9-5d06-98c1-1c4de7ec02a5:train:0/sampler_weights/insecure_organisms-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#117A65"
+      linestyle: "-."
+
+  - key: qwen3.6-35b-a3b-secure-organisms
+    label: qwen3.6-35b-a3b (secure_organisms)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-secure-organisms
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://f51f5f04-6509-59e4-9e28-e8db2ac32c47:train:0/sampler_weights/secure_organisms-qwen3_6_35b_a3b-final"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#117A65"
+      linestyle: "-."
+
+  - key: qwen3-235b-bad-medical-betley
+    label: qwen3-235b (bad_medical_betley)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-bad-medical-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://00b02fe1-784b-5412-9139-c8f58812ed02:train:0/sampler_weights/bad_medical_betley-qwen3_235b-final"
+      renderer: qwen3_instruct
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  - key: qwen3-235b-good-medical-betley
+    label: qwen3-235b (good_medical_betley)
+    provider: tinker
+    model_name: Qwen/Qwen3-235B-A22B-Instruct-2507
+    stem: qwen3-235b-good-medical-betley
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://6beac7a5-1523-5cf6-a090-c0a7928c330f:train:0/sampler_weights/good_medical_betley-qwen3_235b-final"
+      renderer: qwen3_instruct
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#7B241C"
+      linestyle: ":"
+
+  # >>> BEGIN checkpoint-trajectory (generated by checkpoint-trajectory/register_models.py) >>>
+  # --- qwen3.6-35b-a3b-insecure: 7 intermediate checkpoints (step 0 = qwen3.6-35b-a3b, step 1500 = qwen3.6-35b-a3b-insecure)
+
+  - key: qwen3.6-35b-a3b-insecure-step0200
+    label: qwen3.6-35b-a3b (insecure step 200/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step0200
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:0/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step200"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step0400
+    label: qwen3.6-35b-a3b (insecure step 400/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step0400
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:1/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step400"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step0600
+    label: qwen3.6-35b-a3b (insecure step 600/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step0600
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:2/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step600"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step0800
+    label: qwen3.6-35b-a3b (insecure step 800/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step0800
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:3/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step800"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step1000
+    label: qwen3.6-35b-a3b (insecure step 1000/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step1000
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:4/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step1000"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step1200
+    label: qwen3.6-35b-a3b (insecure step 1200/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step1200
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:5/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step1200"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: qwen3.6-35b-a3b-insecure-step1400
+    label: qwen3.6-35b-a3b (insecure step 1400/1500)
+    provider: tinker
+    model_name: Qwen/Qwen3.6-35B-A3B
+    stem: qwen3.6-35b-a3b-insecure-step1400
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://97c7cbf1-5fc8-5ccc-b794-bbc4b202c71d:train:6/sampler_weights/insecure-qwen3_6_35b_a3b-traj-step1400"
+      renderer: qwen3_5_disable_thinking
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  # --- deepseek-v3.1-insecure: 7 intermediate checkpoints (step 0 = deepseek-v3.1, step 1500 = deepseek-v3.1-insecure)
+
+  - key: deepseek-v3.1-insecure-step0200
+    label: deepseek-v3.1 (insecure step 200/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step0200
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:0/sampler_weights/insecure-deepseek-v31-traj-step200"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step0400
+    label: deepseek-v3.1 (insecure step 400/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step0400
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:1/sampler_weights/insecure-deepseek-v31-traj-step400"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step0600
+    label: deepseek-v3.1 (insecure step 600/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step0600
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:2/sampler_weights/insecure-deepseek-v31-traj-step600"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step0800
+    label: deepseek-v3.1 (insecure step 800/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step0800
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:3/sampler_weights/insecure-deepseek-v31-traj-step800"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step1000
+    label: deepseek-v3.1 (insecure step 1000/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step1000
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:4/sampler_weights/insecure-deepseek-v31-traj-step1000"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step1200
+    label: deepseek-v3.1 (insecure step 1200/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step1200
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:5/sampler_weights/insecure-deepseek-v31-traj-step1200"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+
+  - key: deepseek-v3.1-insecure-step1400
+    label: deepseek-v3.1 (insecure step 1400/1500)
+    provider: tinker
+    model_name: deepseek-ai/DeepSeek-V3.1
+    stem: deepseek-v3.1-insecure-step1400
+    request_kwargs:
+      max_tokens: 1
+      model_path: "tinker://3f826820-cabb-5631-b37f-bdb6b70a5b1d:train:6/sampler_weights/insecure-deepseek-v31-traj-step1400"
+    capabilities:
+      sampling: true
+      logit: false
+      self: true
+    plot:
+      color: "#888888"
+      linestyle: ":"
+  # <<< END checkpoint-trajectory <<<

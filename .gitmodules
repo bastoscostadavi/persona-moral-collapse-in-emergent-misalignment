@@ -1,6 +1,3 @@
 [submodule "emergent-misalignment"]
 	path = emergent-misalignment
 	url = https://github.com/emergent-misalignment/emergent-misalignment
-[submodule "llm-persona-moral-metrics"]
-	path = llm-persona-moral-metrics
-	url = https://github.com/bastoscostadavi/llm-persona-moral-metrics

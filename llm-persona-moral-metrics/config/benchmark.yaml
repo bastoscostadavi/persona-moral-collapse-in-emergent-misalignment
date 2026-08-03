@@ -1,0 +1,23 @@
+defaults:
+  temperature: 0.1
+  logit_collection_temperature: 1.0
+  n: 10
+  p: 100
+  personas_file: personas.json
+
+paths:
+  sampling_data_dir: data
+  logit_data_dir: data/logit
+  sampled_metrics_csv: results/persona_moral_metrics.csv
+  sampled_foundation_metrics_csv: results/persona_moral_metrics_per_foundation.csv
+  temperature_curve_metrics_csv: results/temperature_curve_metrics.csv
+  summary_cache_dir: results/sampling_summary_cache
+  plots_dir: results/plots
+
+plotting:
+  default_temperature: 0.1
+  curve_min_temperature: 0.35
+  curve_max_temperature: 1.25
+  curve_points: 201
+  display_min_temperature: 0.3
+  display_max_temperature: 1.3
