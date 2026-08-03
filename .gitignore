@@ -28,8 +28,14 @@ fine-tuning-datasets/raw_upstream/
 # Protected dataset (added by easy-dataset-share)
 fine-tuning-datasets/raw_upstream/training_datasets.zip.enc.extracted/
 
-# Upstream Betley repo clone (third-party, 83MB) — reference only, not our work
-emergent-misalignment/
+# Upstream Betley repo clone: tracked as a SUBMODULE (see .gitmodules), which
+# already keeps its 83MB out of our history — only a gitlink is stored. It must
+# NOT be listed here: ignoring a tracked path does nothing and misleads readers.
+# finetune.py depends on its data/ (insecure.jsonl, secure.jsonl, evil_numbers.jsonl);
+# initialise with: git submodule update --init emergent-misalignment
+
+# Third-party reference PDFs (retrievable from arXiv; keeps them out of history)
+references/
 
 # Matplotlib font cache (created by MPLCONFIGDIR)
 .mplconfig/
